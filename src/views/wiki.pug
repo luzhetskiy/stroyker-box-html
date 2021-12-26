@@ -1,0 +1,286 @@
+extends layout/layout
+
+block scripts 
+  script(type='text/javascript' src='/static/js/jquery-3.2.1.min.js')
+  script(type='text/javascript' src='/static/js/jquery.fancybox.v3.5.7.min.js')
+  script(type='text/javascript' src='/static/js/owl.carousel.js')
+  script(type='text/javascript' src='/static/js/jquery.mask.min.js')
+  script(type='text/javascript').
+    window.onload = windowload;
+    window.onresize = AppendScript;
+    function windowload() {
+    AppendScript();
+    }
+    function AppendScript() {
+    if (window.innerWidth >= 767) {
+    Include('/static/js/scripts-desktop.js', 'on')
+    } else {
+    Include('/static/js/scripts-mobile.js', 'on')
+    }
+    }
+    function Include(filename, status) {
+    var head = document.getElementsByTagName('head')[0];
+    if (status == 'on') {
+    script = document.createElement('script');
+    script.src = filename;
+    script.type = 'text/javascript';
+    head.appendChild(script)
+    } else if (status == 'off') {
+    var scripts = head.getElementsByTagName('script');
+    if (scripts.length > 0) {
+    head.removeChild(scripts[1]);
+    }
+    }
+    }
+  script(type='text/javascript').
+    // This url dictionary is used in js scripts instead of direct links.
+    const URLS = {
+    static: "/static/",
+    cart: "/cart/",
+    register: "/account/register/",
+    }
+  script(src='/static/js/notify.min.js')
+  script(src='/static/js/ajax_setup.js')
+  script(src='/static/catalog/js/search.js')
+  script(src='/static/js/common.js')
+  script(src='/static/js/contentSelectionDisable.js')
+  script(src='/static/commerce/js/cart.js')
+  script(src='/static/catalog/js/catalog.js')
+  script(type='text/javascript' src='/static/crm/js/crm_forms.js')
+  script(type='text/javascript' src='/static/subscription/js/subscription.js')
+  script(src='/static/js/scripts.js')
+
+
+block content
+  section.section
+    .container
+      .catalog-side.mobile-show
+        span.catalog-side__title
+          span.icon
+            svg(width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg')
+              path(d='M0 0V2H16V0H0ZM0 8H16V6H0V8ZM0 14H16V12H0V14Z' fill='currentColor')
+          | Каталог продукции
+        .catalog-side__content
+          ul
+            li.menu-item.current
+              a(href='/catalog/brevno-ocilindrovannoe/') Бревно оцилиндрованное
+            li.menu-item.current
+              a(href='/catalog/vagonka-i-evrovagonka/') Вагонка и Евровагонка
+            li.menu-item.current
+              a(href='/catalog/blok-haus/') Блок Хаус
+            li.menu-item.current
+              a(href='/catalog/imitaciya-brusa/') Имитация бруса
+            li.menu-item.current
+              a(href='/catalog/doska-pola/') Доска пола
+            li.menu-item.current
+              a(href='/catalog/brus-i-doska-suhie-strogannye/') Брус и Доска
+            li.menu-item.current
+              a(href='/catalog/derevianniy-dekor/') Деревянный декор
+            li.menu-item.current
+              a(href='/catalog/elementy-lestnic/') Элементы лестниц
+            li.menu-item.current
+              a(href='/catalog/dveri-i-okna/') Двери и окна
+            li.menu-item.current
+              a(href='/catalog/materialy-iz-lipy/') Материалы из липы и абаши
+            li.menu-item.current
+              a(href='/catalog/materialy-iz-listvennicy/') Материалы из лиственницы
+            li.menu-item.current
+              a(href='/catalog/materialy-ih-osiny-i-abashi/') Материалы из осины
+            li.menu-item.current
+              a(href='/catalog/fanera-osb-dsp-dvp-tssp/') Фанера, ОСБ, ДСП, ДВП
+            li.menu-item.current
+              a(href='/catalog/utepliteli/') Утеплители
+            li.menu-item.current
+              a(href='/catalog/rulonnie-izoliyzionnie-materialy/') Рулонные изоляционные материалы
+            li.menu-item.current
+              a(href='/catalog/propitki-dlya-drevesiny/') Пропитки для древесины
+            li.menu-item.current
+              a(href='/catalog/derevyannye-igrushki/') Деревянные игрушки
+      .page-head
+        .breadcrumbs.breadcrumbs--lk(itemscope='' itemtype='http://schema.org/BreadcrumbList')
+          span(itemprop='itemListElement' itemscope='' itemtype='http://schema.org/ListItem')
+            a(itemprop='item' title='Главная' href='/')
+              | Главная
+              meta(itemprop='name' content='Главная')
+            meta(itemprop='position' content='1')
+          span.sep
+          |         Статьи
+      .content-block
+        h1.h1 Вики — база знаний
+        .articles-block-container
+          .articles-block
+            .item.item--half
+              a.new-slide-item.new-slide-item--wide(href='/articles/kreditovanie-po-nizkoj-stavke/')
+                span.new-slide-item__image
+                  img(src='/media/vagonkabrus_cache/c7/15/c715f98dd287f0396b2d30b3562e2e3d.png' alt='Кредитование по низкой ставке')
+                span.new-slide-item__content
+                  span.new-slide-item__title Выгодно
+                  span.new-slide-item__name Кредитование по низкой ставке
+                  span.new-slide-item__date Фев 2021
+                  span.btn-border Подробнее
+            .item.item--half
+              a.new-slide-item.new-slide-item--wide(href='/articles/modernizaciya-skladskih-pomeshenij/')
+                span.new-slide-item__image
+                  img(src='/media/vagonkabrus_cache/df/8b/df8b88ac94b7158bf76d8d78df60b91a.jpg' alt='Расширение складских площадей')
+                span.new-slide-item__content
+                  span.new-slide-item__title Полезная информация
+                  span.new-slide-item__name Расширение складских площадей
+                  span.new-slide-item__date Окт 2020
+            .item
+              a.new-slide-item(href='/articles/pro-reklamnye-bannera/')
+                span.new-slide-item__image
+                  img(src='/media/vagonkabrus_cache/86/c9/86c97b36ffc37dc8ecee14ace7e719cf.jpg' alt='Евровагонка в интерьере')
+                span.new-slide-item__content
+                  span.new-slide-item__title Лайфхак
+                  span.new-slide-item__name Евровагонка в интерьере
+                  span.new-slide-item__date Авг 2020
+            .item
+              a.new-slide-item(href='/articles/pravda-i-mify-o-terrasnoj-doske/')
+                span.new-slide-item__image
+                  img(src='/media/vagonkabrus_cache/66/fc/66fc5b0f62d4fd2ed2427e409cc4b176.jpg' alt='Правда и мифы о террасной доске')
+                span.new-slide-item__content
+                  span.new-slide-item__title Возможно Вы не знали...
+                  span.new-slide-item__name Правда и мифы о террасной доске
+                  span.new-slide-item__date Авг 2020
+            .item
+              a.new-slide-item(href='/articles/novinki-sezona/')
+                span.new-slide-item__image
+                  img(src='/media/vagonkabrus_cache/4e/88/4e88b3abe8fe194f14afbb84cb762bd7.jpg' alt='Наружная обшивка дома - Блок Хаусом')
+                span.new-slide-item__content
+                  span.new-slide-item__title Полезная информация
+                  span.new-slide-item__name Наружная обшивка дома - Блок Хаусом
+                  span.new-slide-item__date Мар 2020
+            .item
+              a.new-slide-item(href='/articles/kak-krasit-faneru/')
+                span.new-slide-item__image
+                  img(src='/media/vagonkabrus_cache/92/02/9202fc929a9085e4b01dcdee87350b80.jpg' alt='Интересные факты о лестницах')
+                span.new-slide-item__content
+                  span.new-slide-item__title Интересные факты
+                  span.new-slide-item__name Интересные факты о лестницах
+                  span.new-slide-item__date Дек 2019
+            .item
+              a.new-slide-item(href='/articles/dekorativnaya-otdelka-pilomaterialom/')
+                span.new-slide-item__image
+                  img(src='/media/vagonkabrus_cache/00/5a/005a21d263830f810fd76e7f856652bd.jpg' alt='Дверь филенчатая из массива древесины')
+                span.new-slide-item__content
+                  span.new-slide-item__title Интересные подробности
+                  span.new-slide-item__name Дверь филенчатая из массива древесины
+                  span.new-slide-item__date Авг 2019
+            .item
+              a.new-slide-item(href='/articles/cepochki-postavok/')
+                span.new-slide-item__image
+                  img(src='/media/vagonkabrus_cache/a7/eb/a7eb1c23fdd01acbfeca73f3a125dfe1.jpg' alt='Укладка половой доски')
+                span.new-slide-item__content
+                  span.new-slide-item__title Лайфхак
+                  span.new-slide-item__name Укладка половой доски
+                  span.new-slide-item__date Авг 2019
+          .btn-center.mobile-show
+            a.btn-border.btn-download-5
+              span.icon
+                img(src='/static/images/show-more-arrow.svg' alt='')
+              | Показать еще
+  section.section-second-content
+    .container
+      span.content-title.h2 Распродажа
+      .product-slider.product-slider--4
+        .owl-carousel
+        .btn-center.mobile-show
+          a.btn.btn-download.btn-download-2
+            span.icon
+              img(src='/static/images/download-productions.svg' alt='')
+            | Ещё
+      span.content-title.h2 Новости и акции
+      .action-slider
+        .owl-carousel
+          .item
+            a.action-item(href='/news/promo/rasprodazha-evrovagonki/' title='&nbsp;\
+            Низкая цена на евровагонку')
+              span.action-item__image
+                img(src='/media/vagonkabrus_cache/91/ba/91baaea9fdd872c5d2fbfc5b527a7c24.png' alt='РАСПРОДАЖА ЕВРОВАГОНКИ')
+              span.action-item__content
+                span.action-item__type.action-item__type--action
+                  span Акция
+                span.action-item__title РАСПРОДАЖА ЕВРОВАГОНКИ
+          .item
+            a.action-item(href='/news/promo/rasprodazha-vagonki-iz-lipy/' title='РАСПРОДАЖА ВАГОНКИ ИЗ ЛИПЫ')
+              span.action-item__image
+                img(src='/media/vagonkabrus_cache/9a/d5/9ad5dcbf6203454c80294bff6680e2e4.png' alt='РАСПРОДАЖА ВАГОНКИ ИЗ ЛИПЫ')
+              span.action-item__content
+                span.action-item__type.action-item__type--action
+                  span Акция
+                span.action-item__title РАСПРОДАЖА ВАГОНКИ ИЗ ЛИПЫ
+          .item
+            a.action-item(href='/news/promo/eko-akciya-na-listvennicu/' title='ЭКО АКЦИЯ НА ПЛАНКЕТ&nbsp;ЛИСТВЕННИЦА\
+            &nbsp;\
+            &nbsp;')
+              span.action-item__image
+                img(src='/media/vagonkabrus_cache/63/c9/63c983ba5b7c68f4683bb8bf1e579889.png' alt='ЭКО АКЦИЯ НА ЛИСТВЕННИЦУ')
+              span.action-item__content
+                span.action-item__type.action-item__type--action
+                  span Акция
+                span.action-item__title ЭКО АКЦИЯ НА ЛИСТВЕННИЦУ
+          .item
+            a.action-item(href='/news/promo/super-akciya-na-evrovagonku-kategorii-av-4m/' title='СУПЕР АКЦИЯ НА ЕВРОВАГОНКУ КАТЕГОРИИ АВ 4М')
+              span.action-item__image
+                img(src='/media/vagonkabrus_cache/16/8d/168da1312b310aba99a35bf75a21e923.png' alt='АКЦИЯ НА ЕВРОВАГОНКУ КАТЕГОРИИ АВ 4М')
+              span.action-item__content
+                span.action-item__type.action-item__type--action
+                  span Акция
+                span.action-item__title АКЦИЯ НА ЕВРОВАГОНКУ КАТЕГОРИИ АВ 4М
+          .item
+            a.action-item(href='/news/promo/akicya-na-terrasnuy-dosku/' title='СУПЕР АКЦИЯ НА ТЕРРАСНУЮ ДОСКУ&nbsp;ЛИСТВЕННИЦА 190 РУБЛЕЙ М.П.')
+              span.action-item__image
+                img(src='/media/vagonkabrus_cache/47/5c/475c32bcb01fa2c692e0fe0a8db887e8.png' alt='СУПЕР АКЦИЯ НА ТЕРРАСНУЮ ДОСКУ ЛИСТВЕННИЦА 190 РУБЛЕЙ М.П.')
+              span.action-item__content
+                span.action-item__type.action-item__type--action
+                  span Акция
+                span.action-item__title СУПЕР АКЦИЯ НА ТЕРРАСНУЮ ДОСКУ ЛИСТВЕННИЦА 190 РУБЛЕЙ М.П.
+          .item
+            a.action-item(href='/news/promo/novost-nomer-1/' title='СУПЕР АКЦИЯ ЕВРОВАГОНКА АB, &nbsp;0,125 х0,90 х 4,0&nbsp; ЦЕНА 26 РУБЛЕЙ')
+              span.action-item__image
+                img(src='/media/vagonkabrus_cache/7b/e5/7be5a1b64c600e8edac24a56cf84bcc4.png' alt='СУПЕР АКЦИЯ - ЕВРОВАГОНКА АB,  ПО ЦЕНЕ 26 РУБЛЕЙ')
+              span.action-item__content
+                span.action-item__type.action-item__type--action
+                  span Акция
+                span.action-item__title СУПЕР АКЦИЯ - ЕВРОВАГОНКА АB,  ПО ЦЕНЕ 26 РУБЛЕЙ
+          .item
+            a.action-item(href='/news/promo/akicya-na-vagonku-shtil/' title='АКЦИЯ ВАГОНКА ШТИЛЬ АВ,&nbsp;12,5 мм х 112 мм х2.0, ЦЕНА 33 РУБ.')
+              span.action-item__image
+                img(src='/media/vagonkabrus_cache/1a/23/1a23b07fec69c76f04b738a4ee703eb5.png' alt='АКЦИЯ - ВАГОНКА ШТИЛЬ АВ, ПО ЦЕНЕ 33 РУБЛЯ')
+              span.action-item__content
+                span.action-item__type.action-item__type--action
+                  span Акция
+                span.action-item__title АКЦИЯ - ВАГОНКА ШТИЛЬ АВ, ПО ЦЕНЕ 33 РУБЛЯ
+  section.section-dark.feedback-form
+    .container
+      #question-main.question-main
+        .question-form
+          span.content-title.center.h2 Остались вопросы?
+          form#feedback-message-request-form(action='/crm/message/' method='post')
+            input(type='hidden' name='csrfmiddlewaretoken' value='fznlX3wS7Q1ORJknt9XUQ48eWagxCdXDDa7Srib56Bs0JRxNEw8f7zvTFFrUNulA')
+            .question-form__column
+              .form-group
+                input.form-control(type='text' name='name' autocomplete='off' required='')
+                label.label-name(for='name')
+                  span.content-name
+                    | Имя*
+              .form-group
+                input.form-control.phone(type='phone' value='70000000000' name='phone' autocomplete='off' required='')
+                label.label-name(for='phone')
+                  span.content-name
+                    | Телефон
+              .form-group
+                input.form-control(type='mail' value='info@stroyker.pro' name='email' autocomplete='off' required='')
+                label.label-name(for='text')
+                  span.content-name
+                    | e-mail
+            .question-form__column
+              .form-group
+                textarea.form-control(name='message' autocomplete='off' required='')
+                label.label-name(for='message')
+                  span.content-name
+                    | Комментарий
+              input#id_url(type='hidden' name='url')
+              button.btn.btn--main-min(type='submit') Отправить
+          p
+            | Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь с нашей политикой конфиденциальности

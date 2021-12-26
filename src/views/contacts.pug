@@ -1,0 +1,190 @@
+extends layout/layout
+
+block scripts 
+  script(type='text/javascript' src='/static/js/jquery-3.2.1.min.js')
+  script(type='text/javascript' src='/static/js/jquery.fancybox.v3.5.7.min.js')
+  script(type='text/javascript' src='/static/js/owl.carousel.js')
+  script(type='text/javascript' src='/static/js/jquery.mask.min.js')
+  script(type='text/javascript').
+    window.onload = windowload;
+    window.onresize = AppendScript;
+    function windowload() {
+    AppendScript();
+    }
+    function AppendScript() {
+    if (window.innerWidth >= 767) {
+    Include('/static/js/scripts-desktop.js', 'on')
+    } else {
+    Include('/static/js/scripts-mobile.js', 'on')
+    }
+    }
+    function Include(filename, status) {
+    var head = document.getElementsByTagName('head')[0];
+    if (status == 'on') {
+    script = document.createElement('script');
+    script.src = filename;
+    script.type = 'text/javascript';
+    head.appendChild(script)
+    } else if (status == 'off') {
+    var scripts = head.getElementsByTagName('script');
+    if (scripts.length > 0) {
+    head.removeChild(scripts[1]);
+    }
+    }
+    }
+  script(type='text/javascript').
+    // This url dictionary is used in js scripts instead of direct links.
+    const URLS = {
+    static: "/static/",
+    cart: "/cart/",
+    register: "/account/register/",
+    }
+  script(src='/static/js/notify.min.js')
+  script(src='/static/js/ajax_setup.js')
+  script(src='/static/catalog/js/search.js')
+  script(src='/static/js/common.js')
+  script(src='/static/js/contentSelectionDisable.js')
+  script(src='/static/commerce/js/cart.js')
+  script(src='/static/catalog/js/catalog.js')
+  script.
+    var BNR_URLS = {
+    'inc_views': '/bnrs/ajax/view-cnt-incr',
+    'inc_clicks': '/bnrs/ajax/clck-cnt-incr'
+    };
+  script(src='/static/banners/js/bnrs.js')
+  script(type='text/javascript' src='/static/crm/js/crm_forms.js')
+  script(src='/static/addresses/js/addresses_yamap.js')
+  script(src='/static/js/frontpage.js')
+  script(type='text/javascript' src='/static/subscription/js/subscription.js')
+  script(src='/static/js/scripts.js')
+  
+block content
+
+  section.section.section-first
+    .container
+      .catalog-side.mobile-show
+        span.catalog-side__title
+          span.icon
+            svg(width='16', height='14', viewBox='0 0 16 14', fill='none', xmlns='http://www.w3.org/2000/svg')
+              path(d='M0 0V2H16V0H0ZM0 8H16V6H0V8ZM0 14H16V12H0V14Z', fill='currentColor')
+          | Каталог продукции
+        .catalog-side__content
+          ul
+            li.menu-item.current
+              a(href='/catalog/vagonka-i-evrovagonka/') Вагонка и Евровагонка
+            li.menu-item.current
+              a(href='/catalog/blok-haus/') Блок Хаус
+            li.menu-item.current
+              a(href='/catalog/imitaciya-brusa/') Имитация бруса
+            li.menu-item.current
+              a(href='/catalog/doska-pola/') Доска пола
+            li.menu-item.current
+              a(href='/catalog/brus-i-doska-suhie-strogannye/') Брус и Доска (строганные и обрезные)
+            li.menu-item.current
+              a(href='/catalog/dekorativnaya-otdelka/') Декоративная отделка
+            li.menu-item.current
+              a(href='/catalog/elementy-lestnic/') Элементы лестниц
+            li.menu-item.current
+              a(href='/catalog/dveri-i-okna/') Двери и окна
+            li.menu-item.current
+              a(href='/catalog/materialy-iz-lipy/') Материалы из липы
+            li.menu-item.current
+              a(href='/catalog/materialy-iz-listvennicy/') Материалы из лиственницы
+            li.menu-item.current
+              a(href='/catalog/materialy-ih-osiny-i-abashi/') Материалы из осины и абаши
+            li.menu-item.current
+              a(href='/catalog/fanera-osb-dsp-dvp-tssp/') Фанера, ОСБ, ДСП, ДВП
+            li.menu-item.current
+              a(href='/catalog/utepliteli/') Утеплители
+            li.menu-item.current
+              a(href='/catalog/plenki-i-membrany/') Пленки и мембраны
+            li.menu-item.current
+              a(href='/catalog/propitki-dlya-drevesiny/') Пропитки для древесины
+      .page-head
+        .breadcrumbs.breadcrumbs--lk(itemscope='', itemtype='http://schema.org/BreadcrumbList')
+          span(itemprop='itemListElement', itemscope='', itemtype='http://schema.org/ListItem')
+            a(itemprop='item', title='Главная', href='/')
+              | Главная
+              meta(itemprop='name', content='Главная')
+            meta(itemprop='position', content='1')
+          span.sep
+          |         Контакты
+      .content-block
+        h1
+          | Контакты
+        .contacts-section
+          .contacts-block
+            .contacts-block__info
+              span.contacts-block__title Самара
+              div(itemscope='', itemtype='http://schema.org/Organization')
+                span.contacts-block__title-red.address-data(itemprop='name', data-icon-content='ГЛАВНЫЙ ОФИС', data-hint-content='443016, г. Самара, ул. Ставропольская, 74', data-latitude='53.218449', data-longitude='50.223550')
+                  | ГЛАВНЫЙ ОФИС
+                .contacts-list
+                  .contact-line(itemprop='address', itemscope='', itemtype='http://schema.org/PostalAddress')
+                    span.icon
+                      img(src='/static/images/partner-location.svg', alt='')
+                    span(itemprop='streetAddress') 443016, г. Самара, ул. Ставропольская, 74
+                  .contact-line
+                    span.icon
+                      img(src='/static/images/partner-call.svg', alt='')
+                    span.phone(itemprop='telephone') 78462284090
+                  .contact-line
+                    span.icon
+                      img(src='/static/images/partner-email.svg', alt='')
+                    span(itemprop='email') les@stroyles.com
+                  .contact-text-line
+                    p +7(846)2216379, 
+                    p +7(846)2459210.
+                    p Режим работы: Пн - Пт: 9.00 - 17.00 Сб - Вс: выходные
+              div(itemscope='', itemtype='http://schema.org/Organization')
+                span.contacts-block__title-red.address-data(itemprop='name', data-icon-content='Ракитовский склад пиломатериалов', data-hint-content='г. Самара, Ракитовское шоссе 2, стр. 1, Склад «Северная Лесная Компания»', data-latitude='53.272241', data-longitude='50.270244')
+                  | Ракитовский склад пиломатериалов
+                .contacts-list
+                  .contact-line(itemprop='address', itemscope='', itemtype='http://schema.org/PostalAddress')
+                    span.icon
+                      img(src='/static/images/partner-location.svg', alt='')
+                    span(itemprop='streetAddress') г. Самара, Ракитовское шоссе 2, стр. 1, Склад «Северная Лесная Компания»
+                  .contact-line
+                    span.icon
+                      img(src='/static/images/partner-call.svg', alt='')
+                    span.phone(itemprop='telephone') 79277128548, 79277128547, 78469228548, 78469228547
+                  .contact-line
+                    span.icon
+                      img(src='/static/images/partner-email.svg', alt='')
+                    span(itemprop='email') stroylessam@yandex.ru
+                  .contact-text
+                    p Режим работы: Пн - Пт: 8.00 - 17.00, Сб - Вс: 8:00 - 16.00
+            #yamap_addresses.contacts-block__map(data-center-latitude='53.202160', data-center-longitude='50.159618', data-center-zoom='10.000000')
+    section.section-dark
+    .container
+      #question-main.question-main
+        .question-form
+          span.content-title.center.h2 Остались вопросы?
+          form#feedback-message-request-form(action='/crm/message/', method='post')
+            input(type='hidden', name='csrfmiddlewaretoken', value='B0YFNJIopjqXdW8bSmgzYdzKI1NskQhVV9L4H5Wedv3uui4NyYj9UWPuq4WVRbEn')
+            .question-form__column
+              .form-group
+                input.form-control(type='text', name='name', autocomplete='off', required='')
+                label.label-name(for='name')
+                  span.content-name
+                    | Имя*
+              .form-group
+                input.form-control.phone(type='phone', name='phone', autocomplete='off', required='')
+                label.label-name(for='phone')
+                  span.content-name
+                    | Телефон
+              .form-group
+                input.form-control(type='mail', name='email', autocomplete='off', required='')
+                label.label-name(for='text')
+                  span.content-name
+                    | e-mail
+            .question-form__column
+              .form-group
+                textarea.form-control(name='message', autocomplete='off', required='')
+                label.label-name(for='message')
+                  span.content-name
+                    | Комментарий
+              input#id_url(type='hidden', name='url')
+              button.btn.btn--main-min(type='submit') Отправить
+          p
+            | Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь с нашей политикой конфиденциальности

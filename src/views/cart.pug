@@ -1,0 +1,223 @@
+extends layout/layout
+
+block scripts 
+  script(type='text/javascript' src='/static/js/jquery-3.2.1.min.js')
+  script(type='text/javascript' src='/static/js/jquery.fancybox.v3.5.7.min.js')
+  script(type='text/javascript' src='/static/js/owl.carousel.js')
+  script(type='text/javascript' src='/static/js/jquery.mask.min.js')
+  script(type='text/javascript').
+    window.onload = windowload;
+    window.onresize = AppendScript;
+    function windowload() {
+    AppendScript();
+    }
+    function AppendScript() {
+    if (window.innerWidth >= 767) {
+    Include('/static/js/scripts-desktop.js', 'on')
+    } else {
+    Include('/static/js/scripts-mobile.js', 'on')
+    }
+    }
+    function Include(filename, status) {
+    var head = document.getElementsByTagName('head')[0];
+    if (status == 'on') {
+    script = document.createElement('script');
+    script.src = filename;
+    script.type = 'text/javascript';
+    head.appendChild(script)
+    } else if (status == 'off') {
+    var scripts = head.getElementsByTagName('script');
+    if (scripts.length > 0) {
+    head.removeChild(scripts[1]);
+    }
+    }
+    }
+  script(src='/static/js/notify.min.js')
+  script(src='/static/js/ajax_setup.js')
+  script(src='/static/catalog/js/search.js')
+  script(src='/static/js/common.js')
+  script(src='/static/commerce/js/cart.js')
+  script(src='/static/catalog/js/catalog.js')
+  script(type='text/javascript' src='/static/crm/js/crm_forms.js')
+  script(type='text/javascript' src='/static/subscription/js/subscription.js')
+  script(src=href+'/scripts/scripts.js')
+  script(src='/static/js/new.js')
+  
+  
+block content
+  section.section.simple-cart
+    .container
+      .page-head
+        .breadcrumbs.breadcrumbs--lk(itemscope='' itemtype='http://schema.org/BreadcrumbList')
+          svg.breadcrumbs__sep
+            use(xlink:href='#tab-arrow')
+          span(itemprop='itemListElement' itemscope='' itemtype='http://schema.org/ListItem')
+            a(itemprop='item' title='Главная' href='/')
+              | Главная
+              meta(itemprop='name' content='Главная')
+            meta(itemprop='position' content='1')
+          svg.breadcrumbs__sep
+            use(xlink:href='#tab-arrow')
+          |         Корзина
+      .content-block
+        span.content-title.content-title--lg Корзина
+        
+        .simple-cart__content
+          .shopping-cart
+            .shopping-cart-list
+              .shopping-cart-item
+                span.shopping-cart-item__delete(data-cart-delete-url='/cart/del/3557')
+                  a
+                    svg.icon-svg
+                      use(xlink:href='#delete')
+                span.shopping-cart-item__name
+                  span clk00044
+                  | Евровагонка (хвоя) 12,5х90мм 1м категория АВ
+                span.shopping-cart-item__cost 25,00 ₽
+                span.shopping-cart-item__numbers
+                  .input-number
+                    .cart-qty-control.order-down(data-qty-update-url='/cart/upd/3557?q=down')
+                    input#number.cart-qty-control-input(data-qty-update-url='/cart/upd/3557' type='number' min='0' step='1' value='1' required='')
+                    .cart-qty-control.order-up(data-qty-update-url='/cart/upd/3557?q=up')
+                span.shopping-cart-item__total-cost 25,00 ₽
+              .shopping-cart-item
+                span.shopping-cart-item__delete(data-cart-delete-url='/cart/del/3883')
+                  a
+                    svg.icon-svg
+                      use(xlink:href='#delete')
+                span.shopping-cart-item__name
+                  span с0324
+                  | Бревно оцилиндрованное (ель, сосна) 240 мм, Финский профиль
+                span.shopping-cart-item__cost 14500,00 ₽
+                span.shopping-cart-item__numbers
+                  .input-number
+                    .cart-qty-control.order-down(data-qty-update-url='/cart/upd/3883?q=down')
+                    input#number.cart-qty-control-input(data-qty-update-url='/cart/upd/3883' type='number' min='0' step='1' value='1' required='')
+                    .cart-qty-control.order-up(data-qty-update-url='/cart/upd/3883?q=up')
+                span.shopping-cart-item__total-cost 14500,00 ₽
+              .shopping-cart-item
+                span.shopping-cart-item__delete(data-cart-delete-url='/cart/del/3878')
+                  a
+                    svg.icon-svg
+                      use(xlink:href='#delete')
+                span.shopping-cart-item__name
+                  span с0325
+                  | Бревно оцилиндрованное (ель, сосна) 260 мм, Лунный паз
+                span.shopping-cart-item__cost 15000,00 ₽
+                span.shopping-cart-item__numbers
+                  .input-number
+                    .cart-qty-control.order-down(data-qty-update-url='/cart/upd/3878?q=down')
+                    input#number.cart-qty-control-input(data-qty-update-url='/cart/upd/3878' type='number' min='0' step='1' value='1' required='')
+                    .cart-qty-control.order-up(data-qty-update-url='/cart/upd/3878?q=up')
+                span.shopping-cart-item__total-cost 15000,00 ₽
+            .delivery-cart
+              .delivery-total.delivery-total--cart
+                ul
+                  li
+                    span.delivery-total__sm Общий вес, кг:
+                    span.delivery-total__sm.cart-total-weight 0,57
+                  li
+                    span.delivery-total__sm Общий объём, м3: 
+                    span.delivery-total__sm.cart-total-volume 0,1
+                  li
+                    span.delivery-total__lg Итого:
+                    span.delivery-total__lg.cart-total-price 29525,00 ₽
+        .simple-cart__form
+          form.simple-order-form(method='post')
+            input(type='hidden' name='csrfmiddlewaretoken' value='7XAS0lrsOqeHirEGkexQPLF4Crw7LbSZFs8CmQljLjhKCIvAvliNtVMkmUlDqOGv')
+            
+            .simple-order-form__group.simple-order-form__column
+              h3.simple-order-form__title Предпочтительный вариант доставки:
+              ul#id_delivery_variant
+                li
+                  .new-radio
+                    input(type="radio" id='id_delivery_variant_0' name='delivery_variant' value='самовывоз').new-radio__input
+                    label(for='id_delivery_variant_0').new-radio__label самовывоз
+                li
+                  .new-radio
+                    input(type="radio" id='id_delivery_variant_1' name='delivery_variant' value='доставка по адресу').new-radio__input
+                    label(for='id_delivery_variant_1').new-radio__label доставка по адресу
+
+            .simple-order-form__group.simple-order-form__column 
+              h3.simple-order-form__title Предпочтительный вариант оплаты:
+              ul#id_payment_variant
+                li
+                  .new-radio
+                    input(type="radio" id='id_payment_variant_0' name='payment_variant' value='Выставление счета').new-radio__input
+                    label(for='id_payment_variant_0').new-radio__label Выставление счета
+                li
+                  .new-radio
+                    input(type="radio" id='id_payment_variant_1' name='payment_variant' value='Картой при получении').new-radio__input
+                    label(for='id_payment_variant_1').new-radio__label Картой при получении
+                li
+                  .new-radio
+                    input(type="radio" id='id_payment_variant_2' name='payment_variant' value='Наличными при получении').new-radio__input
+                    label(for='id_payment_variant_2').new-radio__label Наличными при получении
+                li
+                  .new-radio
+                    input(type="radio" id='id_payment_variant_3' name='payment_variant' value='Он-лайн').new-radio__input
+                    label(for='id_payment_variant_3').new-radio__label Он-лайн
+                li
+                  .new-radio
+                    input(type="radio" id='id_payment_variant_4' name='payment_variant' value='Кредит').new-radio__input
+                    label(for='id_payment_variant_4').new-radio__label Кредит
+            
+            .simple-order-form__group.simple-order-form__inputs
+              .form-group
+                input#id_name.form-control(type='text' name='name' maxlength='60' required='')
+                label.label-name(for='id_name')
+                  span.content-name
+                    | Имя*
+              .form-group
+                input#id_phone.form-control.phone(type='text' name='phone' value='70000000000' maxlength='18' required='')
+                label.label-name(for='id_phone')
+                  span.content-name
+                    | Телефон*
+              .form-group
+                input#id_email.form-control(type='text' name='email' value='info@stroyker.pro' maxlength='60' required='')
+                label.label-name(for='id_email')
+                  span.content-name
+                    | Email*
+              .form-group.comment
+                textarea#id_comment.form-control.form-control(name='comment' cols='40' rows='10')
+                label.label-name(for='id_comment')
+                  span.content-name
+                    | Комментарий к заказу
+
+            .simple-order-form__group.simple-order-form__submit
+              button.btn.btn--main-min(type='submit') Отправить
+
+  
+  section.section-dark.feedback-form
+    .container
+      #question-main.question-main
+        .question-form
+          span.content-title.center.h2 Остались вопросы?
+          form#feedback-message-request-form(action='/crm/message/' method='post')
+            input(type='hidden' name='csrfmiddlewaretoken' value='7XAS0lrsOqeHirEGkexQPLF4Crw7LbSZFs8CmQljLjhKCIvAvliNtVMkmUlDqOGv')
+            .question-form__column
+              .form-group
+                input.form-control(type='text' name='name' autocomplete='off' required='')
+                label.label-name(for='name')
+                  span.content-name
+                    | Имя*
+              .form-group
+                input.form-control.phone(type='phone' value='70000000000' name='phone' autocomplete='off' required='')
+                label.label-name(for='phone')
+                  span.content-name
+                    | Телефон
+              .form-group
+                input.form-control(type='mail' value='info@stroyker.pro' name='email' autocomplete='off' required='')
+                label.label-name(for='text')
+                  span.content-name
+                    | e-mail
+            .question-form__column
+              .form-group
+                textarea.form-control(name='message' autocomplete='off' required='')
+                label.label-name(for='message')
+                  span.content-name
+                    | Комментарий
+              input#id_url(type='hidden' name='url')
+              button.btn.btn--main-min(type='submit') Отправить
+          p
+            | Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь с нашей политикой конфиденциальности

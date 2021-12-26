@@ -1,0 +1,108 @@
+footer
+  .container
+    .footer-content
+      .footer-first-column
+        .footer-phone
+          a.phone(href='tel:+78469228548') 78469228548
+        span.footer-contact les@stroyles.com, stroylessam@yandex.ru
+        a.logo.mobile-hide(href='/')
+          img(src='/media/ИНСТА СТАРТ (1).svg' alt='Северная Лесная Компания')
+        .mobile-show
+          .developer-link
+            a(href='https://stroyker.pro/')
+              | Решения для строительного бизнеса 
+              span.dev-logo
+                svg
+                  use(xlink:href='#dev-logo')
+      .footer-content__menu
+        .footer-content__column.footer-content__column--lg
+          span.footer-content__title Каталог
+          .footer-content__ul-content
+            ul
+              li.menu-item
+                a(href='/catalog/brevno-ocilindrovannoe/') Бревно оцилиндрованное
+              li.menu-item
+                a(href='/catalog/vagonka-i-evrovagonka/') Вагонка и Евровагонка
+              li.menu-item
+                a(href='/catalog/blok-haus/') Блок Хаус
+              li.menu-item
+                a(href='/catalog/imitaciya-brusa/') Имитация бруса
+              li.menu-item
+                a(href='/catalog/doska-pola/') Доска пола
+              li.menu-item
+                a(href='/catalog/brus-i-doska-suhie-strogannye/') Брус и Доска
+              li.menu-item
+                a(href='/catalog/dekorativnaya-otdelka/') Декоративная отделка
+              li.menu-item
+                a(href='/catalog/elementy-lestnic/') Элементы лестниц
+              li.menu-item
+                a(href='/catalog/dveri-i-okna/') Двери и окна
+              li.menu-item
+                a(href='/catalog/materialy-iz-lipy/') Материалы из липы и абаши
+            ul
+              li.menu-item
+                a(href='/catalog/brevno-ocilindrovannoe/') Бревно оцилиндрованное
+              li.menu-item
+                a(href='/catalog/vagonka-i-evrovagonka/') Вагонка и Евровагонка
+              li.menu-item
+                a(href='/catalog/blok-haus/') Блок Хаус
+              li.menu-item
+                a(href='/catalog/imitaciya-brusa/') Имитация бруса
+              li.menu-item
+                a(href='/catalog/doska-pola/') Доска пола
+              li.menu-item
+                a(href='/catalog/brus-i-doska-suhie-strogannye/') Брус и Доска
+              li.menu-item
+                a(href='/catalog/dekorativnaya-otdelka/') Декоративная отделка
+              li.menu-item
+                a(href='/catalog/elementy-lestnic/') Элементы лестниц
+              li.menu-item
+                a(href='/catalog/dveri-i-okna/') Двери и окна
+              li.menu-item
+                a(href='/catalog/materialy-iz-lipy/') Материалы из липы и абаши
+        .footer-content__column
+          span.footer-content__title Покупателям
+          ul
+            li
+              a(title='Калькулятор доставки' href='/cart/delivery_calculator/') Калькулятор доставки
+            li
+              a(title='Новости и акции' href='/news/') Новости и акции
+            li
+              a(title='Статьи' href='/articles/') Статьи
+            li
+              a(title='Партнеры' href='/addresses/partners/') Партнеры
+            li
+              a(title='Контакты' href='/contacts/') Контакты
+      .footer-right
+        span.footer-content__title
+          | Оставайтесь на связи!
+          span Новинки, скидки, предложения
+        form#footer-subscription-form.footer-subscribe(method='POST' action='/subscription/new/')
+          input(type='hidden' name='csrfmiddlewaretoken' value='TqRHoVLtD58Sx9cFfQymoXFRFPHQM3kMdzE6ihZjrhLpOv8hVsBWkGVBnSQjjoHe')
+          input(type='email' name='email' required='' placeholder='Адрес электронной почты')
+          button(type='submit') Подписаться
+        .developer-link
+          a(href='https://stroyker.pro/')
+            | Решения для строительного бизнеса 
+            span.dev-logo
+              svg
+                use(xlink:href='#dev-logo')
+    .footer-bottom
+      .footer-bottom__left
+        span.copy © 2020 Стройкер. Все права защищены
+      .footer-social
+        span
+          a(href='https://www.facebook.com/%D0%A1%D0%B5%D0%B2%D0%B5%D1%80%D0%BD%D0%B0%D1%8F-%D0%9B%D0%B5%D1%81%D0%BD%D0%B0%D1%8F-%D0%9A%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F-114779857055632')
+            img(src='/static/images/fb-icon.svg' alt='Мы в FaceBook')
+        span
+          a(href='https://www.instagram.com/slk.market/')
+            img(src='/static/images/instagram-icon.svg' alt='Мы в Instagram')
+        span
+          a(href='#')
+            img(src='/static/images/twitter-icon.svg' alt='Мы в Twitter')
+        span
+          a(href='#')
+            img(src='/static/images/youtube-icon.svg' alt='Мы на YouTube')
+        span
+          a(href='https://vk.com/slkmarket')
+            img(src='/static/images/vk-icon.svg' alt='Наша страница ВКонтакте')

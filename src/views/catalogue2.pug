@@ -1,0 +1,642 @@
+extends layout/layout
+
+block scripts 
+  script(type='text/javascript' src='/static/js/jquery-3.2.1.min.js')
+  script(type='text/javascript' src='/static/js/jquery.fancybox.v3.5.7.min.js')
+  script(type='text/javascript' src='/static/js/owl.carousel.js')
+  script(type='text/javascript' src='/static/js/jquery.mask.min.js')
+  script(type='text/javascript').
+    window.onload = windowload;
+    window.onresize = AppendScript;
+    function windowload() {
+    AppendScript();
+    }
+    function AppendScript() {
+    if (window.innerWidth >= 767) {
+    Include('/static/js/scripts-desktop.js', 'on')
+    } else {
+    Include(`#{href}/scripts/scripts-mobile.js`, 'on')
+    }
+    }
+    function Include(filename, status) {
+    var head = document.getElementsByTagName('head')[0];
+    if (status == 'on') {
+    script = document.createElement('script');
+    script.src = filename;
+    script.type = 'text/javascript';
+    head.appendChild(script)
+    } else if (status == 'off') {
+    var scripts = head.getElementsByTagName('script');
+    if (scripts.length > 0) {
+    head.removeChild(scripts[1]);
+    }
+    }
+    }
+  script(src='/static/js/notify.min.js')
+  script(src='/static/js/ajax_setup.js')
+  script(src='/static/catalog/js/search.js')
+  script(src='/static/js/common.js')
+  script(src='/static/js/contentSelectionDisable.js')
+  script(src='/static/commerce/js/cart.js')
+  script(src='/static/catalog/js/catalog.js')
+  script(type='text/javascript' src='/static/crm/js/crm_forms.js')
+  script(type='text/javascript' src='/static/subscription/js/subscription.js')
+  script(src='/static/js/scripts.js')
+
+block content
+  section.section
+    .container
+      .catalog-side.mobile-show
+        span.catalog-side__title
+          span.icon
+            svg(width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg')
+              path(d='M0 0V2H16V0H0ZM0 8H16V6H0V8ZM0 14H16V12H0V14Z' fill='currentColor')
+          | Каталог продукции
+        .catalog-side__content
+          ul
+            li.menu-item.current
+              a(href='/catalog/brevno-ocilindrovannoe/') Бревно оцилиндрованное
+            li.menu-item.current
+              a(href='/catalog/vagonka-i-evrovagonka/') Вагонка и Евровагонка
+            li.menu-item.current
+              a(href='/catalog/blok-haus/') Блок Хаус
+            li.menu-item.current
+              a(href='/catalog/imitaciya-brusa/') Имитация бруса
+            li.menu-item.current
+              a(href='/catalog/doska-pola/') Доска пола
+            li.menu-item.current
+              a(href='/catalog/brus-i-doska-suhie-strogannye/') Брус и Доска
+            li.menu-item.current
+              a(href='/catalog/derevianniy-dekor/') Деревянный декор
+            li.menu-item.current
+              a(href='/catalog/elementy-lestnic/') Элементы лестниц
+            li.menu-item.current
+              a(href='/catalog/dveri-i-okna/') Двери и окна
+            li.menu-item.current
+              a(href='/catalog/materialy-iz-lipy/') Материалы из липы и абаши
+            li.menu-item.current
+              a(href='/catalog/materialy-iz-listvennicy/') Материалы из лиственницы
+            li.menu-item.current
+              a(href='/catalog/materialy-ih-osiny-i-abashi/') Материалы из осины
+            li.menu-item.current
+              a(href='/catalog/fanera-osb-dsp-dvp-tssp/') Фанера, ОСБ, ДСП, ДВП
+            li.menu-item.current
+              a(href='/catalog/utepliteli/') Утеплители
+            li.menu-item.current
+              a(href='/catalog/rulonnie-izoliyzionnie-materialy/') Рулонные изоляционные материалы
+            li.menu-item.current
+              a(href='/catalog/propitki-dlya-drevesiny/') Пропитки для древесины
+            li.menu-item.current
+              a(href='/catalog/derevyannye-igrushki/') Деревянные игрушки
+      .page-head
+        .breadcrumbs.breadcrumbs--lk(itemscope='' itemtype='http://schema.org/BreadcrumbList')
+          span(itemprop='itemListElement' itemscope='' itemtype='http://schema.org/ListItem')
+            a(itemprop='item' title='Главная' href='/')
+              | Главная
+              meta(itemprop='name' content='Главная')
+            meta(itemprop='position' content='1')
+          span.sep
+          span(itemprop='itemListElement' itemscope='' itemtype='http://schema.org/ListItem')
+            a(itemprop='item' title='Каталог' href='/catalog/')
+              | Каталог
+              meta(itemprop='name' content='Каталог')
+            meta(itemprop='position' content='2')
+          span.sep
+          |         Вагонка и Евровагонка
+      .content-block
+        h1
+          | Вагонка и Евровагонка , купить по лучшей цене в Самаре
+        .welcome
+          .welcome__side
+            #catalog-menu.catalog-side
+              span.catalog-side__title
+                span.icon
+                  svg(width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg')
+                    path(d='M0 0V2H16V0H0ZM0 8H16V6H0V8ZM0 14H16V12H0V14Z' fill='currentColor')
+                | Каталог продукции
+              .catalog-side__content
+                ul
+                  li.menu-item
+                    a(href='/catalog/brevno-ocilindrovannoe/') Бревно оцилиндрованное
+                  li.menu-item.current
+                    a(href='/catalog/vagonka-i-evrovagonka/') Вагонка и Евровагонка
+                    ul.submenu
+                      li.menu-item
+                        a(href='/catalog/category/vagonka-i-evrovagonka/evrovagonka-hvoya/') Евровагонка (хвоя)
+                      li.menu-item
+                        a(href='/catalog/category/vagonka-i-evrovagonka/vagonka-lipa/') Вагонка (липа)
+                      li.menu-item
+                        a(href='/catalog/category/vagonka-i-evrovagonka/imitaciya-brusa-vagonka-shtil-hvoya/') Имитация бруса - вагонка "штиль" (хвоя)
+                      li.menu-item
+                        a(href='/catalog/category/vagonka-i-evrovagonka/evrovagonka-iz-osiny/') Евровагонка из осины
+                  li.menu-item
+                    a(href='/catalog/blok-haus/') Блок Хаус
+                  li.menu-item
+                    a(href='/catalog/imitaciya-brusa/') Имитация бруса
+                    ul.submenu
+                      li.menu-item
+                        a(href='/catalog/category/imitaciya-brusa/imitaciya-brusa-hvoya/') Имитация Бруса (хвоя)
+                      li.menu-item
+                        a(href='/catalog/category/imitaciya-brusa/imitatsiia-brusa-vagonka-shtil-khvoia/') Имитация Бруса - вагонка "штиль" (хвоя)
+                  li.menu-item
+                    a(href='/catalog/doska-pola/') Доска пола
+                    ul.submenu
+                      li.menu-item
+                        a(href='/catalog/category/doska-pola/doska-pola-hvoya/') Доска пола (хвоя)
+                      li.menu-item
+                        a(href='/catalog/category/doska-pola/terrasnaya-doska-listvennica/') Террасная доска (лиственница)
+                  li.menu-item
+                    a(href='/catalog/brus-i-doska-suhie-strogannye/') Брус и Доска
+                    ul.submenu
+                      li.menu-item
+                        a(href='/catalog/category/brus-i-doska-suhie-strogannye/brus-suhoj-stroganyj/') Брус сухой строганый
+                      li.menu-item
+                        a(href='/catalog/category/brus-i-doska-suhie-strogannye/doska-suhaya-stroganaya/') Доска сухая строганая
+                      li.menu-item
+                        a(href='/catalog/category/brus-i-doska-suhie-strogannye/planken-kosoj-listvennica/') Планкен (лиственница)
+                      li.menu-item
+                        a(href='/catalog/category/brus-i-doska-suhie-strogannye/brus-i-doska-obreznye/') Брус и Доска обрезные
+                      li.menu-item
+                        a(href='/catalog/category/brus-i-doska-suhie-strogannye/brus-kleenyj/') Брус клееный
+                  li.menu-item
+                    a(href='/catalog/derevianniy-dekor/') Деревянный декор
+                    ul.submenu
+                      li.menu-item
+                        a(href='/catalog/category/derevianniy-dekor/nalichnik-lipa/') Наличник (липа)
+                      li.menu-item
+                        a(href='/catalog/category/derevianniy-dekor/nalichnik-hvoya/') Наличник (хвоя)
+                      li.menu-item
+                        a(href='/catalog/category/derevianniy-dekor/plintus-lipa/') Плинтус (липа)
+                      li.menu-item
+                        a(href='/catalog/category/derevianniy-dekor/plintus-hvoya/') Плинтус (хвоя)
+                      li.menu-item
+                        a(href='/catalog/category/derevianniy-dekor/raskladka-hvoya/') Раскладка (хвоя)
+                      li.menu-item
+                        a(href='/catalog/category/derevianniy-dekor/ugol-hvoya-vnutrennij/') Угол (хвоя) внутренний
+                      li.menu-item
+                        a(href='/catalog/category/derevianniy-dekor/ugol-hvoya-naruzhnyj/') Угол (хвоя) наружный
+                      li.menu-item
+                        a(href='/catalog/category/derevianniy-dekor/ugol-lipa-naruzhnyj/') Угол  (липа) наружный
+                      li.menu-item
+                        a(href='/catalog/category/derevianniy-dekor/mebelnyj-shit/') Мебельный щит
+                      li.menu-item
+                        a(href='/catalog/category/derevianniy-dekor/shtapik/') Штапик
+                  li.menu-item
+                    a(href='/catalog/elementy-lestnic/') Элементы лестниц
+                    ul.submenu
+                      li.menu-item
+                        a(href='/catalog/category/elementy-lestnic/balyasiny-hvoya/') Балясины (хвоя)
+                      li.menu-item
+                        a(href='/catalog/category/elementy-lestnic/perila-hvoya/') Перила (хвоя)
+                      li.menu-item
+                        a(href='/catalog/category/elementy-lestnic/ploshadka-hvoya/') Площадка (хвоя)
+                      li.menu-item
+                        a(href='/catalog/category/elementy-lestnic/podstupenniki-hvoya/') Подступенники (хвоя)
+                      li.menu-item
+                        a(href='/catalog/category/elementy-lestnic/stolb-hvoya/') Столб (хвоя)
+                      li.menu-item
+                        a(href='/catalog/category/elementy-lestnic/stupeni-hvoya/') Ступени (хвоя)
+                      li.menu-item
+                        a(href='/catalog/category/elementy-lestnic/tetiva-hvoya/') Тетива (хвоя)
+                  li.menu-item
+                    a(href='/catalog/dveri-i-okna/') Двери и окна
+                    ul.submenu
+                      li.menu-item
+                        a(href='/catalog/category/dveri-i-okna/brus-korobochnyj/') Брус коробочный
+                      li.menu-item
+                        a(href='/catalog/category/dveri-i-okna/dver-filenchataya-iz-massiva-sosny/') Дверь филенчатая (из массива сосны)
+                      li.menu-item
+                        a(href='/catalog/category/dveri-i-okna/podokonnik-iz-sosny-kleenyj-na-msh/') Подоконник (из сосны, клееный на м/ш)
+                  li.menu-item
+                    a(href='/catalog/materialy-iz-lipy/') Материалы из липы и абаши
+                    ul.submenu
+                      li.menu-item
+                        a(href='/catalog/category/materialy-iz-lipy/dveri-bannye-lipa/') Двери банные (липа)
+                      li.menu-item
+                        a(href='/catalog/category/materialy-iz-lipy/blok-haus-iz-lipy/') Блок Хаус из липы
+                      li.menu-item
+                        a(href='/catalog/category/materialy-iz-lipy/raskladka-iz-lipy/') Раскладка из липы
+                      li.menu-item
+                        a(href='/catalog/category/materialy-iz-lipy/plintus-iz-lipy/') Плинтус из липы
+                      li.menu-item
+                        a(href='/catalog/category/materialy-iz-lipy/vagonka-iz-lipy/') Вагонка из липы
+                      li.menu-item
+                        a(href='/catalog/category/materialy-iz-lipy/nalichnik-iz-lipy/') Наличник из липы
+                      li.menu-item
+                        a(href='/catalog/category/materialy-iz-lipy/ugol-naruzhnyj-iz-lipy/') Угол наружный из липы
+                      li.menu-item
+                        a(href='/catalog/category/materialy-iz-lipy/polok-iz-lipy/') Полок из липы
+                      li.menu-item
+                        a(href='/catalog/category/materialy-iz-lipy/polok-abashi/') Полок (абаши)
+                  li.menu-item
+                    a(href='/catalog/materialy-iz-listvennicy/') Материалы из лиственницы
+                    ul.submenu
+                      li.menu-item
+                        a(href='/catalog/category/materialy-iz-listvennicy/doska-obreznaya/') Доска обрезная
+                      li.menu-item
+                        a(href='/catalog/category/materialy-iz-listvennicy/evrovagonka/') Евровагонка
+                      li.menu-item
+                        a(href='/catalog/category/materialy-iz-listvennicy/imitaciya-brusa/') Имитация бруса
+                      li.menu-item
+                        a(href='/catalog/category/materialy-iz-listvennicy/planken/') Планкен
+                      li.menu-item
+                        a(href='/catalog/category/materialy-iz-listvennicy/terrasnaya-doska/') Террасная доска
+                      li.menu-item
+                        a(href='/catalog/category/materialy-iz-listvennicy/palubnaya-doska/') Палубная доска
+                  li.menu-item
+                    a(href='/catalog/materialy-ih-osiny-i-abashi/') Материалы из осины
+                    ul.submenu
+                      li.menu-item
+                        a(href='/catalog/category/materialy-ih-osiny-i-abashi/okno-osina/') Окно (осина)
+                      li.menu-item
+                        a(href='/catalog/category/materialy-ih-osiny-i-abashi/evrovagonka-osina/') Евровагонка (осина)
+                      li.menu-item
+                        a(href='/catalog/category/materialy-ih-osiny-i-abashi/polok-osina/') Полок (осина)
+                  li.menu-item
+                    a(href='/catalog/fanera-osb-dsp-dvp-tssp/') Фанера, ОСБ, ДСП, ДВП
+                    ul.submenu
+                      li.menu-item
+                        a(href='/catalog/category/fanera-osb-dsp-dvp-tssp/dvp-dsp-tssp/') ДВП и ДСП
+                      li.menu-item
+                        a(href='/catalog/category/fanera-osb-dsp-dvp-tssp/plity-osb-osp/') Плиты ОСБ-ОСП
+                      li.menu-item
+                        a(href='/catalog/category/fanera-osb-dsp-dvp-tssp/fanera/') Фанера (ФК и ФСФ)
+                  li.menu-item
+                    a(href='/catalog/utepliteli/') Утеплители
+                    ul.submenu
+                      li.menu-item
+                        a(href='/catalog/category/utepliteli/dzhutovoe-polotno/') Джутовое полотно
+                      li.menu-item
+                        a(href='/catalog/category/utepliteli/penopleks/') Пенополистиролы
+                      li.menu-item
+                        a(href='/catalog/category/utepliteli/roklajt-tehnonikol/') Минеральная вата
+                  li.menu-item
+                    a(href='/catalog/rulonnie-izoliyzionnie-materialy/') Рулонные изоляционные материалы
+                    ul.submenu
+                      li.menu-item
+                        a(href='/catalog/category/rulonnie-izoliyzionnie-materialy/plenki-i-membrany/') Пленки и мембраны
+                      li.menu-item
+                        a(href='/catalog/category/rulonnie-izoliyzionnie-materialy/folga-stroitelnay/') Фольга строительная
+                  li.menu-item
+                    a(href='/catalog/propitki-dlya-drevesiny/') Пропитки для древесины
+                  li.menu-item
+                    a(href='/catalog/derevyannye-igrushki/') Деревянные игрушки
+            //banners
+            .new-banners.owl-carousel
+              .item
+                .product-item.product-item--banner
+                  a(href='https://vagonka-brus-doska.ru/catalog/materialy-iz-listvennicy/' title='АКЦИЯ ПЛАНКЕН ЛИСТВЕННИЦА')
+                    img.bnr-image-for-page(data-bnr-pk='4' src='/media/bnrs/images/%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80_%D0%B1%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%B91_2.jpg' alt='АКЦИЯ ПЛАНКЕН ЛИСТВЕННИЦА')
+              .item
+                .product-item.product-item--banner
+                  a(href='https://vagonka-brus-doska.ru/catalog/materialy-iz-lipy/' title='АКЦИЯ ВАГОНКА ЛИПА')
+                    img.bnr-image-for-page(data-bnr-pk='5' src='/media/bnrs/images/%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80_%D0%B1%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%B91_1.jpg' alt='АКЦИЯ ВАГОНКА ЛИПА')
+              .item
+                .product-item.product-item--banner
+                  a(href='https://vagonka-brus-doska.ru/catalog/materialy-iz-lipy/' title='АКЦИЯ ВАГОНКА ЛИПА')
+                    img.bnr-image-for-page(data-bnr-pk='5' src='/media/bnrs/images/%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80_%D0%B1%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%B91_1.jpg' alt='АКЦИЯ ВАГОНКА ЛИПА')
+          
+          
+          
+          .welcome__content
+            .catalog-menu
+              a.catalog-menu-item(href='/catalog/category/vagonka-i-evrovagonka/evrovagonka-hvoya/')
+                span.catalog-menu-item__image
+                  img(src='/media/vagonkabrus_cache/5b/e5/5be581d74876dde76c0bc054d01367d5.jpg' alt='Евровагонка (хвоя)')
+                span.catalog-menu-item__name Евровагонка (хвоя)
+              a.catalog-menu-item(href='/catalog/category/vagonka-i-evrovagonka/vagonka-lipa/')
+                span.catalog-menu-item__image
+                  img(src='/media/vagonkabrus_cache/da/86/da864fa97f6985696bcd4cecb1dcefc4.jpg' alt='Вагонка (липа)')
+                span.catalog-menu-item__name Вагонка (липа)
+              a.catalog-menu-item(href='/catalog/category/vagonka-i-evrovagonka/imitaciya-brusa-vagonka-shtil-hvoya/')
+                span.catalog-menu-item__image
+                  img(src='/media/vagonkabrus_cache/75/35/753579e20e7633378959c9fc24be37e1.jpg' alt='Имитация бруса - вагонка "штиль" (хвоя)')
+                span.catalog-menu-item__name Имитация бруса - вагонка "штиль" (хвоя)
+              a.catalog-menu-item(href='/catalog/category/vagonka-i-evrovagonka/evrovagonka-iz-osiny/')
+                span.catalog-menu-item__image
+                  img(src='/media/vagonkabrus_cache/42/73/4273f1fe0a9789a10b6dd3a1ba9b4606.jpg' alt='Евровагонка из осины')
+                span.catalog-menu-item__name Евровагонка из осины
+            
+            //new
+            .advertising.advertising_horizontal
+              .advertising__container
+                a(href="#").advertising__block
+                  img(src="/media/bnrs/images/%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80_%D0%B1%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%B91_2.jpg", alt="image")
+                a(href="#").advertising__block
+                  img(src="/media/bnrs/images/%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80_%D0%B1%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%B91_1.jpg", alt="image")
+                a(href="#").advertising__block
+                  img(src="/media/bnrs/images/%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80_%D0%B1%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%B91_2.jpg", alt="image")
+                a(href="#").advertising__block
+                  img(src="/media/bnrs/images/%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80_%D0%B1%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%B91_1.jpg", alt="image") 
+            
+            .top-products-block
+              h2 ТОП-товары Вагонка и Евровагонка
+              .catalog-container
+                .catalog-content.top-products
+                  .product-item
+                    a.product-item__link(href='/catalog/product/evrovagonka-khvoy-125-kh-97-10-17-m-sort-ab/')
+                      span.product-item__image
+                        img(src='/media/vagonkabrus_cache/8a/e0/8ae071a4d5f840cc98da8a382353226d.jpg' alt='Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ')
+                        span.product-item__flag-content
+                          span.product-item__flag.product-item__flag--hit хит
+                      span.product-item__content-top
+                        span.product-item__head
+                          span.product-item__art с00004
+                          span.product-item__rating
+                            span.star.star--empty
+                            span.star.star--empty
+                            span.star.star--empty
+                            span.star.star--empty
+                            span.star.star--empty
+                        span.product-item__name Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ
+                        .product-item__status.product-item__status--many
+                          | Кол-во: много
+                        span.product-item__cost
+                          span.product-item__cost-product
+                            | 19,00
+                            span  ₽/п.м.
+                    .product-item__content-bottom
+                      .product-item__btns
+                        .shopping-cart-product
+                          .input-number
+                            .order-down
+                            input#number(type='number' min='0' step='1' value='1' required='')
+                            .order-up
+                          a.shopping-cart-btn.add-to-cart(href='/cart/add/3557')
+                            svg.icon
+                              use(xlink:href='#shopping-cart')
+                  .product-item
+                    a.product-item__link(href='/catalog/product/evrovagonka-khvoy-125-kh-97-10-15-m-sort-c/')
+                      span.product-item__image
+                        img(src='/media/vagonkabrus_cache/e7/1e/e71e5a5fb4a181ec3dc66fdb097ca058.jpg' alt='Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория C')
+                        span.product-item__flag-content
+                          span.product-item__flag.product-item__flag--hit хит
+                      span.product-item__content-top
+                        span.product-item__head
+                          span.product-item__art с00008
+                          span.product-item__rating
+                            span.star.star--empty
+                            span.star.star--empty
+                            span.star.star--empty
+                            span.star.star--empty
+                            span.star.star--empty
+                        span.product-item__name Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория C
+                        .product-item__status.product-item__status--many
+                          | Кол-во: много
+                        span.product-item__cost
+                          span.product-item__cost-product
+                            | 13,00
+                            span  ₽/п.м.
+                    .product-item__content-bottom
+                      .product-item__btns
+                        .shopping-cart-product
+                          .input-number
+                            .order-down
+                            input#number(type='number' min='0' step='1' value='1' required='')
+                            .order-up
+                          a.shopping-cart-btn.add-to-cart(href='/cart/add/3561')
+                            svg.icon
+                              use(xlink:href='#shopping-cart')
+                  .product-item
+                    a.product-item__link(href='/catalog/product/vagonka-lipa-16-kh-98-10-17-m-sort-b/')
+                      span.product-item__image
+                        img(src='/media/vagonkabrus_cache/12/65/1265d66e9b9029fc7845fbf1fcb23054.png' alt='Вагонка (липа) 16 х 98 мм, 1-1.7 м, категория B')
+                        span.product-item__flag-content
+                          span.product-item__flag.product-item__flag--hit хит
+                      span.product-item__content-top
+                        span.product-item__head
+                          span.product-item__art с00012
+                          span.product-item__rating
+                            span.star.star--empty
+                            span.star.star--empty
+                            span.star.star--empty
+                            span.star.star--empty
+                            span.star.star--empty
+                        span.product-item__name Вагонка (липа) 16 х 98 мм, 1-1.7 м, категория B
+                        .product-item__status.product-item__status--many
+                          | Кол-во: много
+                        span.product-item__cost
+                          span.product-item__cost-product
+                            | 48,00
+                            span  ₽/п.м.
+                    .product-item__content-bottom
+                      .product-item__btns
+                        .shopping-cart-product
+                          .input-number
+                            .order-down
+                            input#number(type='number' min='0' step='1' value='1' required='')
+                            .order-up
+                          a.shopping-cart-btn.add-to-cart(href='/cart/add/3565')
+                            svg.icon
+                              use(xlink:href='#shopping-cart')
+                  .product-item
+                    a.product-item__link(href='/catalog/product/vagonka-lipa-16-kh-98-10-15-m-sort-bc/')
+                      span.product-item__image
+                        img(src='/media/vagonkabrus_cache/61/cc/61cc61dfb4575ac47eee9cd013028272.png' alt='Вагонка (липа) 16 х 98 мм, 1-1.5 м, категория BC')
+                        span.product-item__flag-content
+                          span.product-item__flag.product-item__flag--hit хит
+                      span.product-item__content-top
+                        span.product-item__head
+                          span.product-item__art с00014
+                          span.product-item__rating
+                            span.star.star--empty
+                            span.star.star--empty
+                            span.star.star--empty
+                            span.star.star--empty
+                            span.star.star--empty
+                        span.product-item__name Вагонка (липа) 16 х 98 мм, 1-1.5 м, категория BC
+                        .product-item__status.product-item__status--many
+                          | Кол-во: много
+                        span.product-item__cost
+                          span.product-item__cost-product
+                            | 40,00
+                            span  ₽/п.м.
+                    .product-item__content-bottom
+                      .product-item__btns
+                        .shopping-cart-product
+                          .input-number
+                            .order-down
+                            input#number(type='number' min='0' step='1' value='1' required='')
+                            .order-up
+                          a.shopping-cart-btn.add-to-cart(href='/cart/add/3567')
+                            svg.icon
+                              use(xlink:href='#shopping-cart')
+                  .product-item
+                    a.product-item__link(href='/catalog/product/imitacia-brusa-vagonka-shtil-khvoya-125kh-118-20-60-m-sort-a/')
+                      span.product-item__image
+                        img(src='/media/vagonkabrus_cache/58/b4/58b4cf7291add712187ddfacc0f797c6.jpg' alt='Имитация бруса - вагонка "штиль" (хвоя) 12,5 х 118 мм, 2-6 м, категория А')
+                        span.product-item__flag-content
+                          span.product-item__flag.product-item__flag--hit хит
+                      span.product-item__content-top
+                        span.product-item__head
+                          span.product-item__art с00016
+                          span.product-item__rating
+                            span.star.star--empty
+                            span.star.star--empty
+                            span.star.star--empty
+                            span.star.star--empty
+                            span.star.star--empty
+                        span.product-item__name Имитация бруса - вагонка "штиль" (хвоя) 12,5 х 118 мм, 2-6 м, категория А
+                        .product-item__status.product-item__status--many
+                          | Кол-во: много
+                        span.product-item__cost
+                          span.product-item__cost-product
+                            | 37,00
+                            span  ₽/п.м.
+                    .product-item__content-bottom
+                      .product-item__btns
+                        .shopping-cart-product
+                          .input-number
+                            .order-down
+                            input#number(type='number' min='0' step='1' value='1' required='')
+                            .order-up
+                          a.shopping-cart-btn.add-to-cart(href='/cart/add/3568')
+                            svg.icon
+                              use(xlink:href='#shopping-cart')
+                  .product-item
+                    a.product-item__link(href='/catalog/product/imitacia-brusa-vagonka-shtil-khvoya-125kh-118-20-50-m-sort-bc/')
+                      span.product-item__image
+                        img(src='/media/vagonkabrus_cache/dc/7a/dc7a6e5e3dc38c4007c812bef8b65aef.jpg' alt='Имитация бруса - вагонка "штиль" (хвоя) 12,5 х 118 мм, 2-5 м, категория ВС')
+                        span.product-item__flag-content
+                          span.product-item__flag.product-item__flag--hit хит
+                      span.product-item__content-top
+                        span.product-item__head
+                          span.product-item__art с0188
+                          span.product-item__rating
+                            span.star.star--empty
+                            span.star.star--empty
+                            span.star.star--empty
+                            span.star.star--empty
+                            span.star.star--empty
+                        span.product-item__name Имитация бруса - вагонка "штиль" (хвоя) 12,5 х 118 мм, 2-5 м, категория ВС
+                        .product-item__status.product-item__status--many
+                          | Кол-во: много
+                        span.product-item__cost
+                          span.product-item__cost-product
+                            | 22,00
+                            span  ₽/п.м.
+                    .product-item__content-bottom
+                      .product-item__btns
+                        .shopping-cart-product
+                          .input-number
+                            .order-down
+                            input#number(type='number' min='0' step='1' value='1' required='')
+                            .order-up
+                          a.shopping-cart-btn.add-to-cart(href='/cart/add/3738')
+                            svg.icon
+                              use(xlink:href='#shopping-cart')
+                  .product-item
+                    a.product-item__link(href='/catalog/product/evrovagonka-osina-16-kh-90-1-0-1-7-m-sort-b/')
+                      span.product-item__image
+                        img(src='/media/vagonkabrus_cache/9d/17/9d174d4cd4df31ba6e5b0e6108bfd133.jpg' alt='Евровагонка (осина) 16 х 90 мм, 1-1.7 м, категория B')
+                        span.product-item__flag-content
+                          span.product-item__flag.product-item__flag--hit хит
+                      span.product-item__content-top
+                        span.product-item__head
+                          span.product-item__art с0232
+                          span.product-item__rating
+                            span.star.star--empty
+                            span.star.star--empty
+                            span.star.star--empty
+                            span.star.star--empty
+                            span.star.star--empty
+                        span.product-item__name Евровагонка (осина) 16 х 90 мм, 1-1.7 м, категория B
+                        .product-item__status.product-item__status--many
+                          | Кол-во: много
+                        span.product-item__cost
+                          span.product-item__cost-product
+                            | 39,00
+                            span  ₽/п.м.
+                    .product-item__content-bottom
+                      .product-item__btns
+                        .shopping-cart-product
+                          .input-number
+                            .order-down
+                            input#number(type='number' min='0' step='1' value='1' required='')
+                            .order-up
+                          a.shopping-cart-btn.add-to-cart(href='/cart/add/3783')
+                            svg.icon
+                              use(xlink:href='#shopping-cart')
+                  .product-item
+                    a.product-item__link(href='/catalog/product/evrovagonka-osina-16-kh-90-1-0-1-7-m-sort-bc/')
+                      span.product-item__image
+                        img(src='/media/vagonkabrus_cache/22/e2/22e2641f4d3a5c2ab1017592c60e1eda.jpg' alt='Евровагонка (осина) 16 х 90 мм, 1-1.7 м, категория BC')
+                        span.product-item__flag-content
+                          span.product-item__flag.product-item__flag--hit хит
+                      span.product-item__content-top
+                        span.product-item__head
+                          span.product-item__art с0234
+                          span.product-item__rating
+                            span.star.star--empty
+                            span.star.star--empty
+                            span.star.star--empty
+                            span.star.star--empty
+                            span.star.star--empty
+                        span.product-item__name Евровагонка (осина) 16 х 90 мм, 1-1.7 м, категория BC
+                        .product-item__status.product-item__status--many
+                          | Кол-во: много
+                        span.product-item__cost
+                          span.product-item__cost-product
+                            | 32,00
+                            span  ₽/п.м.
+                    .product-item__content-bottom
+                      .product-item__btns
+                        .shopping-cart-product
+                          .input-number
+                            .order-down
+                            input#number(type='number' min='0' step='1' value='1' required='')
+                            .order-up
+                          a.shopping-cart-btn.add-to-cart(href='/cart/add/3785')
+                            svg.icon
+                              use(xlink:href='#shopping-cart')
+  section.section-dark
+    .container
+      #question-main.question-main
+        .question-form
+          span.content-title.center.h2 Остались вопросы?
+          form#feedback-message-request-form(action='/crm/message/' method='post')
+            input(type='hidden' name='csrfmiddlewaretoken' value='aoXHmBm0q7lyR3QrQB3AedJKSXJKI0ke09E8xaL1Y42j7gYre5qD6GC72H96G14X')
+            .question-form__column
+              .form-group
+                input.form-control(type='text' name='name' autocomplete='off' required='')
+                label.label-name(for='name')
+                  span.content-name
+                    | Имя*
+              .form-group
+                input.form-control.phone(type='phone' name='phone' autocomplete='off' required='')
+                label.label-name(for='phone')
+                  span.content-name
+                    | Телефон
+              .form-group
+                input.form-control(type='mail' name='email' autocomplete='off' required='')
+                label.label-name(for='text')
+                  span.content-name
+                    | e-mail
+            .question-form__column
+              .form-group
+                textarea.form-control(name='message' autocomplete='off' required='')
+                label.label-name(for='message')
+                  span.content-name
+                    | Комментарий
+              input#id_url(type='hidden' name='url')
+              button.btn.btn--main-min(type='submit') Отправить
+          p
+            | Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь с нашей политикой конфиденциальности
+  section.section
+    .container.container--small
+      .text-page
+        h2 Купить вагонку и евровагонку по наилучшей цене в SLKMARKET.RU
+        p
+          | Древесина благодаря своей универсальности, во все времена имела популярность как при строительстве, так и при отделке помещений. Одним из самых востребованных видов отделочных материалов из древесины - является вагонка, которая легко монтируется и создает в доме домашнюю атмосферу. Вагонка представляет собой строганную доску которая имеет специальный шунт на торцевой части для плотной стыковки панелей между собой. Аналогичным обшивочным материалом является Евровагонка, которая выполняет те же функции, но к ней предъявляются больше требований по качеству и внешнему виду.  Внутренняя часть доски снабжена продольным пазом предназначенным для предотвращения появления конденсата, при резких перепадах температур. Также Евровагонка отличается от стандартной - степенью влажности древесины и размером замочного торцевого шипа.
+        p
+          | Вагонку используют для помещений самого разного типа и назначения. Ею обшивают наружные фасады и стены внутри помещения,  потолки и перегородки, из липы - бани и сауны. Данный отделочный материал помимо придания дому привлекательного внешнего вида и уютного дизайна, также помогает скрыть некоторые дефекты на обрабатываемой поверхности. Монтаж вагонки производится достаточно легко. Расположение панелей допустимо как вертикально, так и горизонтально. Но здесь следует учитывать, что вертикальное расположение - визуально удлиняет высоту помещения, а горизонтальное придает уюта интерьеру. В банных помещениях принято вагонку располагать вертикально, это связано с тем, что при горизонтальном расположении панелей будет скапливаться остаточная влага и впоследствии приведет к потемнению данных участков.
+        p
+          | Для достижения эффекта гладкости используют вагонку “Штиль”, которая при монтаже создает идеально ровную и более эстетичную поверхность. Внешняя сторона панелей имеет небольшую закругленную фаску. Внутренняя же часть доски имеет дополнительный паз для вентиляции. Благодаря этому эксплуатационные характеристики материала становятся заметно выше. В заключении можно отметить, что вагонка всех видов способствует хорошей звукоизоляции и сохранению тепла в доме.
+        h3 О Компании
+        p
+          | Северная Лесная Компания - один из лидеров по оптовым и розничным продажам пиломатериалов в Самарской области. Свою деятельность компания осуществляет в течение 20 лет, и за это время заслужила уважение и доверие потребителей. В настоящее время Компания представляет широкий ассортиментный ряд продукции из древесины по оптимальным, доступным ценам и с высоким уровнем обслуживания. Товарная линейка включает в себя пиломатериалы как хвойных, так и лиственных пород, всех основных сортов дерева.
+        p
+          | Северная Лесная Компания также осуществляет продажу наиболее востребованных строительных конструкций и столярных изделий (окна, двери, лестницы и пр.).
+        p
+          | Товары можно приобрести со скидкой, оформив покупку через Сайт компании. Кроме того на Сайте можно произвести расчет стоимости доставки и соответственно выбрать и заказать необходимое транспортное средство. Компания также регулярно проводит Акции, благодаря которым пиломатериалы и строительные конструкции можно купить по более выгодной цене.
+        h6 Воспользуйтесь преимуществами сайта, при покупке наших товаров!

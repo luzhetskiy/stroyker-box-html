@@ -1,0 +1,848 @@
+extends layout/layout
+
+block scripts 
+  script(type='text/javascript' src='/static/js/jquery-3.2.1.min.js')
+  script(type='text/javascript' src='/static/js/jquery.fancybox.v3.5.7.min.js')
+  script(type='text/javascript' src='/static/js/owl.carousel.js')
+  script(type='text/javascript' src='/static/js/jquery.mask.min.js')
+  script(type='text/javascript').
+    window.onload = windowload;
+    window.onresize = AppendScript;
+    function windowload() {
+    AppendScript();
+    }
+    function AppendScript() {
+    if (window.innerWidth >= 767) {
+    Include(`${href}/scripts/scripts-desktop.js`, 'on')
+    } else {
+    Include('/static/js/scripts-mobile.js', 'on')
+    }
+    }
+    function Include(filename, status) {
+    var head = document.getElementsByTagName('head')[0];
+    if (status == 'on') {
+    script = document.createElement('script');
+    script.src = filename;
+    script.type = 'text/javascript';
+    head.appendChild(script)
+    } else if (status == 'off') {
+    var scripts = head.getElementsByTagName('script');
+    if (scripts.length > 0) {
+    head.removeChild(scripts[1]);
+    }
+    }
+    }
+  script(type='text/javascript').
+    // This url dictionary is used in js scripts instead of direct links.
+    const URLS = {
+    static: "/static/",
+    cart: "/cart/",
+    register: "/account/register/",
+    }
+  script(src='/static/js/notify.min.js')
+  script(src='/static/js/ajax_setup.js')
+  script(src='/static/catalog/js/search.js')
+  script(src='/static/js/common.js')
+  script(src='/static/js/contentSelectionDisable.js')
+  script(src='/static/commerce/js/cart.js')
+  script(src='/static/catalog/js/catalog.js')
+  script(type='text/javascript' src='/static/crm/js/crm_forms.js')
+  script(type='text/javascript' src='/static/subscription/js/subscription.js')
+  script(src=href+'/scripts/scripts.js')
+  
+block content
+  section.section
+    .container
+      .catalog-side.mobile-show
+        span.catalog-side__title
+          span.icon
+            svg(width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg')
+              path(d='M0 0V2H16V0H0ZM0 8H16V6H0V8ZM0 14H16V12H0V14Z' fill='currentColor')
+          | Каталог продукции
+        .catalog-side__content
+          ul
+            li.menu-item.current
+              a(href='/catalog/brevno-ocilindrovannoe/') Бревно оцилиндрованное
+            li.menu-item.current
+              a(href='/catalog/vagonka-i-evrovagonka/') Вагонка и Евровагонка
+            li.menu-item.current
+              a(href='/catalog/blok-haus/') Блок Хаус
+            li.menu-item.current
+              a(href='/catalog/imitaciya-brusa/') Имитация бруса
+            li.menu-item.current
+              a(href='/catalog/doska-pola/') Доска пола
+            li.menu-item.current
+              a(href='/catalog/brus-i-doska-suhie-strogannye/') Брус и Доска
+            li.menu-item.current
+              a(href='/catalog/dekorativnaya-otdelka/') Декоративная отделка
+            li.menu-item.current
+              a(href='/catalog/elementy-lestnic/') Элементы лестниц
+            li.menu-item.current
+              a(href='/catalog/dveri-i-okna/') Двери и окна
+            li.menu-item.current
+              a(href='/catalog/materialy-iz-lipy/') Материалы из липы и абаши
+            li.menu-item.current
+              a(href='/catalog/materialy-iz-listvennicy/') Материалы из лиственницы
+            li.menu-item.current
+              a(href='/catalog/materialy-ih-osiny-i-abashi/') Материалы из осины
+            li.menu-item.current
+              a(href='/catalog/fanera-osb-dsp-dvp-tssp/') Фанера, ОСБ, ДСП, ДВП
+            li.menu-item.current
+              a(href='/catalog/utepliteli/') Утеплители
+            li.menu-item.current
+              a(href='/catalog/plenki-i-membrany/') Пленки и мембраны
+            li.menu-item.current
+              a(href='/catalog/propitki-dlya-drevesiny/') Пропитки для древесины
+            li.menu-item.current
+              a(href='/catalog/derevyannye-igrushki/') Деревянные игрушки
+      .page-head
+        .breadcrumbs.breadcrumbs--lk(itemscope='' itemtype='http://schema.org/BreadcrumbList')
+          svg.breadcrumbs__sep
+            use(xlink:href='#tab-arrow')
+          //item
+          span(itemprop='itemListElement' itemscope='' itemtype='http://schema.org/ListItem')
+            a(itemprop='item' title='Главная' href='/')
+              | Главная
+              meta(itemprop='name' content='Главная')
+            meta(itemprop='position' content='1')
+          svg.breadcrumbs__sep
+            use(xlink:href='#tab-arrow')
+          //item
+          span(itemprop='itemListElement' itemscope='' itemtype='http://schema.org/ListItem')
+            a(itemprop='item' title='Каталог' href='/catalog/')
+              | Каталог
+              meta(itemprop='name' content='Каталог')
+            meta(itemprop='position' content='2')
+          svg.breadcrumbs__sep
+            use(xlink:href='#tab-arrow')
+          //item
+          |         Бревно оцилиндрованное
+      .content-block
+        h1
+          | Бревно оцилиндрованное
+        .catalog
+          .catalog-head
+            .catalog-sorting
+              span.catalog-sorting__title Сортировка:
+              ul
+                li
+                  a(href='?sort_field=price__asc')
+                    span.icon-sort-price.price-asc
+                      span
+                    | Цена (по возрастанию)
+                li
+                  a(href='?sort_field=price__desc')
+                    span.icon-sort-price.price-desc
+                      span
+                    | Цена (по убыванию)
+                li.sort-availability
+                  a(href='?sort_field=availability')
+                    | Наличие
+                li
+                  a(href='?sort_field=is_hit')
+                    | Популярность
+            .sort-select
+              select#products-header-sort-mobile.custom-select(name='characters' tabindex='-1')
+                option(value='?sort_field=price__asc') По цене (по возрастанию)
+                option(value='?sort_field=price__desc') По цене (по убыванию)
+                option(value='?sort_field=availability') По наличию
+                option(value='?sort_field=is_hit') По популярности
+            .catalog-right
+              a.price-download(href='/catalog/export/terrasnaya-doska-listvennica/')
+                svg.icon
+                  use(xlink:href='#document-icon')
+                | Скачать прайс
+
+              .view-sorting
+                span.view-sorting__title Вид
+                button.view-sort-item.select-product-list-view.view-sort-item--1.current.button1
+                  svg.icon-svg
+                    use(xlink:href='#view-sort-1')
+                button.view-sort-item.select-product-list-view.view-sort-item--2.button2
+                  svg.icon-svg
+                    use(xlink:href='#view-sort-2')
+                button.view-sort-item.view-sort-item--3.button3(style='display: none;')
+                  svg.icon-svg
+                    use(xlink:href='#view-sort-3')
+            a.filter-btn
+          .catalog-container
+            .catalog-filter
+              .mobile-menu-head
+                .mobile-menu-head__title Фильтры
+                a.mobile-menu-head__close-btn.close-btn-2
+                  svg.icon
+                    use(xlink:href='#delete')
+              form#catalog_filter_form.catalog-filter-body(action='/catalog/brevno-ocilindrovannoe/' method='get')
+                ul.catalog-filter-accordion
+                  li
+                    a.opener(href='#') Диаметр в мм
+                      svg.icon
+                        use(xlink:href='#tab-arrow')
+
+                    ul.submenu(style='display:none')
+                      li
+                        .filter-item
+                          .filter-item__content
+                            .form-group
+                              .checkbox
+                                input#id_diametr-v-mm_0(type='checkbox' name='diametr-v-mm' value='180mm')
+                                label(for='id_diametr-v-mm_0')
+                                  | 180мм 
+                                  span 1
+                            .form-group
+                              .checkbox
+                                input#id_diametr-v-mm_1(type='checkbox' name='diametr-v-mm' value='200-mm')
+                                label(for='id_diametr-v-mm_1')
+                                  | 200 мм 
+                                  span 2
+                            .form-group
+                              .checkbox
+                                input#id_diametr-v-mm_2(type='checkbox' name='diametr-v-mm' value='220-mm')
+                                label(for='id_diametr-v-mm_2')
+                                  | 220 мм 
+                                  span 2
+                            .form-group
+                              .checkbox
+                                input#id_diametr-v-mm_3(type='checkbox' name='diametr-v-mm' value='240-mm')
+                                label(for='id_diametr-v-mm_3')
+                                  | 240 мм 
+                                  span 2
+                            .form-group
+                              .checkbox
+                                input#id_diametr-v-mm_4(type='checkbox' name='diametr-v-mm' value='260-mm')
+                                label(for='id_diametr-v-mm_4')
+                                  | 260 мм 
+                                  span 2
+                            .form-group
+                              .checkbox
+                                input#id_diametr-v-mm_5(type='checkbox' name='diametr-v-mm' value='280-mm')
+                                label(for='id_diametr-v-mm_5')
+                                  | 280 мм 
+                                  span 2
+                            .form-group
+                              .checkbox
+                                input#id_diametr-v-mm_6(type='checkbox' name='diametr-v-mm' value='300-mm')
+                                label(for='id_diametr-v-mm_6')
+                                  | 300 мм 
+                                  span 1
+                            .form-group
+                              .checkbox
+                                input#id_diametr-v-mm_7(type='checkbox' name='diametr-v-mm' value='320-mm')
+                                label(for='id_diametr-v-mm_7')
+                                  | 320 мм 
+                                  span 1
+                  li
+                    a.opener(href='#') Рабочая высота
+                      svg.icon
+                        use(xlink:href='#tab-arrow')
+                    ul.submenu(style='display:none')
+                      li
+                        .filter-item
+                          .filter-item__content
+                            .form-group
+                              .checkbox
+                                input#id_rabochaya-vysota_0(type='checkbox' name='rabochaya-vysota' value='143-mm')
+                                label(for='id_rabochaya-vysota_0')
+                                  | 143 мм 
+                                  span 1
+                            .form-group
+                              .checkbox
+                                input#id_rabochaya-vysota_1(type='checkbox' name='rabochaya-vysota' value='150-mm')
+                                label(for='id_rabochaya-vysota_1')
+                                  | 150 мм 
+                                  span 1
+                            .form-group
+                              .checkbox
+                                input#id_rabochaya-vysota_2(type='checkbox' name='rabochaya-vysota' value='159-mm')
+                                label(for='id_rabochaya-vysota_2')
+                                  | 159 мм 
+                                  span 1
+                            .form-group
+                              .checkbox
+                                input#id_rabochaya-vysota_3(type='checkbox' name='rabochaya-vysota' value='165-mm')
+                                label(for='id_rabochaya-vysota_3')
+                                  | 165 мм 
+                                  span 1
+                            .form-group
+                              .checkbox
+                                input#id_rabochaya-vysota_4(type='checkbox' name='rabochaya-vysota' value='173-mm')
+                                label(for='id_rabochaya-vysota_4')
+                                  | 173 мм 
+                                  span 1
+                            .form-group
+                              .checkbox
+                                input#id_rabochaya-vysota_5(type='checkbox' name='rabochaya-vysota' value='182-mm')
+                                label(for='id_rabochaya-vysota_5')
+                                  | 182 мм 
+                                  span 1
+                            .form-group
+                              .checkbox
+                                input#id_rabochaya-vysota_6(type='checkbox' name='rabochaya-vysota' value='191-mm')
+                                label(for='id_rabochaya-vysota_6')
+                                  | 191 мм 
+                                  span 1
+                            .form-group
+                              .checkbox
+                                input#id_rabochaya-vysota_7(type='checkbox' name='rabochaya-vysota' value='208-mm')
+                                label(for='id_rabochaya-vysota_7')
+                                  | 208 мм 
+                                  span 1
+                            .form-group
+                              .checkbox
+                                input#id_rabochaya-vysota_8(type='checkbox' name='rabochaya-vysota' value='209-mm')
+                                label(for='id_rabochaya-vysota_8')
+                                  | 209 мм 
+                                  span 1
+                            .form-group
+                              .checkbox
+                                input#id_rabochaya-vysota_9(type='checkbox' name='rabochaya-vysota' value='225-mm')
+                                label(for='id_rabochaya-vysota_9')
+                                  | 225 мм 
+                                  span 1
+                            .form-group
+                              .checkbox
+                                input#id_rabochaya-vysota_10(type='checkbox' name='rabochaya-vysota' value='243-mm')
+                                label(for='id_rabochaya-vysota_10')
+                                  | 243 мм 
+                                  span 1
+                            .form-group
+                              .checkbox
+                                input#id_rabochaya-vysota_11(type='checkbox' name='rabochaya-vysota' value='260-mm')
+                                label(for='id_rabochaya-vysota_11')
+                                  | 260 мм 
+                                  span 1
+                            .form-group
+                              .checkbox
+                                input#id_rabochaya-vysota_12(type='checkbox' name='rabochaya-vysota' value='277-mm')
+                                label(for='id_rabochaya-vysota_12')
+                                  | 277 мм 
+                                  span 1
+                  li
+                    a.opener(href='#') Ширина теплового паза
+                      svg.icon
+                        use(xlink:href='#tab-arrow')
+                    ul.submenu(style='display:none')
+                      li
+                        .filter-item
+                          .filter-item__content
+                            .form-group
+                              .checkbox
+                                input#id_shirina-teplovogo-paza_0(type='checkbox' name='shirina-teplovogo-paza' value='100-mm')
+                                label(for='id_shirina-teplovogo-paza_0')
+                                  | 100 мм 
+                                  span 2
+                            .form-group
+                              .checkbox
+                                input#id_shirina-teplovogo-paza_1(type='checkbox' name='shirina-teplovogo-paza' value='110-mm')
+                                label(for='id_shirina-teplovogo-paza_1')
+                                  | 110 мм 
+                                  span 1
+                            .form-group
+                              .checkbox
+                                input#id_shirina-teplovogo-paza_2(type='checkbox' name='shirina-teplovogo-paza' value='120-mm')
+                                label(for='id_shirina-teplovogo-paza_2')
+                                  | 120 мм 
+                                  span 1
+                            .form-group
+                              .checkbox
+                                input#id_shirina-teplovogo-paza_3(type='checkbox' name='shirina-teplovogo-paza' value='130-mm')
+                                label(for='id_shirina-teplovogo-paza_3')
+                                  | 130 мм 
+                                  span 1
+                            .form-group
+                              .checkbox
+                                input#id_shirina-teplovogo-paza_4(type='checkbox' name='shirina-teplovogo-paza' value='140-mm')
+                                label(for='id_shirina-teplovogo-paza_4')
+                                  | 140 мм 
+                                  span 2
+                            .form-group
+                              .checkbox
+                                input#id_shirina-teplovogo-paza_5(type='checkbox' name='shirina-teplovogo-paza' value='150-mm')
+                                label(for='id_shirina-teplovogo-paza_5')
+                                  | 150 мм 
+                                  span 1
+                            .form-group
+                              .checkbox
+                                input#id_shirina-teplovogo-paza_6(type='checkbox' name='shirina-teplovogo-paza' value='152-mm')
+                                label(for='id_shirina-teplovogo-paza_6')
+                                  | 152 мм 
+                                  span 1
+                            .form-group
+                              .checkbox
+                                input#id_shirina-teplovogo-paza_7(type='checkbox' name='shirina-teplovogo-paza' value='160-mm')
+                                label(for='id_shirina-teplovogo-paza_7')
+                                  | 160 мм 
+                                  span 1
+                            .form-group
+                              .checkbox
+                                input#id_shirina-teplovogo-paza_8(type='checkbox' name='shirina-teplovogo-paza' value='174-mm')
+                                label(for='id_shirina-teplovogo-paza_8')
+                                  | 174 мм 
+                                  span 1
+                            .form-group
+                              .checkbox
+                                input#id_shirina-teplovogo-paza_9(type='checkbox' name='shirina-teplovogo-paza' value='186-mm')
+                                label(for='id_shirina-teplovogo-paza_9')
+                                  | 186 мм 
+                                  span 2
+                .catalog-filter__bottom
+                  .filter-range
+                    .filter-range__head
+                      span От
+                      span До
+                    .range-slider(data-name='price_range')
+                    .filter-range__content
+                      .input-cont
+                        .input-placeholder
+                        input#id_price_range_0.range-input(type='text' name='price_range_0' data-current-value='9500.00' data-min-value='9500')
+                      .input-cont
+                        .input-placeholder
+                        input#id_price_range_1.range-input(type='text' name='price_range_1' data-current-value='10300' data-max-value='10300')
+                .catalog-filter__btns
+                  button.btn.btn--main-min Применить
+                  a.btn-border.btn-link(href='/catalog/brevno-ocilindrovannoe/') Очистить
+                span.filter-show-all(style='display: none')
+            .catalog-body
+              .catalog-content
+                .product-item
+                  a.product-item__link(href='/catalog/product/brevno-ozilindrovannoe-el-sosna-180-mm-lunniy-paz/')
+                    span.product-item__image
+                      img(src=href+'/img/test.jpg' alt='Бревно оцилиндрованное (ель, сосна) 180 мм, Лунный паз')
+                      span.product-item__flag-content
+                        span.product-item__flag.product-item__flag--hit хит
+                    span.product-item__content-top
+                      span.product-item__head
+                        span.product-item__art с0303
+                        span.product-item__rating
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                      span.product-item__name Бревно оцилиндрованное (ель, сосна) 180 мм, Лунный паз
+                      .product-item__status.product-item__status--many
+                        | Кол-во: много
+                      span.product-item__cost
+                        span.product-item__cost-product
+                          | 9500,00
+                          span  ₽/м3
+                  .product-item__content-bottom
+                    .product-item__btns
+                      .shopping-cart-product
+                        .input-number
+                          .order-down
+                          input#number(type='number' min='0' step='1' value='1' required='')
+                          .order-up
+                        a.shopping-cart-btn.add-to-cart(href='/cart/add/3873')
+                          svg.icon
+                            use(xlink:href='#shopping-cart')
+                .product-item
+                  a.product-item__link(href='/catalog/product/brevno-ozilindrovannoe-el-sosna-200-mm-finskiy-profil/')
+                    span.product-item__image
+                      img(src='/media/vagonkabrus_cache/71/09/7109e8464e5b06e5da46f61f6336a7de.jpg' alt='Бревно оцилиндрованное (ель, сосна) 200 мм, Финский профиль')
+                      span.product-item__flag-content
+                        span.product-item__flag.product-item__flag--hit хит
+                    span.product-item__content-top
+                      span.product-item__head
+                        span.product-item__art с0304
+                        span.product-item__rating
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                      span.product-item__name Бревно оцилиндрованное (ель, сосна) 200 мм, Финский профиль
+                      .product-item__status.product-item__status--many
+                        | Кол-во: много
+                      span.product-item__cost
+                        span.product-item__cost-product
+                          | 9900,00
+                          span  ₽/м3
+                  .product-item__content-bottom
+                    .product-item__btns
+                      .shopping-cart-product
+                        .input-number
+                          .order-down
+                          input#number(type='number' min='0' step='1' value='1' required='')
+                          .order-up
+                        a.shopping-cart-btn.add-to-cart(href='/cart/add/3874')
+                          svg.icon
+                            use(xlink:href='#shopping-cart')
+                .product-item
+                  a.product-item__link(href='/catalog/product/brevno-ozilindrovannoe-el-sosna-200-mm-lunniy-paz/')
+                    span.product-item__image
+                      img(src='/media/vagonkabrus_cache/eb/7f/eb7f939900dbaa333213c681c5ca618b.jpg' alt='Бревно оцилиндрованное (ель, сосна) 200 мм, Лунный паз')
+                      span.product-item__flag-content
+                        span.product-item__flag.product-item__flag--hit хит
+                    span.product-item__content-top
+                      span.product-item__head
+                        span.product-item__art с0305
+                        span.product-item__rating
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                      span.product-item__name Бревно оцилиндрованное (ель, сосна) 200 мм, Лунный паз
+                      .product-item__status.product-item__status--many
+                        | Кол-во: много
+                      span.product-item__cost
+                        span.product-item__cost-product
+                          | 9500,00
+                          span  ₽/м3
+                  .product-item__content-bottom
+                    .product-item__btns
+                      .shopping-cart-product
+                        .input-number
+                          .order-down
+                          input#number(type='number' min='0' step='1' value='1' required='')
+                          .order-up
+                        a.shopping-cart-btn.add-to-cart(href='/cart/add/3875')
+                          svg.icon
+                            use(xlink:href='#shopping-cart')
+                .product-item
+                  a.product-item__link(href='/catalog/product/brevno-ozilindrovannoe-el-sosna-220-mm-finskiy-profil/')
+                    span.product-item__image
+                      img(src='/media/vagonkabrus_cache/12/d2/12d217a8f7c6054486df400c7240f8bc.jpg' alt='Бревно оцилиндрованное (ель, сосна) 220 мм, Финский профиль')
+                      span.product-item__flag-content
+                        span.product-item__flag.product-item__flag--hit хит
+                    span.product-item__content-top
+                      span.product-item__head
+                        span.product-item__art с0306
+                        span.product-item__rating
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                      span.product-item__name Бревно оцилиндрованное (ель, сосна) 220 мм, Финский профиль
+                      .product-item__status.product-item__status--many
+                        | Кол-во: много
+                      span.product-item__cost
+                        span.product-item__cost-product
+                          | 10000,00
+                          span  ₽/м3
+                  .product-item__content-bottom
+                    .product-item__btns
+                      .shopping-cart-product
+                        .input-number
+                          .order-down
+                          input#number(type='number' min='0' step='1' value='1' required='')
+                          .order-up
+                        a.shopping-cart-btn.add-to-cart(href='/cart/add/3882')
+                          svg.icon
+                            use(xlink:href='#shopping-cart')
+                .product-item
+                  a.product-item__link(href='/catalog/product/brevno-ozilindrovannoe-el-sosna-220-mm-lunniy-paz/')
+                    span.product-item__image
+                      img(src='/media/vagonkabrus_cache/eb/7f/eb7f939900dbaa333213c681c5ca618b.jpg' alt='Бревно оцилиндрованное (ель, сосна) 220 мм, Лунный паз')
+                      span.product-item__flag-content
+                        span.product-item__flag.product-item__flag--hit хит
+                    span.product-item__content-top
+                      span.product-item__head
+                        span.product-item__art с0307
+                        span.product-item__rating
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                      span.product-item__name Бревно оцилиндрованное (ель, сосна) 220 мм, Лунный паз
+                      .product-item__status.product-item__status--many
+                        | Кол-во: много
+                      span.product-item__cost
+                        span.product-item__cost-product
+                          | 9600,00
+                          span  ₽/м3
+                  .product-item__content-bottom
+                    .product-item__btns
+                      .shopping-cart-product
+                        .input-number
+                          .order-down
+                          input#number(type='number' min='0' step='1' value='1' required='')
+                          .order-up
+                        a.shopping-cart-btn.add-to-cart(href='/cart/add/3876')
+                          svg.icon
+                            use(xlink:href='#shopping-cart')
+                .product-item
+                  a.product-item__link(href='/catalog/product/brevno-ozilindrovannoe-el-sosna-240-mm-lunniy-paz/')
+                    span.product-item__image
+                      img(src='/media/vagonkabrus_cache/eb/7f/eb7f939900dbaa333213c681c5ca618b.jpg' alt='Бревно оцилиндрованное (ель, сосна) 240 мм, Лунный паз')
+                      span.product-item__flag-content
+                        span.product-item__flag.product-item__flag--hit хит
+                    span.product-item__content-top
+                      span.product-item__head
+                        span.product-item__art с0323
+                        span.product-item__rating
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                      span.product-item__name Бревно оцилиндрованное (ель, сосна) 240 мм, Лунный паз
+                      .product-item__status.product-item__status--many
+                        | Кол-во: много
+                      span.product-item__cost
+                        span.product-item__cost-product
+                          | 9900,00
+                          span  ₽/м3
+                  .product-item__content-bottom
+                    .product-item__btns
+                      .shopping-cart-product
+                        .input-number
+                          .order-down
+                          input#number(type='number' min='0' step='1' value='1' required='')
+                          .order-up
+                        a.shopping-cart-btn.add-to-cart(href='/cart/add/3877')
+                          svg.icon
+                            use(xlink:href='#shopping-cart')
+                .product-item
+                  a.product-item__link(href='/catalog/product/brevno-ozilindrovannoe-el-sosna-240-mm-finskiy-profil/')
+                    span.product-item__image
+                      img(src='/media/vagonkabrus_cache/71/09/7109e8464e5b06e5da46f61f6336a7de.jpg' alt='Бревно оцилиндрованное (ель, сосна) 240 мм, Финский профиль')
+                      span.product-item__flag-content
+                    span.product-item__content-top
+                      span.product-item__head
+                        span.product-item__art с0324
+                        span.product-item__rating
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                      span.product-item__name Бревно оцилиндрованное (ель, сосна) 240 мм, Финский профиль
+                      .product-item__status.product-item__status--many
+                        | Кол-во: много
+                      span.product-item__cost
+                        span.product-item__cost-product
+                          | 10300,00
+                          span  ₽/м3
+                  .product-item__content-bottom
+                    .product-item__btns
+                      .shopping-cart-product
+                        .input-number
+                          .order-down
+                          input#number(type='number' min='0' step='1' value='1' required='')
+                          .order-up
+                        a.shopping-cart-btn.add-to-cart(href='/cart/add/3883')
+                          svg.icon
+                            use(xlink:href='#shopping-cart')
+                .product-item
+                  a.product-item__link(href='/catalog/product/brevno-ozilindrovannoe-el-sosna-260-mm-lunniy-paz/')
+                    span.product-item__image
+                      img(src='/media/vagonkabrus_cache/0e/1c/0e1cfdd92d36c7b6bddf66125ec9b33d.jpg' alt='Бревно оцилиндрованное (ель, сосна) 260 мм, Лунный паз')
+                      span.product-item__flag-content
+                        span.product-item__flag.product-item__flag--hit хит
+                    span.product-item__content-top
+                      span.product-item__head
+                        span.product-item__art с0325
+                        span.product-item__rating
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                      span.product-item__name Бревно оцилиндрованное (ель, сосна) 260 мм, Лунный паз
+                      .product-item__status.product-item__status--many
+                        | Кол-во: много
+                      span.product-item__cost
+                        span.product-item__cost-product
+                          | 9700,00
+                          span  ₽/м3
+                  .product-item__content-bottom
+                    .product-item__btns
+                      .shopping-cart-product
+                        .input-number
+                          .order-down
+                          input#number(type='number' min='0' step='1' value='1' required='')
+                          .order-up
+                        a.shopping-cart-btn.add-to-cart(href='/cart/add/3878')
+                          svg.icon
+                            use(xlink:href='#shopping-cart')
+                .product-item
+                  a.product-item__link(href='/catalog/product/brevno-ozilindrovannoe-el-sosna-260-mm-finskiy-profi/')
+                    span.product-item__image
+                      img(src='/media/vagonkabrus_cache/71/09/7109e8464e5b06e5da46f61f6336a7de.jpg' alt='Бревно оцилиндрованное (ель, сосна) 260 мм, Финский профиль')
+                      span.product-item__flag-content
+                    span.product-item__content-top
+                      span.product-item__head
+                        span.product-item__art с0326
+                        span.product-item__rating
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                      span.product-item__name Бревно оцилиндрованное (ель, сосна) 260 мм, Финский профиль
+                      .product-item__status.product-item__status--many
+                        | Кол-во: много
+                      span.product-item__cost
+                        span.product-item__cost-product
+                          | 10100,00
+                          span  ₽/м3
+                  .product-item__content-bottom
+                    .product-item__btns
+                      .shopping-cart-product
+                        .input-number
+                          .order-down
+                          input#number(type='number' min='0' step='1' value='1' required='')
+                          .order-up
+                        a.shopping-cart-btn.add-to-cart(href='/cart/add/3884')
+                          svg.icon
+                            use(xlink:href='#shopping-cart')
+                .product-item
+                  a.product-item__link(href='/catalog/product/brevno-ozilindrovannoe-el-sosna-280-mm-lunniy-paz/')
+                    span.product-item__image
+                      img(src='/media/vagonkabrus_cache/b8/ea/b8ea005c0b7e91066257991ab721acb3.jpg' alt='Бревно оцилиндрованное (ель, сосна) 280 мм, Лунный паз')
+                      span.product-item__flag-content
+                        span.product-item__flag.product-item__flag--hit хит
+                    span.product-item__content-top
+                      span.product-item__head
+                        span.product-item__art с0327
+                        span.product-item__rating
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                      span.product-item__name Бревно оцилиндрованное (ель, сосна) 280 мм, Лунный паз
+                      .product-item__status.product-item__status--many
+                        | Кол-во: много
+                      span.product-item__cost
+                        span.product-item__cost-product
+                          | 9700,00
+                          span  ₽/м3
+                  .product-item__content-bottom
+                    .product-item__btns
+                      .shopping-cart-product
+                        .input-number
+                          .order-down
+                          input#number(type='number' min='0' step='1' value='1' required='')
+                          .order-up
+                        a.shopping-cart-btn.add-to-cart(href='/cart/add/3879')
+                          svg.icon
+                            use(xlink:href='#shopping-cart')
+                .product-item
+                  a.product-item__link(href='/catalog/product/brevno-ozilindrovannoe-el-sosna-280-mm-finskiy-profil/')
+                    span.product-item__image
+                      img(src='/media/vagonkabrus_cache/71/09/7109e8464e5b06e5da46f61f6336a7de.jpg' alt='Бревно оцилиндрованное (ель, сосна) 280 мм, Финский профиль')
+                      span.product-item__flag-content
+                    span.product-item__content-top
+                      span.product-item__head
+                        span.product-item__art с0328
+                        span.product-item__rating
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                      span.product-item__name Бревно оцилиндрованное (ель, сосна) 280 мм, Финский профиль
+                      .product-item__status.product-item__status--many
+                        | Кол-во: много
+                      span.product-item__cost
+                        span.product-item__cost-product
+                          | 10100,00
+                          span  ₽/м3
+                  .product-item__content-bottom
+                    .product-item__btns
+                      .shopping-cart-product
+                        .input-number
+                          .order-down
+                          input#number(type='number' min='0' step='1' value='1' required='')
+                          .order-up
+                        a.shopping-cart-btn.add-to-cart(href='/cart/add/3885')
+                          svg.icon
+                            use(xlink:href='#shopping-cart')
+                .product-item
+                  a.product-item__link(href='/catalog/product/brevno-ozilindrovannoe-el-sosna-300-mm-lunniy-paz/')
+                    span.product-item__image
+                      img(src='/media/vagonkabrus_cache/fc/0c/fc0c98b02b8bd967e01ce157784bb578.jpg' alt='Бревно оцилиндрованное (ель, сосна) 300 мм, Лунный паз')
+                      span.product-item__flag-content
+                    span.product-item__content-top
+                      span.product-item__head
+                        span.product-item__art с0329
+                        span.product-item__rating
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                          span.star.star--empty
+                      span.product-item__name Бревно оцилиндрованное (ель, сосна) 300 мм, Лунный паз
+                      .product-item__status.product-item__status--many
+                        | Кол-во: много
+                      span.product-item__cost
+                        span.product-item__cost-product
+                          | 9900,00
+                          span  ₽/м3
+                  .product-item__content-bottom
+                    .product-item__btns
+                      .shopping-cart-product
+                        .input-number
+                          .order-down
+                          input#number(type='number' min='0' step='1' value='1' required='')
+                          .order-up
+                        a.shopping-cart-btn.add-to-cart(href='/cart/add/3880')
+                          svg.icon
+                            use(xlink:href='#shopping-cart')
+              .pagination.mobile-hide
+                span 1
+                span
+                  a(href='?page=2')
+                    | 2
+                a.next(href='?page=2')
+  section.section-dark
+    .container
+      #question-main.question-main
+        .question-form
+          span.content-title.center.h2 Остались вопросы?
+          form#feedback-message-request-form(action='/crm/message/' method='post')
+            input(type='hidden' name='csrfmiddlewaretoken' value='TqRHoVLtD58Sx9cFfQymoXFRFPHQM3kMdzE6ihZjrhLpOv8hVsBWkGVBnSQjjoHe')
+            .question-form__column
+              .form-group
+                input.form-control(type='text' name='name' autocomplete='off' required='')
+                label.label-name(for='name')
+                  span.content-name
+                    | Имя*
+              .form-group
+                input.form-control.phone(type='phone' name='phone' autocomplete='off' required='')
+                label.label-name(for='phone')
+                  span.content-name
+                    | Телефон
+              .form-group
+                input.form-control(type='mail' name='email' autocomplete='off' required='')
+                label.label-name(for='text')
+                  span.content-name
+                    | e-mail
+            .question-form__column
+              .form-group
+                textarea.form-control(name='message' autocomplete='off' required='')
+                label.label-name(for='message')
+                  span.content-name
+                    | Комментарий
+              input#id_url(type='hidden' name='url')
+              button.btn.btn--main-min(type='submit') Отправить
+          p
+            | Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь с нашей политикой конфиденциальности
+  section.section
+    .container.container--small
+      .text-page
+        h2 Купить бревно оцилиндрованное по выгодной цене
+        p
+          | В России на протяжении многих веков строили дома именно из дерева. В настоящее время в связи возросшей популярностью загородного коттеджного строительства - дома из древесины стали очень востребованы. В этой связи одним из самых распространенных материалов для строительства дома является оцилиндрованное бревно. Главным преимуществом оцилиндрованного бревна является его идеальная цилиндрическая форма, с одинаковым диаметром по всей длине. Помимо этого материал имеет четко заданные параметры ширины теплового паза и посадочных чаш, благодаря чему готовое строение выглядит аккуратно и имеет привлекательный внешний вид. Оцилиндрованные бревна изготавливаются из многих пород дерева, но чаще всего используют хвойные сорта древесины (сосна, лиственница и кедр). Немаловажное значение при строительстве имеет тип теплового паза, необходимый для плотного примыкания бревен друг к другу. Одними из самых распространенных видов являются:
+        ul
+          li
+            | Лунный (классический) -  имеет полукруглую форму. Это самая популярная конструкция, в связи с простотой устройства.
+          li
+            | Финский - отличается существенно большей шириной паза. что обеспечивает более плотное примыкание и повышение ветрозащитных и теплоизоляционных характеристик дома. Использование данного вида ускоряет процесс усадки строения (в два раза), и что немаловажно надежно защищает стены от проникновения влаги. Другим существенным моментом является исключение дополнительных работ связанных с конопаткой швов. Это обеспечивается тем, что межвенцовый утеплитель находящийся в пазу, плотно закрывается последующим бревном. Данный факт помимо эстетичности, также ведет и к экономии средств.
+        p
+          | Северная лесная компания осуществляет реализацию оцилиндрованных бревен зимнего, таежного сибирского леса из хвойных пород. Древесина заготовленная в условиях Сибирской зимы имеет более равномерную сушку и соответственно меньше растрескивается. Дома из сибирской Лиственницы и Кедра простоят не одну сотню лет. Они помимо естественной экологичности, также обладают и целебными характеристиками, что связано с содержанием в структуре дерева эфирных масел и фитонцидов. В домах из сибирской хвои - тепло зимой и прохладно летом. Северная лесная компания реализует оцилиндрованные бревна погонажем (не более 6 метров) с большим ассортиментом по диаметру и по приемлемой цене.
+        h2 О Компании
+        p
+          | Северная Лесная Компания - один из лидеров по оптовым и розничным продажам пиломатериалов в Самарской области. Свою деятельность компания осуществляет в течение 20 лет, и за это время заслужила уважение и доверие потребителей. В настоящее время Компания представляет широкий ассортиментный ряд продукции из древесины по оптимальным, доступным ценам и с высоким уровнем обслуживания. Товарная линейка включает в себя пиломатериалы как хвойных, так и лиственных пород, всех основных сортов дерева.
+        p
+          | Северная Лесная Компания также осуществляет продажу наиболее востребованных строительных конструкций и столярных изделий (окна, двери, лестницы и пр.).
+        p
+          | Товары можно приобрести со скидкой, оформив покупку через Сайт компании. Кроме того на Сайте можно произвести расчет стоимости доставки и соответственно выбрать и заказать необходимое транспортное средство. Компания также регулярно проводит Акции, благодаря которым пиломатериалы и строительные конструкции можно купить по более выгодной цене.
+  .bottom-panel.found-cheaper-panel
+    a.btn-bottom.smoothScroll(href='#question-main') Нашли дешевле?
+    a.close-panel

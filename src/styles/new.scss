@@ -1,0 +1,17 @@
+//scss variables
+@import './components/variables';
+//bootstrap utilites
+@import "./bootstrap/utilities";
+//сss variables
+@import "./components/css-variables";
+//bootstrap grid
+@import "./bootstrap/grid";
+
+//else
+@import './components/helpers';
+@import './components/layout';
+@import './components/buttons';
+
+@import './components/fix';
+@import './components/components';
+@import './components/blocks';

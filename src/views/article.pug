@@ -1,0 +1,399 @@
+extends layout/layout
+
+block scripts 
+  script(type='text/javascript' src='/static/js/jquery-3.2.1.min.js')
+  script(type='text/javascript' src='/static/js/jquery.fancybox.v3.5.7.min.js')
+  script(type='text/javascript' src='/static/js/owl.carousel.js')
+  script(type='text/javascript' src='/static/js/jquery.mask.min.js')
+  script(type='text/javascript').
+    window.onload = windowload;
+    window.onresize = AppendScript;
+    function windowload() {
+    AppendScript();
+    }
+    function AppendScript() {
+    if (window.innerWidth >= 767) {
+    Include('/static/js/scripts-desktop.js', 'on')
+    } else {
+    Include('/static/js/scripts-mobile.js', 'on')
+    }
+    }
+    function Include(filename, status) {
+    var head = document.getElementsByTagName('head')[0];
+    if (status == 'on') {
+    script = document.createElement('script');
+    script.src = filename;
+    script.type = 'text/javascript';
+    head.appendChild(script)
+    } else if (status == 'off') {
+    var scripts = head.getElementsByTagName('script');
+    if (scripts.length > 0) {
+    head.removeChild(scripts[1]);
+    }
+    }
+    }
+  script(type='text/javascript').
+    // This url dictionary is used in js scripts instead of direct links.
+    const URLS = {
+    static: "/static/",
+    cart: "/cart/",
+    register: "/account/register/",
+    }
+  script(src='/static/js/notify.min.js')
+  script(src='/static/js/ajax_setup.js')
+  script(src='/static/catalog/js/search.js')
+  script(src='/static/js/common.js')
+  script(src='/static/js/contentSelectionDisable.js')
+  script(src='/static/commerce/js/cart.js')
+  script(src='/static/catalog/js/catalog.js')
+  script(type='text/javascript' src='/static/crm/js/crm_forms.js')
+  script(type='text/javascript' src='/static/subscription/js/subscription.js')
+  script(src='/static/js/scripts.js')
+
+block content
+  section.section-dark
+    .container
+      .page-head
+        .breadcrumbs.breadcrumbs--lk(itemscope='' itemtype='http://schema.org/BreadcrumbList')
+          svg.breadcrumbs__sep
+            use(xlink:href='#tab-arrow')
+          span(itemprop='itemListElement' itemscope='' itemtype='http://schema.org/ListItem')
+            a(itemprop='item' title='Главная' href='/')
+              | Главная
+              meta(itemprop='name' content='Главная')
+            meta(itemprop='position' content='1')
+          svg.breadcrumbs__sep
+            use(xlink:href='#tab-arrow')
+          span(itemprop='itemListElement' itemscope='' itemtype='http://schema.org/ListItem')
+            a(itemprop='item' title='Статьи' href='/articles/')
+              | Статьи
+              meta(itemprop='name' content='Статьи')
+            meta(itemprop='position' content='2')
+          svg.breadcrumbs__sep
+            use(xlink:href='#tab-arrow')
+          |         Правда и мифы о террасной доске
+      .article-inner.noselect
+        .article-inner__content
+          .text-page.noselect
+            h1
+              | Правда и мифы о террасной доске
+            span.new-slide-item__title Возможно Вы не знали...
+            p
+              | Террасная доска из лиственницы благодаря своим уникальным эксплуатационным характеристикам, становится все более популярным строительным материалом. Ее используют при облицовке террас, фасадов зданий, крытых и открытых площадок, заборов и мн.др. Террасная доска выпускается с различным рельефом лицевой поверхности (гладкий и “вельвет”) - благодаря чему она легко вписывается практически в любой интерьер.
+            p
+              | Но несмотря на все преимущества, существуют и некоторые заблуждения. Один из них касается в предположении о возможной деформации панелей. Но диапазон температур, который они способны выдерживать довольно высок: от - 50 гр. до + 70 гр. На прочность и долговечность влияет качество укладки. И если довериться профессионалам (несмотря на простоту монтажа) - террасная доска из лиственницы прослужит достаточно длительное время. Так же есть предположение, что данный материал может впитывать влагу, вследствии чего при отрицательных температурах она может потрескаться. Но проведя испытания выяснилось, что доски абсолютно водонепроницаемы. Благодаря высокому показателю влагостойкости, доски из лиственницы часто используются в местах повышенной влажности (пирсы, причалы, площадки около бассейна, террасы и пр.). Ну и последнее заблуждение касается потерей со временем шероховатости основания. Но благодаря высокому коэффициенту упругости материала и повышенной стойкости к механическому воздействию - террасная доска практически не подвержена истиранию и имеет достаточно длительный срок эксплуатации.
+        
+          .article-inner__share
+            span.article-inner__share-title Чтобы поделиться ссылкой,<br> нажмите на иконку вашей соцсети
+            .article-inner__share-content
+              <script src="https://yastatic.net/share2/share.js" async></script>
+              .ya-share2(data-services='vkontakte,twitter,odnoklassniki,facebook,telegram,whatsapp,viber')
+        .article-inner__side
+          .side-menu
+            ul
+              li
+                a(title='Рассрочка по пиломатериалам' href='/articles/rassrochka-po-pilomaterialam/') Рассрочка по пиломатериалам
+                  svg.icon
+                    use(xlink:href='#tab-arrow')
+              li
+                a(title='Кредитование по низкой ставке' href='/articles/kreditovanie-po-nizkoj-stavke/') Кредитование по низкой ставке
+                  svg.icon
+                    use(xlink:href='#tab-arrow')
+              li
+                a(title='Расширение складских площадей' href='/articles/modernizaciya-skladskih-pomeshenij/') Расширение складских площадей
+                  svg.icon
+                    use(xlink:href='#tab-arrow')
+              li
+                a(title='Евровагонка в интерьере' href='/articles/pro-reklamnye-bannera/') Евровагонка в интерьере
+                  svg.icon
+                    use(xlink:href='#tab-arrow')
+              li
+                a(title='Правда и мифы о террасной доске' href='/articles/pravda-i-mify-o-terrasnoj-doske/') Правда и мифы о террасной доске
+                  svg.icon
+                    use(xlink:href='#tab-arrow')
+              li
+                a(title='Интересные факты о лестницах' href='/articles/kak-krasit-faneru/') Интересные факты о лестницах
+                  svg.icon
+                    use(xlink:href='#tab-arrow')
+              li
+                a(title='Дверь филенчатая из массива древесины' href='/articles/dekorativnaya-otdelka-pilomaterialom/') Дверь филенчатая из массива древесины
+                  svg.icon
+                    use(xlink:href='#tab-arrow')
+
+
+  section.conditional-section.conditional-section_bg
+    
+    section.conditional-section
+      .container 
+        span.content-title.product-set-title.h2 Карусель товаров
+        .product-slider.product-slider--4
+          .owl-carousel
+            .item
+              .product-item
+                a.product-item__link(href='/catalog/product/vagonka-lipa-16-kh-98-10-15-m-sort-bc/')
+                  span.product-item__image
+                    img(src='/media/vagonkabrus_cache/61/cc/61cc61dfb4575ac47eee9cd013028272.png' alt='Вагонка (липа) 16 х 98 мм, 1-1.5 м, категория BC')
+                    span.product-item__flag-content
+                      span.product-item__flag.product-item__flag--hit хит
+                  span.product-item__content-top
+                    span.product-item__head
+                      span.product-item__art с00014
+                      span.product-item__rating
+                        span.star.star--empty
+                        span.star.star--empty
+                        span.star.star--empty
+                        span.star.star--empty
+                        span.star.star--empty
+                    span.product-item__name Вагонка (липа) 16 х 98 мм, 1-1.5 м, категория BC
+                    .product-item__status.product-item__status--many
+                      | Кол-во: много
+                    span.product-item__cost
+                      span.product-item__cost-product
+                        | 40,00
+                        span  ₽/п.м.
+                .product-item__content-bottom
+                  .product-item__btns
+                    .shopping-cart-product
+                      .input-number
+                        .order-down
+                        input#number(type='number' min='0' step='1' value='1' required='')
+                        .order-up
+                      a.shopping-cart-btn.add-to-cart(href='/cart/add/3567')
+                        svg.icon
+                          use(xlink:href='#shopping-cart')
+            .item
+              .product-item
+                a.product-item__link(href='/catalog/product/evrovagonka-khvoy-125-kh-97-10-15-m-sort-c/')
+                  span.product-item__image
+                    img(src='/media/vagonkabrus_cache/e7/1e/e71e5a5fb4a181ec3dc66fdb097ca058.jpg' alt='Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория C')
+                    span.product-item__flag-content
+                      span.product-item__flag.product-item__flag--hit хит
+                  span.product-item__content-top
+                    span.product-item__head
+                      span.product-item__art с00008
+                      span.product-item__rating
+                        span.star.star--empty
+                        span.star.star--empty
+                        span.star.star--empty
+                        span.star.star--empty
+                        span.star.star--empty
+                    span.product-item__name Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория C
+                    .product-item__status.product-item__status--many
+                      | Кол-во: много
+                    span.product-item__cost
+                      span.product-item__cost-product
+                        | 13,00
+                        span  ₽/п.м.
+                .product-item__content-bottom
+                  .product-item__btns
+                    .shopping-cart-product
+                      .input-number
+                        .order-down
+                        input#number(type='number' min='0' step='1' value='1' required='')
+                        .order-up
+                      a.shopping-cart-btn.add-to-cart(href='/cart/add/3561')
+                        svg.icon
+                          use(xlink:href='#shopping-cart')
+            .item
+              .product-item
+                a.product-item__link(href='/catalog/product/imitacia-brusa-vagonka-shtil-khvoya-125kh-118-20-50-m-sort-bc/')
+                  span.product-item__image
+                    img(src='/media/vagonkabrus_cache/dc/7a/dc7a6e5e3dc38c4007c812bef8b65aef.jpg' alt='Имитация бруса - вагонка "штиль" (хвоя) 12,5 х 118 мм, 2-5 м, категория ВС')
+                    span.product-item__flag-content
+                      span.product-item__flag.product-item__flag--hit хит
+                  span.product-item__content-top
+                    span.product-item__head
+                      span.product-item__art с0188
+                      span.product-item__rating
+                        span.star.star--empty
+                        span.star.star--empty
+                        span.star.star--empty
+                        span.star.star--empty
+                        span.star.star--empty
+                    span.product-item__name Имитация бруса - вагонка "штиль" (хвоя) 12,5 х 118 мм, 2-5 м, категория ВС
+                    .product-item__status.product-item__status--many
+                      | Кол-во: много
+                    span.product-item__cost
+                      span.product-item__cost-product
+                        | 22,00
+                        span  ₽/п.м.
+                .product-item__content-bottom
+                  .product-item__btns
+                    .shopping-cart-product
+                      .input-number
+                        .order-down
+                        input#number(type='number' min='0' step='1' value='1' required='')
+                        .order-up
+                      a.shopping-cart-btn.add-to-cart(href='/cart/add/3738')
+                        svg.icon
+                          use(xlink:href='#shopping-cart')
+            .item
+              .product-item
+                a.product-item__link(href='/catalog/product/brevno-ozilindrovannoe-el-sosna-180-mm-lunniy-paz/')
+                  span.product-item__image
+                    img(src='/media/vagonkabrus_cache/eb/7f/eb7f939900dbaa333213c681c5ca618b.jpg' alt='Бревно оцилиндрованное (ель, сосна) 180 мм, Лунный паз')
+                    span.product-item__flag-content
+                      span.product-item__flag.product-item__flag--hit хит
+                  span.product-item__content-top
+                    span.product-item__head
+                      span.product-item__art с0303
+                      span.product-item__rating
+                        span.star.star--empty
+                        span.star.star--empty
+                        span.star.star--empty
+                        span.star.star--empty
+                        span.star.star--empty
+                    span.product-item__name Бревно оцилиндрованное (ель, сосна) 180 мм, Лунный паз
+                    .product-item__status.product-item__status--many
+                      | Кол-во: много
+                    span.product-item__cost
+                      span.product-item__cost-product
+                        | 9500,00
+                        span  ₽/м3
+                .product-item__content-bottom
+                  .product-item__btns
+                    .shopping-cart-product
+                      .input-number
+                        .order-down
+                        input#number(type='number' min='0' step='1' value='1' required='')
+                        .order-up
+                      a.shopping-cart-btn.add-to-cart(href='/cart/add/3873')
+                        svg.icon
+                          use(xlink:href='#shopping-cart')
+            .item
+              .product-item
+                a.product-item__link(href='/catalog/product/blok-khaus-khvoy-22-kh-98-2-6-m-sort-ab/')
+                  span.product-item__image
+                    img(src='/media/vagonkabrus_cache/b2/85/b285644cfac3b113691fc8d347fd996d.jpg' alt='Блок Хаус (хвоя) 22 х 98 мм, 2-6 м, категория АВ')
+                    span.product-item__flag-content
+                      span.product-item__flag.product-item__flag--hit хит
+                  span.product-item__content-top
+                    span.product-item__head
+                      span.product-item__art с00018
+                      span.product-item__rating
+                        span.star.star--empty
+                        span.star.star--empty
+                        span.star.star--empty
+                        span.star.star--empty
+                        span.star.star--empty
+                    span.product-item__name Блок Хаус (хвоя) 22 х 98 мм, 2-6 м, категория АВ
+                    .product-item__status.product-item__status--many
+                      | Кол-во: много
+                    span.product-item__cost
+                      span.product-item__cost-product
+                        | 44,00
+                        span  ₽/п.м.
+                .product-item__content-bottom
+                  .product-item__btns
+                    .shopping-cart-product
+                      .input-number
+                        .order-down
+                        input#number(type='number' min='0' step='1' value='1' required='')
+                        .order-up
+                      a.shopping-cart-btn.add-to-cart(href='/cart/add/3571')
+                        svg.icon
+                          use(xlink:href='#shopping-cart')
+          .btn-center.mobile-show
+            a.btn-download.btn-download-2
+              span.icon
+                img(src='/static/images/download-productions.svg' alt='')
+              | Ещё
+
+    section.conditional-section
+      .container
+        span.content-title.h2 Карусель других статей
+        .news-slider
+          .owl-carousel
+            .item
+              a.new-slide-item.new-slide-item--bg-1(href='/articles/kreditovanie-po-nizkoj-stavke/')
+                span.new-slide-item__image.new-slide-item__image--picture
+                  img(src='/media/vagonkabrus_cache/c7/15/c715f98dd287f0396b2d30b3562e2e3d.png' alt='Выгодные условия')
+                span.new-slide-item__content
+                  span.new-slide-item__title Выгодно
+                  span.new-slide-item__name Кредитование по низкой ставке
+            .item
+              a.new-slide-item.new-slide-item--bg-2(href='/articles/modernizaciya-skladskih-pomeshenij/')
+                span.new-slide-item__image.new-slide-item__image--picture
+                  img(src='/media/vagonkabrus_cache/df/8b/df8b88ac94b7158bf76d8d78df60b91a.jpg' alt='Расширение складских площадей')
+                span.new-slide-item__content
+                  span.new-slide-item__title Полезная информация
+                  span.new-slide-item__name Расширение складских площадей
+            .item
+              a.new-slide-item.new-slide-item--bg-3(href='/articles/pro-reklamnye-bannera/')
+                span.new-slide-item__image.new-slide-item__image--picture
+                  img(src='/media/vagonkabrus_cache/86/c9/86c97b36ffc37dc8ecee14ace7e719cf.jpg' alt='Статья: Евровагонка в интерьере')
+                span.new-slide-item__content
+                  span.new-slide-item__title Лайфхак
+                  span.new-slide-item__name Евровагонка в интерьере
+            .item
+              a.new-slide-item.new-slide-item--bg-1(href='/articles/pravda-i-mify-o-terrasnoj-doske/')
+                span.new-slide-item__image.new-slide-item__image--picture
+                  img(src='/media/vagonkabrus_cache/66/fc/66fc5b0f62d4fd2ed2427e409cc4b176.jpg' alt='Правда и мифы о террасной доске')
+                span.new-slide-item__content
+                  span.new-slide-item__title Возможно Вы не знали...
+                  span.new-slide-item__name Правда и мифы о террасной доске
+            .item
+              a.new-slide-item.new-slide-item--bg-2(href='/articles/novinki-sezona/')
+                span.new-slide-item__image.new-slide-item__image--picture
+                  img(src='/media/vagonkabrus_cache/4e/88/4e88b3abe8fe194f14afbb84cb762bd7.jpg' alt='Наружная обшивка дома - Блок Хаусом')
+                span.new-slide-item__content
+                  span.new-slide-item__title Полезная информация
+                  span.new-slide-item__name Наружная обшивка дома - Блок Хаусом
+            .item
+              a.new-slide-item.new-slide-item--bg-3(href='/articles/kak-krasit-faneru/')
+                span.new-slide-item__image.new-slide-item__image--picture
+                  img(src='/media/vagonkabrus_cache/92/02/9202fc929a9085e4b01dcdee87350b80.jpg' alt='Интересные факты о лестницах')
+                span.new-slide-item__content
+                  span.new-slide-item__title Интересные факты
+                  span.new-slide-item__name Интересные факты о лестницах
+            .item
+              a.new-slide-item.new-slide-item--bg-1(href='/articles/dekorativnaya-otdelka-pilomaterialom/')
+                span.new-slide-item__image.new-slide-item__image--picture
+                  img(src='/media/vagonkabrus_cache/00/5a/005a21d263830f810fd76e7f856652bd.jpg' alt='Дверь филенчатая из массива древесины\
+                  &nbsp;')
+                span.new-slide-item__content
+                  span.new-slide-item__title Интересные подробности
+                  span.new-slide-item__name Дверь филенчатая из массива древесины
+            .item
+              a.new-slide-item.new-slide-item--bg-2(href='/articles/cepochki-postavok/')
+                span.new-slide-item__image.new-slide-item__image--picture
+                  img(src='/media/vagonkabrus_cache/a7/eb/a7eb1c23fdd01acbfeca73f3a125dfe1.jpg' alt='Укладка половой доски')
+                span.new-slide-item__content
+                  span.new-slide-item__title Лайфхак
+                  span.new-slide-item__name Укладка половой доски
+    
+    
+    
+  section.section-dark.feedback-form
+    .container
+      #question-main.question-main
+        .question-form
+          span.content-title.center.h2 Остались вопросы?
+          form#feedback-message-request-form(action='/crm/message/' method='post')
+            input(type='hidden' name='csrfmiddlewaretoken' value='bfHXGeKvhBItOOvCX0eOk5rTn1b2QZQWzQruatpIgm9FGWI28np9BAOy6wmp1geT')
+            .question-form__column
+              .form-group
+                input.form-control(type='text' name='name' autocomplete='off' required='')
+                label.label-name(for='name')
+                  span.content-name
+                    | Имя*
+              .form-group
+                input.form-control.phone(type='phone' value='70000000000' name='phone' autocomplete='off' required='')
+                label.label-name(for='phone')
+                  span.content-name
+                    | Телефон
+              .form-group
+                input.form-control(type='mail' value='info@stroyker.pro' name='email' autocomplete='off' required='')
+                label.label-name(for='text')
+                  span.content-name
+                    | e-mail
+            .question-form__column
+              .form-group
+                textarea.form-control(name='message' autocomplete='off' required='')
+                label.label-name(for='message')
+                  span.content-name
+                    | Комментарий
+              input#id_url(type='hidden' name='url')
+              button.btn.btn--main-min(type='submit') Отправить
+          p
+            | Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь с нашей политикой конфиденциальности

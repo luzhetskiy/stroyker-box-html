@@ -1,0 +1,609 @@
+extends layout/layout
+
+block scripts 
+  script(type='text/javascript' src='/static/js/jquery-3.2.1.min.js')
+  script(type='text/javascript' src='/static/js/jquery.fancybox.v3.5.7.min.js')
+  script(type='text/javascript' src='/static/js/owl.carousel.js')
+  script(type='text/javascript' src='/static/js/jquery.mask.min.js')
+  script(type='text/javascript').
+    window.onload = windowload;
+    window.onresize = AppendScript;
+    function windowload() {
+    AppendScript();
+    }
+    function AppendScript() {
+    if (window.innerWidth >= 767) {
+    Include(`#{href}/scripts/scripts-desktop.js`, 'on')
+    } else {
+    Include('/static/js/scripts-mobile.js', 'on')
+    }
+    }
+    function Include(filename, status) {
+    var head = document.getElementsByTagName('head')[0];
+    if (status == 'on') {
+    script = document.createElement('script');
+    script.src = filename;
+    script.type = 'text/javascript';
+    head.appendChild(script)
+    } else if (status == 'off') {
+    var scripts = head.getElementsByTagName('script');
+    if (scripts.length > 0) {
+    head.removeChild(scripts[1]);
+    }
+    }
+    }
+  script(type='text/javascript').
+    // This url dictionary is used in js scripts instead of direct links.
+    const URLS = {
+    static: "/static/",
+    cart: "/cart/",
+    register: "/account/register/",
+    }
+  script(src='/static/js/notify.min.js')
+  script(src='/static/js/ajax_setup.js')
+  script(src='/static/catalog/js/search.js')
+  script(src='/static/js/common.js')
+  script(src='/static/js/contentSelectionDisable.js')
+  script(src='/static/commerce/js/cart.js')
+  script(src='/static/catalog/js/catalog.js')
+  script.
+    var BNR_URLS = {
+    'inc_views': '/bnrs/ajax/view-cnt-incr',
+    'inc_clicks': '/bnrs/ajax/clck-cnt-incr'
+    };
+  script(src='/static/banners/js/bnrs.js')
+  script(type='text/javascript' src='/static/crm/js/crm_forms.js')
+  script(src='/static/addresses/js/addresses_yamap.js')
+  script(src='/static/js/frontpage.js')
+  script(type='text/javascript' src='/static/subscription/js/subscription.js')
+  script(src='/static/js/scripts.js')
+  
+block content
+  section.section-dark
+    .container
+      .catalog-side.mobile-show
+        span.catalog-side__title
+          span.icon
+            svg(width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg')
+              path(d='M0 0V2H16V0H0ZM0 8H16V6H0V8ZM0 14H16V12H0V14Z' fill='currentColor')
+          | Каталог продукции
+        .catalog-side__content
+          ul
+            li.menu-item.current
+              a(href='/catalog/brevno-ocilindrovannoe/') Бревно оцилиндрованное
+            li.menu-item.current
+              a(href='/catalog/vagonka-i-evrovagonka/') Вагонка и Евровагонка
+            li.menu-item.current
+              a(href='/catalog/blok-haus/') Блок Хаус
+            li.menu-item.current
+              a(href='/catalog/imitaciya-brusa/') Имитация бруса
+            li.menu-item.current
+              a(href='/catalog/doska-pola/') Доска пола
+            li.menu-item.current
+              a(href='/catalog/brus-i-doska-suhie-strogannye/') Брус и Доска
+            li.menu-item.current
+              a(href='/catalog/dekorativnaya-otdelka/') Декоративная отделка
+            li.menu-item.current
+              a(href='/catalog/elementy-lestnic/') Элементы лестниц
+            li.menu-item.current
+              a(href='/catalog/dveri-i-okna/') Двери и окна
+            li.menu-item.current
+              a(href='/catalog/materialy-iz-lipy/') Материалы из липы и абаши
+            li.menu-item.current
+              a(href='/catalog/materialy-iz-listvennicy/') Материалы из лиственницы
+            li.menu-item.current
+              a(href='/catalog/materialy-ih-osiny-i-abashi/') Материалы из осины
+            li.menu-item.current
+              a(href='/catalog/fanera-osb-dsp-dvp-tssp/') Фанера, ОСБ, ДСП, ДВП
+            li.menu-item.current
+              a(href='/catalog/utepliteli/') Утеплители
+            li.menu-item.current
+              a(href='/catalog/plenki-i-membrany/') Пленки и мембраны
+            li.menu-item.current
+              a(href='/catalog/propitki-dlya-drevesiny/') Пропитки для древесины
+            li.menu-item.current
+              a(href='/catalog/derevyannye-igrushki/') Деревянные игрушки
+      .page-head
+        .breadcrumbs.breadcrumbs--lk(itemscope='' itemtype='http://schema.org/BreadcrumbList')
+          span(itemprop='itemListElement' itemscope='' itemtype='http://schema.org/ListItem')
+            a(itemprop='item' title='Главная' href='/')
+              | Главная
+              meta(itemprop='name' content='Главная')
+            meta(itemprop='position' content='1')
+          span.sep
+          span(itemprop='itemListElement' itemscope='' itemtype='http://schema.org/ListItem')
+            a(itemprop='item' title='Каталог' href='/catalog/')
+              | Каталог
+              meta(itemprop='name' content='Каталог')
+            meta(itemprop='position' content='2')
+          span.sep
+          span(itemprop='itemListElement' itemscope='' itemtype='http://schema.org/ListItem')
+            a(itemprop='item' title='Вагонка и Евровагонка' href='/catalog/vagonka-i-evrovagonka/')
+              | Вагонка и Евровагонка
+              meta(itemprop='name' content='Вагонка и Евровагонка')
+            meta(itemprop='position' content='3')
+          span.sep
+          span(itemprop='itemListElement' itemscope='' itemtype='http://schema.org/ListItem')
+            a(itemprop='item' title='Вагонка (липа)' href='/catalog/category/vagonka-i-evrovagonka/vagonka-lipa/')
+              | Вагонка (липа)
+              meta(itemprop='name' content='Вагонка (липа)')
+            meta(itemprop='position' content='4')
+      .content-block
+        div(itemscope='' itemtype='http://schema.org/Product')
+          .product-card
+            .product-card__navigation
+              a.product-card__nav-prev(href='/catalog/product/vagonka-lipa-16-kh-98-20-30-m-sort-a/')
+                span.icon
+                  svg.icon-svg
+                    use(xlink:href='#product-nav-arrow')
+                |                 Предыдущий товар
+              a.product-card__nav-next(href='/catalog/product/vagonka-lipa-16-kh-98-18m-sort-b/')
+                | Следующий товар
+                span.icon
+                  svg.icon-svg
+                    use(xlink:href='#product-nav-arrow')
+            .product-card__head
+              h1.product-card__title(itemprop='name')
+                | Вагонка (липа) 16 х 98 мм, 1,0 - 1,7 м, категория А
+              span.product-card__artikul(itemprop='sku') с00010
+            .product-card__container
+              .product-card__slideshow
+                #sync1.owl-carousel.owl-theme
+                  a(href="/media/products/images/3_Cb5L3SB.jpg" data-fancybox='images').item
+                    img(itemprop='image' src='/media/products/images/3_Cb5L3SB.jpg' alt='Вагонка (липа) 16 х 98 мм, 1,0 - 1,7 м, категория А (фото 1)')
+                    span.product-item__flag-content
+                  a(href="/media/products/images/4_m8tW3bL.jpg" data-fancybox='images').item
+                    img(itemprop='image' src='/media/products/images/4_m8tW3bL.jpg' alt='Вагонка (липа) 16 х 98 мм, 1,0 - 1,7 м, категория А (фото 2)')
+                    span.product-item__flag-content
+                  a(href="/media/products/images/%D0%9B%D0%B8%D0%BF%D0%B0_%D0%90_96_2_Uai5eTA.jpg" data-fancybox='images').item
+                    img(itemprop='image' src='/media/products/images/%D0%9B%D0%B8%D0%BF%D0%B0_%D0%90_96_2_Uai5eTA.jpg' alt='Вагонка (липа) 16 х 98 мм, 1,0 - 1,7 м, категория А (фото 3)')
+                    span.product-item__flag-content
+                #sync2.owl-carousel.owl-theme
+                  .item
+                    img(src='/media/products/images/3_Cb5L3SB.jpg' alt='')
+                  .item
+                    img(src='/media/products/images/4_m8tW3bL.jpg' alt='')
+                  .item
+                    img(src='/media/products/images/%D0%9B%D0%B8%D0%BF%D0%B0_%D0%90_96_2_Uai5eTA.jpg' alt='')
+              .product-card__content
+                .product-card__left
+                  .product-card__personal-cost
+                    span цена за п.м.:
+                    |                         60,00 ₽
+                  .product-card__main-cost(itemprop='offers' itemtype='http://schema.org/Offer' itemscope='')
+                    meta(itemprop='price' content='60')
+                    meta(itemprop='priceCurrency' content='RUB')
+                    link(itemprop='availability' href='http://schema.org/InStock')
+                  .shopping-cart-product
+                    .input-number.input-number--lg
+                      .order-down
+                      input#number(type='number' min='0' step='1' value='1' required='')
+                      .order-up
+                    a.shopping-cart-btn.shopping-cart-btn--lg.add-to-cart(href='/cart/add/3563') Купить
+                  .product-card-schedule
+                    .product-card-schedule__image
+                      img(src='/static/images/schedule.svg' alt='')
+                    .schedule-btn
+                      a(rel='tab4')
+                        span.icon
+                          svg.icon-svg
+                            use(xlink:href='#schedule-icon')
+                        | Показать график цен
+                  .product-card__btns.ya-share-block
+                    a.btn-radius.share-btn
+                      span.icon-svg
+                        svg.icon
+                          use(xlink:href='#share-icon')
+                      | Поделиться
+                    .share-block__show
+                      p Чтобы поделиться ссылкой, нажмите на иконку вашей соцсети
+                      script(src='https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js')
+                      script(src='https://yastatic.net/share2/share.js')
+                      .ya-share2(data-services='vkontakte,twitter,odnoklassniki,facebook')
+                  .product-card__rating
+                    span.product-item__rating
+                      span.star.star--empty
+                      span.star.star--empty
+                      span.star.star--empty
+                      span.star.star--empty
+                      span.star.star--empty
+                    span.product-card__review-link
+                      a(rel='tab3') Отзывы (0)
+                .product-card__right
+                  .product-card__discription
+                    span.product-card__discription-title Наличие:
+                    ul
+                      li
+                        span.green-color
+                          .product-item__status.product-item__status--many
+                            | Кол-во: много
+                  .product-card__discription
+                    span.product-card__discription-title Оплата:
+                    ul
+                      li — Картой / наличными при получении
+                      li — Онлайн на сайте
+                      li — Оплата в кредит
+                      li — Безналом по счёту
+                    a.btn-get-an-account-min(href='/cart/')
+                      span.icon
+                        svg.icon
+                          use(xlink:href='#check-btn')
+                      | Получить счёт
+                  .product-card__discription
+                    ul
+                      li
+                        strong Доставка:
+                        |  точно и в срок
+                    a.btn-calculate-min(href='/cart/delivery_calculator/')
+                      span.icon
+                        svg.icon
+                          use(xlink:href='#delivery-white')
+                      | Рассчитать доставку
+          .product-card-container
+            .product-card-content.noselect
+              .tabs-content
+                ul.tabs
+                  li.active(rel='tab2') Характеристики
+                  li.review-tab-link(rel='tab3') Отзывы
+                  li.schedule-link(rel='tab4') График цен
+                  li.tab_last(rel='tab5') Документы
+                .tabsgroup
+                  // #tab1
+                  span.tab_drawer_heading(rel='tab2')
+                    span.icon
+                      svg.icon-svg
+                        use(xlink:href='#tab-arrow')
+                    |                             Характеристики
+                  #tab2.tab-content(style='display: none;')
+                    ul.char
+                      li
+                        span.char-text
+                          span.char-text__mask Сорт леса
+                        span.char-text
+                          | А
+                      li
+                        span.char-text
+                          span.char-text__mask Длина
+                        span.char-text
+                          | 1 - 1,7 м
+                      li
+                        span.char-text
+                          span.char-text__mask Толщина
+                        span.char-text
+                          | 16мм
+                      li
+                        span.char-text
+                          span.char-text__mask Ширина
+                        span.char-text
+                          | 98 мм
+                      li
+                        span.char-text
+                          span.char-text__mask Горючесть
+                        span.char-text Горючий
+                      li
+                        span.char-text
+                          span.char-text__mask Производитель
+                        span.char-text Россия
+                      li
+                        span.char-text
+                          span.char-text__mask Ширина (рабочая)
+                        span.char-text 90 мм
+                  // #tab2
+                  span.tab_drawer_heading(rel='tab3')
+                    span.icon
+                      svg.icon-svg
+                        use(xlink:href='#tab-arrow')
+                    |                             Отзывы
+                  #tab3.tab-content(style='display: none;')
+                    p
+                      | Для возможности оставлять свои отзывы на товары сайта необходимо 
+                      a(href='/account/login/?next=/catalog/product/vagonka-lipa-16-kh-98-10-17-m-sort-a/') авторизироваться
+                      | .
+                    h2 Отзывы на товар 
+                    p Отзывов для данного товара пока еще нет.
+                  // #tab3
+                  span.tab_drawer_heading(rel='tab4')
+                    span.icon
+                      svg.icon-svg
+                        use(xlink:href='#tab-arrow')
+                    |                             График цен
+                  #tab4.tab-content(style='display: none;')
+                    h2 График цен на товар
+                    p Цена на данный продукт еще не менялась.
+                  span.tab_drawer_heading(rel='tab5')
+                    span.icon
+                      svg.icon-svg
+                        use(xlink:href='#tab-arrow')
+                    |                             Документы
+                  #tab5.tab-content(style='display: none;')
+                    h2 Документы и сертификаты
+                    .documents
+                      p Документация для данного товара временно отсутствует.
+                  // #tab4
+                  // .tab_container
+            
+              span.content-title.product-set-title.h2 С этим товаром обычно покупают
+              .product-slider.product-slider--4.product-slider--5
+                .owl-carousel
+                  .item
+                    .product-item
+                      a.product-item__link(href='/catalog/product/dveri-bannie-lipa-40kh600-16-19-m-kategoria-a/')
+                        span.product-item__image
+                          img(src='/media/vagonkabrus_cache/a8/cf/a8cf9b33e659c4b6e838f87951a0def9.jpg' alt='Двери банные (липа) 40 х 600 мм, 1,6 - 1,9 м, категория A')
+                          span.product-item__flag-content
+                            span.product-item__flag.product-item__flag--hit хит
+                        span.product-item__content-top
+                          span.product-item__head
+                            span.product-item__art с0118
+                            span.product-item__rating
+                              span.star.star--empty
+                              span.star.star--empty
+                              span.star.star--empty
+                              span.star.star--empty
+                              span.star.star--empty
+                          span.product-item__name Двери банные (липа) 40 х 600 мм, 1,6 - 1,9 м, категория A
+                          .product-item__status.product-item__status--many
+                            | Кол-во: много
+                          span.product-item__cost
+                            span.product-item__cost-product
+                              | 2500,00
+                              span  ₽/шт.
+                      .product-item__content-bottom
+                        .product-item__btns
+                          .shopping-cart-product
+                            .input-number
+                              .order-down
+                              input#number(type='number' min='0' step='1' value='1' required='')
+                              .order-up
+                            a.shopping-cart-btn.add-to-cart(href='/cart/add/3671')
+                              svg.icon
+                                use(xlink:href='#shopping-cart')
+                  .item
+                    .product-item
+                      a.product-item__link(href='/catalog/product/blok-khaus-khvoy-22-kh-110-20-30-m-sort-a/')
+                        span.product-item__image
+                          img(src='/media/vagonkabrus_cache/3d/71/3d71ad11e93d4b6fb58c965ddb9b8067.jpg' alt='Блок Хаус (липа) 22 х 110 мм, 2-3 м, категория А')
+                          span.product-item__flag-content
+                        span.product-item__content-top
+                          span.product-item__head
+                            span.product-item__art с0218
+                            span.product-item__rating
+                              span.star.star--empty
+                              span.star.star--empty
+                              span.star.star--empty
+                              span.star.star--empty
+                              span.star.star--empty
+                          span.product-item__name Блок Хаус (липа) 22 х 110 мм, 2-3 м, категория А
+                          .product-item__status.product-item__status--many
+                            | Кол-во: много
+                          span.product-item__cost
+                            span.product-item__cost-product
+                              | 150,00
+                              span  ₽/п.м.
+                    
+                    
+                    
+                    .product-card-side
+
+          //new
+          .product-card-bottom
+            span.product-card-bottom__artikul с00010
+            .product-card__navigation
+              a.product-card__nav-prev(href='/catalog/product/vagonka-lipa-16-kh-98-20-30-m-sort-a/')
+                span.icon
+                  svg.icon-svg
+                    use(xlink:href='#product-nav-arrow')
+                |                 Предыдущий товар
+              a.product-card__nav-next(href='/catalog/product/vagonka-lipa-16-kh-98-18m-sort-b/')
+                | Следующий товар
+                span.icon
+                  svg.icon-svg
+                    use(xlink:href='#product-nav-arrow')
+  
+  section.section
+    .container
+      span.content-title.product-set-title.h2 С этим товаром обычно покупают
+      .product-slider.product-slider--4
+        .owl-carousel
+          .item
+            .product-item
+              a.product-item__link(href='/catalog/product/dveri-bannie-lipa-40kh600-16-19-m-kategoria-a/')
+                span.product-item__image
+                  img(src='/media/vagonkabrus_cache/a8/cf/a8cf9b33e659c4b6e838f87951a0def9.jpg' alt='Двери банные (липа) 40 х 600 мм, 1,6 - 1,9 м, категория A')
+                  span.product-item__flag-content
+                    span.product-item__flag.product-item__flag--hit хит
+                span.product-item__content-top
+                  span.product-item__head
+                    span.product-item__art с0118
+                    span.product-item__rating
+                      span.star.star--empty
+                      span.star.star--empty
+                      span.star.star--empty
+                      span.star.star--empty
+                      span.star.star--empty
+                  span.product-item__name Двери банные (липа) 40 х 600 мм, 1,6 - 1,9 м, категория A
+                  .product-item__status.product-item__status--many
+                    | Кол-во: много
+                  span.product-item__cost
+                    span.product-item__cost-product
+                      | 2500,00
+                      span  ₽/шт.
+              .product-item__content-bottom
+                .product-item__btns
+                  .shopping-cart-product
+                    .input-number
+                      .order-down
+                      input#number(type='number' min='0' step='1' value='1' required='')
+                      .order-up
+                    a.shopping-cart-btn.add-to-cart(href='/cart/add/3671')
+                      svg.icon
+                        use(xlink:href='#shopping-cart')
+          .item
+            .product-item
+              a.product-item__link(href='/catalog/product/blok-khaus-khvoy-22-kh-110-20-30-m-sort-a/')
+                span.product-item__image
+                  img(src='/media/vagonkabrus_cache/3d/71/3d71ad11e93d4b6fb58c965ddb9b8067.jpg' alt='Блок Хаус (липа) 22 х 110 мм, 2-3 м, категория А')
+                  span.product-item__flag-content
+                span.product-item__content-top
+                  span.product-item__head
+                    span.product-item__art с0218
+                    span.product-item__rating
+                      span.star.star--empty
+                      span.star.star--empty
+                      span.star.star--empty
+                      span.star.star--empty
+                      span.star.star--empty
+                  span.product-item__name Блок Хаус (липа) 22 х 110 мм, 2-3 м, категория А
+                  .product-item__status.product-item__status--many
+                    | Кол-во: много
+                  span.product-item__cost
+                    span.product-item__cost-product
+                      | 150,00
+                      span  ₽/п.м.
+              .product-item__content-bottom
+                .product-item__btns
+                  .shopping-cart-product
+                    .input-number
+                      .order-down
+                      input#number(type='number' min='0' step='1' value='1' required='')
+                      .order-up
+                    a.shopping-cart-btn.add-to-cart(href='/cart/add/3768')
+                      svg.icon
+                        use(xlink:href='#shopping-cart')
+          .item
+            .product-item
+              a.product-item__link(href='/catalog/product/polok-lipa-28kh90-mm-1-1-7-m-kategoria-a/')
+                span.product-item__image
+                  img(src='/media/vagonkabrus_cache/be/04/be04febf8be53dd8824da8865aa74c79.jpg' alt='Полок (липа) 28 х 90 мм, 1 - 1,7 м, категория А')
+                  span.product-item__flag-content
+                span.product-item__content-top
+                  span.product-item__head
+                    span.product-item__art с0133
+                    span.product-item__rating
+                      span.star.star--empty
+                      span.star.star--empty
+                      span.star.star--empty
+                      span.star.star--empty
+                      span.star.star--empty
+                  span.product-item__name Полок (липа) 28 х 90 мм, 1 - 1,7 м, категория А
+                  .product-item__status.product-item__status--many
+                    | Кол-во: много
+                  span.product-item__cost
+                    span.product-item__cost-product
+                      | 120,00
+                      span  ₽/п.м.
+              .product-item__content-bottom
+                .product-item__btns
+                  .shopping-cart-product
+                    .input-number
+                      .order-down
+                      input#number(type='number' min='0' step='1' value='1' required='')
+                      .order-up
+                    a.shopping-cart-btn.add-to-cart(href='/cart/add/3686')
+                      svg.icon
+                        use(xlink:href='#shopping-cart')
+          .item
+            .product-item
+              a.product-item__link(href='/catalog/product/nalichnik-lipa-15kh70-mm-1-7-2-2-m-kategoria-a/')
+                span.product-item__image
+                  img(src='/media/vagonkabrus_cache/79/29/79291dd26f33c7963d9c0f8e983d06c2.jpg' alt='Наличник (липа) 15 х 70 мм, 1,7 - 2,2 м, категория А')
+                  span.product-item__flag-content
+                span.product-item__content-top
+                  span.product-item__head
+                    span.product-item__art с0127
+                    span.product-item__rating
+                      span.star.star--empty
+                      span.star.star--empty
+                      span.star.star--empty
+                      span.star.star--empty
+                      span.star.star--empty
+                  span.product-item__name Наличник (липа) 15 х 70 мм, 1,7 - 2,2 м, категория А
+                  .product-item__status.product-item__status--many
+                    | Кол-во: много
+                  span.product-item__cost
+                    span.product-item__cost-product
+                      | 65,00
+                      span  ₽/п.м.
+              .product-item__content-bottom
+                .product-item__btns
+                  .shopping-cart-product
+                    .input-number
+                      .order-down
+                      input#number(type='number' min='0' step='1' value='1' required='')
+                      .order-up
+                    a.shopping-cart-btn.add-to-cart(href='/cart/add/3680')
+                      svg.icon
+                        use(xlink:href='#shopping-cart')
+          .item
+            .product-item
+              a.product-item__link(href='/catalog/product/ugol-naruzhniy-lipa-30kh30-mm-1-5-2-5-m-kategoria-a/')
+                span.product-item__image
+                  img(src='/media/vagonkabrus_cache/21/06/2106d401a5e7ef6a8ff616b785404c4e.jpg' alt='Угол наружный (липа) 30 х 30 мм, 1,5 - 2,5 м, категория А')
+                  span.product-item__flag-content
+                span.product-item__content-top
+                  span.product-item__head
+                    span.product-item__art с0137
+                    span.product-item__rating
+                      span.star.star--empty
+                      span.star.star--empty
+                      span.star.star--empty
+                      span.star.star--empty
+                      span.star.star--empty
+                  span.product-item__name Угол наружный (липа) 30 х 30 мм, 1,5 - 2,5 м, категория А
+                  .product-item__status.product-item__status--many
+                    | Кол-во: много
+                  span.product-item__cost
+                    span.product-item__cost-product
+                      | 60,00
+                      span  ₽/п.м.
+              .product-item__content-bottom
+                .product-item__btns
+                  .shopping-cart-product
+                    .input-number
+                      .order-down
+                      input#number(type='number' min='0' step='1' value='1' required='')
+                      .order-up
+                    a.shopping-cart-btn.add-to-cart(href='/cart/add/3690')
+                      svg.icon
+                        use(xlink:href='#shopping-cart')
+        .btn-center.mobile-show
+          a.btn-download.btn-download-2
+            span.icon
+              img(src='/static/images/download-productions.svg' alt='')
+            | Ещё
+  section.section-dark.feedback-form
+    .container
+      #question-main.question-main
+        .question-form
+          span.content-title.center.h2 Остались вопросы?
+          form#feedback-message-request-form(action='/crm/message/' method='post')
+            input(type='hidden' name='csrfmiddlewaretoken' value='OYLDLTncap3QbDBxkyMk5ihWWavuBucB87y2FfB2YBGnsZx90aPU11xGEdEX8Pz3')
+            .question-form__column
+              .form-group
+                input.form-control(type='text' name='name' autocomplete='off' required='')
+                label.label-name(for='name')
+                  span.content-name
+                    | Имя*
+              .form-group
+                input.form-control.phone(type='phone' name='phone' autocomplete='off' required='')
+                label.label-name(for='phone')
+                  span.content-name
+                    | Телефон
+              .form-group
+                input.form-control(type='mail' name='email' autocomplete='off' required='')
+                label.label-name(for='text')
+                  span.content-name
+                    | e-mail
+            .question-form__column
+              .form-group
+                textarea.form-control(name='message' autocomplete='off' required='')
+                label.label-name(for='message')
+                  span.content-name
+                    | Комментарий
+              input#id_url(type='hidden' name='url')
+              button.btn.btn--main-min(type='submit') Отправить
+          p
+            | Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь с нашей политикой конфиденциальности
+
+
+    
