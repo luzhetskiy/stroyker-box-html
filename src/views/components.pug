@@ -102,14 +102,31 @@ block content
               span Шаблон кнопки
               svg.icon
                 use(xlink:href="#shopping-cart") 
+
+        .d-flex.flex-column.align-items-start.row-gap-15
+          button.button.button_disabled.button_xl 
+            svg.icon
+              use(xlink:href="#shopping-cart")
+            span Шаблон кнопки
+          button.button.button_disabled.button_xl
+            span Шаблон кнопки
+            svg.icon
+              use(xlink:href="#shopping-cart")
+          button.button.button_disabled 
+            svg.icon
+              use(xlink:href="#shopping-cart")
+            span Шаблон кнопки
+          button.button.button_disabled
+            span Шаблон кнопки
+            svg.icon
+              use(xlink:href="#shopping-cart")
     
   section.section
     .container  
       .mb-25
-        h2.mb-20 Карточки товаров 
+        h2.mb-20 Превью товаров 
           span.text-color-accent 2.0
-        p Отличие по стилю в мобильной версии.<br> 
-          | Меняется только класс у родителя <strong>product-card-v2_type-1</strong>
+        p Меняется только класс у родителя <strong>product-card-v2_type-1</strong>
 
       .d-grid.gap-grid.row-gap-sm-20.grid-columns-2.grid-columns-md-3.grid-columns-lg-4.grid-columns-xl-5
         +product-card-v2()
@@ -123,7 +140,7 @@ block content
   section.section
     .container  
       .mb-25
-        h2.mb-20 Карточки товаров 
+        h2.mb-20 Превью товаров 
           span.text-color-accent 2.1
         p Отличие по стилю в мобильной версии.<br> 
           | Меняется только класс у родителя <strong>product-card-v2_type-2</strong>

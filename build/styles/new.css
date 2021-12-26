@@ -3637,8 +3637,9 @@ body {
 
 .card-label {
   display: block;
-  width: 50px;
-  font-size: 0.75rem;
+  min-width: 50px;
+  font-size: 12px;
+  padding: 0 5px;
   color: #fff;
   line-height: 20px;
   text-align: center;
