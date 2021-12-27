@@ -34,7 +34,15 @@
                 </ul>
               </div>
             </div>
-            <div class="top-header__content-right"><a class="header-phone phone" href="tel:+78469228548">78469228548</a><a class="btn-border callme-button mobile-hide" data-fancybox="callme-modal" data-src="#callme-modal" href="javascript:;">Заказать звонок</a></div>
+            <div class="top-header__content-right">
+              <div class="header-phones top-header__phones">
+                <!--если номера не нужно скрывать, просто убрать это кнопку-->
+                <button class="header-phones__toggle" onclick="document.querySelectorAll('.header-phones__toggle').forEach($this=&gt;{$this.remove()});" type="button">Показать 443-37-77<br>номера... 711-93-93</button>
+                <!--1 или 2 номера-->
+                <div class="header-phones__inner"><a class="header-phones__phone" href="tel:+79874433777">+7 987 443-37-77</a><a class="header-phones__phone" href="tel:+79874433777">+7 927 711-93-93</a></div>
+              </div>
+              <!--a.header-phone.phone(href='tel:+78469228548') 78469228548--><a class="btn-border callme-button mobile-hide" data-fancybox="callme-modal" data-src="#callme-modal" href="javascript:;">Заказать звонок</a>
+            </div>
             <div class="burger-menu">
               <div class="burger"></div>
             </div>
@@ -178,7 +186,14 @@
                     <use xlink:href="#shopping-cart"></use>
                   </svg></i><span class="cart-number">0</span></a>
             </div>
-            <div class="header-fixed-content"><a class="header-phone phone" href="tel:+78469228548">78469228548</a><a class="btn-border callme-button mobile-hide" data-fancybox="callme-modal-1" data-src="#callme-modal" href="javascript:;">Заказать звонок</a></div>
+            <div class="header-fixed-content">
+              <div class="header-phones">
+                <!--если номера не нужно скрывать, просто убрать это кнопку-->
+                <button class="header-phones__toggle" onclick="document.querySelectorAll('.header-phones__toggle').forEach($this=&gt;{$this.remove()});" type="button">Показать 443-37-77<br>номера... 711-93-93</button>
+                <!--1 или 2 номера-->
+                <div class="header-phones__inner"><a class="header-phones__phone" href="tel:+79874433777">+7 987 443-37-77</a><a class="header-phones__phone" href="tel:+79874433777">+7 927 711-93-93</a></div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="catalog-header-content" style="display: none;">
@@ -628,6 +643,11 @@
               </div>
             </div>
           </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container d-flex">
+          <button class="test-1">9000</button><a class="test-2" href="#">9000</a>
         </div>
       </section>
     </main>

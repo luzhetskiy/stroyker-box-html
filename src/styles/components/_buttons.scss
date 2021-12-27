@@ -1,13 +1,5 @@
 .button {
-  //reset
-  outline: none;
-  text-decoration: none;
-  box-shadow: none;
-  border: 0;
-  appearance: none;
-  color: inherit;
-  font-weight: inherit;
-  text-rendering: inherit;
+  @include reset-button;
   //style
   cursor: pointer;
   position: relative;
@@ -73,4 +65,16 @@
     }
   }
 
+}
+
+.test-1 {
+  @include reset-button;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.test-2 {
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 16px;
 }

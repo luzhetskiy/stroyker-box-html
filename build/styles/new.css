@@ -3391,7 +3391,7 @@
   color: #BDBDBD; }
 
 body {
-  text-rendering: optimizeSpeed; }
+  text-rendering: geometricPrecision; }
 
 * {
   min-height: 0px;
@@ -3399,13 +3399,17 @@ body {
 
 .button {
   outline: none;
-  text-decoration: none;
+  background-color: transparent;
   box-shadow: none;
   border: 0;
   appearance: none;
+  padding: 0;
+  border-radius: 0;
   color: inherit;
   font-weight: inherit;
+  font-family: inherit;
   text-rendering: inherit;
+  line-height: inherit;
   cursor: pointer;
   position: relative;
   white-space: nowrap;
@@ -3455,6 +3459,27 @@ body {
     .button_xl .icon {
       height: 20px;
       width: 20px; }
+
+.test-1 {
+  outline: none;
+  background-color: transparent;
+  box-shadow: none;
+  border: 0;
+  appearance: none;
+  padding: 0;
+  border-radius: 0;
+  color: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  text-rendering: inherit;
+  line-height: inherit;
+  font-size: 16px;
+  font-weight: 700; }
+
+.test-2 {
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 16px; }
 
 .frontpage .section-first-alter {
   margin-bottom: 40px; }
@@ -3616,6 +3641,83 @@ body {
 @media (min-width: 768px) {
   .product-card-container .product-slider {
     margin: 0 !important; } }
+
+.header-phones {
+  --font-size: 14px;
+  --line-height: 20px;
+  --font-weight: 700;
+  --color: var(--header-top-phone-font-color, #333);
+  --color-hover: var(--header-top-menu-font-hover-color, #2363D1); }
+  .header-phones__toggle {
+    outline: none;
+    background-color: transparent;
+    box-shadow: none;
+    border: 0;
+    appearance: none;
+    padding: 0;
+    border-radius: 0;
+    color: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    text-rendering: inherit;
+    line-height: inherit;
+    font-weight: var(--font-weight);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    color: var(--color);
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 0.15s ease-out;
+    padding-left: 20px;
+    display: block; }
+    .header-phones__toggle::before, .header-phones__toggle::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      animation: flicker 1s linear infinite; }
+    .header-phones__toggle::before {
+      width: 15px;
+      height: 15px;
+      left: 0;
+      border-radius: 50%;
+      border-width: 2px;
+      border-style: solid;
+      border-color: currentColor; }
+    .header-phones__toggle::after {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      left: 5px;
+      background-color: currentColor; }
+    .header-phones__toggle[data-touch], .header-phones__toggle[data-hover] {
+      color: var(--color-hover); }
+    .header-phones__toggle ~ .header-phones__inner {
+      display: none; }
+  .header-phones__phone {
+    font-weight: var(--font-weight);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    color: var(--color);
+    display: block;
+    text-decoration: none;
+    transition: color 0.15s ease-out; }
+    .header-phones__phone[data-touch], .header-phones__phone[data-hover] {
+      color: var(--color-hover); }
+
+@media (max-width: 1279.98px) {
+  .top-header__phones {
+    display: none; } }
+
+@keyframes flicker {
+  0% {
+    color: #fff; }
+  80% {
+    color: var(--main-elements-color, #2363D1); }
+  100% {
+    color: #fff; } }
 
 .image {
   display: block;

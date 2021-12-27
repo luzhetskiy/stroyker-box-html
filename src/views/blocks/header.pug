@@ -16,7 +16,19 @@ header(class=header_style=='landing'?'header_landing':'')
               li
                 a(title='Контакты' href='/contacts/') Контакты
         .top-header__content-right
-          a.header-phone.phone(href='tel:+78469228548') 78469228548
+
+          .header-phones.top-header__phones
+            //если номера не нужно скрывать, просто убрать это кнопку
+            button.header-phones__toggle(onclick="document.querySelectorAll('.header-phones__toggle').forEach($this=>{$this.remove()});" type="button")
+              | Показать 443-37-77
+              br
+              | номера... 711-93-93
+            //1 или 2 номера
+            .header-phones__inner
+              a(href="tel:+79874433777").header-phones__phone +7 987 443-37-77
+              a(href="tel:+79874433777").header-phones__phone +7 927 711-93-93
+
+          //a.header-phone.phone(href='tel:+78469228548') 78469228548
           a.btn-border.callme-button.mobile-hide(data-fancybox='callme-modal' data-src='#callme-modal' href='javascript:;') Заказать звонок
         .burger-menu
           .burger
@@ -137,6 +149,7 @@ header(class=header_style=='landing'?'header_landing':'')
           .mobile-btn.mobile-show
             a.btn.btn--rubber(data-fancybox='callme-modal-mobile' data-src='#callme-modal-mobile' href='javascript:;') Заказать звонок
   
+
   if header_style !== 'landing'
     .header-body
       .container
@@ -184,11 +197,22 @@ header(class=header_style=='landing'?'header_landing':'')
                 svg.icon-svg
                   use(xlink:href='#shopping-cart')
               span.cart-number 0
+
           .header-fixed-content
-            a.header-phone.phone(href='tel:+78469228548')
-              | 78469228548
-            a.btn-border.callme-button.mobile-hide(data-fancybox='callme-modal-1' data-src='#callme-modal' href='javascript:;')
-              | Заказать звонок
+            .header-phones
+              //если номера не нужно скрывать, просто убрать это кнопку
+              button.header-phones__toggle(onclick="document.querySelectorAll('.header-phones__toggle').forEach($this=>{$this.remove()});" type="button")
+                | Показать 443-37-77
+                br
+                | номера... 711-93-93
+              //1 или 2 номера
+              .header-phones__inner
+                a(href="tel:+79874433777").header-phones__phone +7 987 443-37-77
+                a(href="tel:+79874433777").header-phones__phone +7 927 711-93-93
+
+      
+      
+      
       .catalog-header-content(style='display: none;')
         ul
           li.menu-item

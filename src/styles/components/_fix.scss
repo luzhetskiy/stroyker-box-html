@@ -218,3 +218,86 @@
     }
   }
 }
+
+.header-phones {
+  --font-size: 14px;
+  --line-height: 20px;
+  --font-weight: 700;
+  --color: var(--header-top-phone-font-color, #333);
+  --color-hover: var(--header-top-menu-font-hover-color, #2363D1);
+  &__toggle {
+    @include reset-button;
+    font-weight: var(--font-weight);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    color: var(--color);
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color $trs1;
+    padding-left: 20px;
+    display: block;
+    &::before, &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      animation: flicker 1s linear infinite;
+    }
+    &::before {
+      width: 15px;
+      height: 15px;
+      left: 0;
+      border-radius: 50%;
+      border-width: 2px;
+      border-style: solid;
+      border-color: currentColor;
+    }
+    &::after {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      left: 5px;
+      background-color: currentColor;
+    }
+    &[data-touch], &[data-hover] {
+      color: var(--color-hover);
+    }
+    & ~ .header-phones__inner {
+      display: none;
+    }
+  }
+  &__phone {
+    font-weight: var(--font-weight);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    color: var(--color);
+    display: block;
+    text-decoration: none;
+    transition: color $trs1;
+    &[data-touch], &[data-hover] {
+      color: var(--color-hover);
+    }
+  }
+}
+
+.top-header {
+  @include media-breakpoint-down(xl) {
+    &__phones {
+      display: none;
+    }
+  }
+}
+
+@keyframes flicker {
+  0% {
+    color: #fff;
+  }
+  80% {
+    color: var(--main-elements-color, #2363D1);
+  }
+  100% {
+    color: #fff;
+  }
+}
