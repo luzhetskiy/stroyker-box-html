@@ -65,3 +65,44 @@ mixin product-card-v2(params = {})
               span  
                 span Много товара
                 span В корзину
+
+mixin content-placeholder()
+  .content-placeholder
+    span Просто заглушка
+
+mixin content-standard-box(params = {})
+  -var imageSrc = params.imageSrc?params.imageSrc: href+'/img/e79cec4f0a120d2e96a1701cf4ef8db3.png'
+  .content-standard-box
+    .content-standard-box__container
+      if params.image
+        if params.gallery
+          a(href=imageSrc data-fancybox).content-image.image-zoom
+            .image
+              img(src=imageSrc, alt="image")
+        else 
+          .content-image.image-zoom
+            .image
+              img(src=imageSrc, alt="image")
+      if params.text
+        .content-standard-box__text-content
+          h3 Lorem ipsum dolor
+          p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum eveniet quae ducimus voluptatibus? Fuga labore corrupti cupiditate.
+
+mixin content-background-box(params = {})
+  -var imageSrc = params.imageSrc?params.imageSrc: href+'/img/e79cec4f0a120d2e96a1701cf4ef8db3.png'
+  //если нужно, родительский .content-background-box может быть ссылкой
+  .content-background-box.image-zoom
+    .content-background-box__container
+      if params.background
+        .content-background-box__background(style="background-color:#F5F5F5;")
+
+      if params.image 
+        .content-background-box__background-image 
+          .image.image_cover
+            img(src=imageSrc, alt="image")
+
+      if params.text
+        .content-background-box__text-content
+          h3 Lorem ipsum dolor
+          p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum eveniet quae ducimus voluptatibus? Fuga labore corrupti cupiditate.
+          p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum eveniet quae ducimus voluptatibus? Fuga labore corrupti cupiditate.

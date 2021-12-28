@@ -1,5 +1,9 @@
 "use strict";
 
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -8,6 +12,13 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+var breakpoints = {
+  sm: 576,
+  md: 768,
+  lg: 1024,
+  xl: 1280,
+  xxl: 1600
+};
 $(document).ready(function () {
   homeBanner();
   header();
@@ -18,7 +29,12 @@ $(document).ready(function () {
   toggle(); //interaction
 
   new СustomInteraction({
-    targets: 'a, button, [data-custom-interaction]'
+    targets: 'a, button, [data-custom-interaction], .image-zoom'
+  }); //slider constructor
+
+  document.querySelectorAll('.slider-constructor').forEach(function ($this) {
+    console.log('constructor');
+    new SliderConstructor($this).init();
   });
 });
 
@@ -342,4 +358,79 @@ var СustomInteraction = function СustomInteraction() {
   document.addEventListener('mouseup', events);
   document.addEventListener('contextmenu', events);
 };
+
+var SliderConstructor = /*#__PURE__*/function () {
+  function SliderConstructor($element) {
+    _classCallCheck(this, SliderConstructor);
+
+    this.$element = $element;
+  }
+
+  _createClass(SliderConstructor, [{
+    key: "init",
+    value: function init() {
+      var vector = '<svg class="icon" fill="currentColor" viewBox="0 0 10.5 18.1"><path stroke="none" d="M9,0l1.4,1.4L2.8,9l7.6,7.6L9,18.1L0,9C0,9,9.1,0,9,0z"></path></svg>',
+          next_arrow = "<button type=\"button\" class=\"button button_style-1 slick-next\">".concat(vector, "</button>"),
+          prev_arrow = "<button type=\"button\" class=\"button button_style-1 slick-prev\">".concat(vector, "</button>");
+      var autoplay = this.$element.getAttribute('data-autoplay-timeout') ? true : false,
+          autoplay_timeout = this.$element.getAttribute('data-autoplay-timeout') || 5000;
+      var arrows = this.$element.getAttribute('data-no-arrows') == '' ? false : true,
+          adaptiveHeight = this.$element.getAttribute('data-adaptive-height') == '' ? true : false;
+      var slides_count = +this.$element.getAttribute('data-slides') || 1,
+          slides_sm_count = +this.$element.getAttribute('data-sm-slides') || slides_count,
+          slides_md_count = +this.$element.getAttribute('data-md-slides') || slides_sm_count,
+          slides_lg_count = +this.$element.getAttribute('data-lg-slides') || slides_md_count,
+          slides_xl_count = +this.$element.getAttribute('data-xl-slides') || slides_lg_count;
+      var rows_count = +this.$element.getAttribute('data-rows') || 1,
+          rows_sm_count = +this.$element.getAttribute('data-sm-rows') || rows_count,
+          rows_md_count = +this.$element.getAttribute('data-md-rows') || rows_sm_count,
+          rows_lg_count = +this.$element.getAttribute('data-lg-rows') || rows_md_count,
+          rows_xl_count = +this.$element.getAttribute('data-xl-rows') || rows_lg_count;
+      $(this.$element).slick({
+        autoplay: autoplay,
+        autoplaySpeed: autoplay_timeout,
+        mobileFirst: true,
+        slidesToShow: slides_count,
+        slidesToScroll: slides_count,
+        rows: rows_count,
+        nextArrow: next_arrow,
+        prevArrow: prev_arrow,
+        arrows: arrows,
+        adaptiveHeight: adaptiveHeight,
+        dots: true,
+        responsive: [{
+          breakpoint: breakpoints.sm - 1,
+          settings: {
+            slidesToShow: slides_sm_count,
+            slidesToScroll: slides_sm_count,
+            rows: rows_sm_count
+          }
+        }, {
+          breakpoint: breakpoints.md - 1,
+          settings: {
+            slidesToShow: slides_md_count,
+            slidesToScroll: slides_md_count,
+            rows: rows_md_count
+          }
+        }, {
+          breakpoint: breakpoints.lg - 1,
+          settings: {
+            slidesToShow: slides_lg_count,
+            slidesToScroll: slides_lg_count,
+            rows: rows_lg_count
+          }
+        }, {
+          breakpoint: breakpoints.xl - 1,
+          settings: {
+            slidesToShow: slides_xl_count,
+            slidesToScroll: slides_xl_count,
+            rows: rows_xl_count
+          }
+        }]
+      });
+    }
+  }]);
+
+  return SliderConstructor;
+}();
 //# sourceMappingURL=maps/new.js.map

@@ -1,20 +1,37 @@
+img {
+  display: block;
+  user-select: none;
+  &.lazyload, &.lazyloading {
+    opacity: 0;
+    visibility: hidden;
+  }
+  &.lazyloaded {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity $trs2, visibility $trs2, transform $trs1;
+  }
+}
+
 //images
 .image {
   display: block;
   position: relative;
   img {
-    width: 100%;
-    height: auto;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
   }
   &_contain, &_cover {
     img {
       position: absolute;
       top: 0;
       left: 0;
-      height: 100%;
+      height: 100% !important;
     }
   }
   &_cover {
+    background-color: #D9D9DE;
     overflow: hidden;
     img {
       object-fit: cover;
@@ -25,6 +42,23 @@
       object-fit: contain;
     }
   }
+}
+
+.image-zoom {
+  overflow: hidden;
+  .image {
+    transition: transform $trs1;
+    will-change: transform;
+  }
+  &[data-touch], &[data-hover] {
+    .image {
+      transform: scale(1.05);
+    }
+  }
+}
+
+[data-fancybox] {
+  cursor: zoom-in;
 }
 
 .card-label {
@@ -48,7 +82,6 @@
   }
 }
 
-
 .product-card-v2 {
   --pd: 10px;
   font-size: 14px;
@@ -63,7 +96,6 @@
     height: 100%;
     top: 0;
     left: 0;
-    display: none;
   }
   &__image {
     position: relative;
@@ -349,5 +381,81 @@
         }
       }
     }
+  }
+}
+
+.content-placeholder {
+  background: #b1b1b1;
+  color: #fff;
+  position: relative;
+  text-align: center;
+  font-size: 20px;
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 60%;
+  }
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+  }
+}
+
+.content-image {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.content-standard-box {
+  &__container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+}
+
+.content-background-box {
+  &__container {
+    position: relative;
+    min-height: 180px;
+    height: 100%;
+  }
+  &__background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  &__background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    .image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+  &__text-content {
+    position: relative;
+    z-index: 3;
+    padding: 25px 20px;
   }
 }

@@ -60,7 +60,7 @@ block scripts
   
 block content
 
-  section.section
+  section.conditional-section
     .container
       .mb-25
         h2 Кнопки
@@ -121,7 +121,7 @@ block content
             svg.icon
               use(xlink:href="#shopping-cart")
     
-  section.section
+  section.conditional-section
     .container  
       .mb-25
         h2.mb-20 Превью товаров 
@@ -137,7 +137,7 @@ block content
           style: '3'
         })
 
-  section.section
+  section.conditional-section
     .container  
       .mb-25
         h2.mb-20 Превью товаров 
@@ -158,7 +158,7 @@ block content
           type: '2'
         })
 
-  section.section
+  section.conditional-section
     .container  
       .mb-25
         h2.mb-20 Сетка для каталога с фильтром 
@@ -179,7 +179,7 @@ block content
             })
             +product-card-v2()
 
-  section.section
+  section.conditional-section
     .container  
       .mb-25
         h2.mb-20 Сетка для каталога с фильтром 
@@ -206,9 +206,85 @@ block content
               type: '2'
             })
 
-  section.section
-    .container.d-flex
+  section.conditional-section
+    .container
+      h2.mb-25 Текст(опционально) + Картинка на фоне(опционально) + Цвет фона(опционально)
+      .d-grid.row-gap-25.column-gap-grid.grid-columns-md-2.grid-columns-lg-3
+        +content-background-box({
+          background: true,
+          text: true
+        })
+        +content-background-box({
+          image: true,
+          text: true
+        })
+        +content-background-box({
+          image: true
+        })
 
-      button.test-1 9000
-    
-      a(href="#").test-2 9000
+  section.conditional-section
+    .container
+      h2.mb-25 Картинка(опционально) + галерея(опционально) + текст(опционально)
+      .d-grid.row-gap-25.column-gap-grid.grid-columns-md-2.grid-columns-lg-3
+        +content-standard-box({
+          image: true
+        })
+        +content-standard-box({
+          image: true,
+          gallery: true,
+          text: true
+        })
+        +content-standard-box({
+          text: true
+        })
+
+  section.conditional-section
+    .container
+      h2.mb-25 Сетка для контента 
+        span.text-color-accent 3 в ряд
+      .d-grid.row-gap-25.column-gap-grid.grid-columns-md-2.grid-columns-lg-3
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+
+  section.conditional-section
+    .container
+      h2.mb-25 Сетка для контента 
+        span.text-color-accent 2 в ряд
+      .d-grid.row-gap-25.column-gap-grid.grid-columns-md-2
+        +content-placeholder()
+        +content-placeholder()
+
+  section.conditional-section
+    .container
+      h2.mb-25 Слайдер для контента 
+         span.text-color-accent 3 в ряд
+      .slider-constructor(data-slides='1' data-md-slides='2' data-lg-slides='3' data-adaptive-height)
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+
+  section.conditional-section
+    .container
+      h2.mb-25 Слайдер для контента 
+        span.text-color-accent 4 в ряд
+      .slider-constructor(data-slides='1' data-md-slides='2' data-lg-slides='3' data-xl-slides='4' data-adaptive-height)
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder() 
+
+  section.conditional-section
+    .container
+      h2.mb-25 Слайдер для контента 
+        span.text-color-accent 6 в ряд
+      .slider-constructor(data-slides='2' data-sm-slides='3' data-md-slides='4' data-lg-slides='5' data-xl-slides='6' data-adaptive-height)  
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()

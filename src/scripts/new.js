@@ -1,3 +1,11 @@
+const breakpoints = {
+  sm: 576,
+  md: 768,
+  lg: 1024,
+  xl: 1280,
+  xxl: 1600
+};
+
 $(document).ready(function(){
   homeBanner();
   header();
@@ -9,8 +17,14 @@ $(document).ready(function(){
 
   //interaction
   new СustomInteraction({
-    targets: 'a, button, [data-custom-interaction]'
+    targets: 'a, button, [data-custom-interaction], .image-zoom'
   });
+  //slider constructor
+  document.querySelectorAll('.slider-constructor').forEach($this => {
+    console.log('constructor')
+    new SliderConstructor($this).init();
+    
+  })
 })
 
 
@@ -18,7 +32,6 @@ function homeBanner() {
   let $slider = $('.home-banner .owl-carousel'),
       arrowPrev = '<svg class="icon" viewBox="0 0 10.5 18.1"><path stroke="none" d="M9,0l1.4,1.4L2.8,9l7.6,7.6L9,18.1L0,9C0,9,9.1,0,9,0z"></path></svg>',
       arrowNext = '<svg class="icon" viewBox="0 0 10.5 18.1"><path stroke="none" d="M1.4,18.1L0,16.7l7.6-7.6L0,1.5L1.4,0l9,9.1C10.4,9.1,1.3,18.1,1.4,18.1z"></path></svg>';
-
 
   if ($slider.length) {
     $slider.owlCarousel({
@@ -315,5 +328,78 @@ class СustomInteraction {
     document.addEventListener('mousedown',   events);
     document.addEventListener('mouseup',     events);
     document.addEventListener('contextmenu', events);
+  }
+}
+
+class SliderConstructor {
+  constructor($element) {
+    this.$element = $element;
+  }
+
+  init() {
+    let vector = '<svg class="icon" fill="currentColor" viewBox="0 0 10.5 18.1"><path stroke="none" d="M9,0l1.4,1.4L2.8,9l7.6,7.6L9,18.1L0,9C0,9,9.1,0,9,0z"></path></svg>',
+        next_arrow = `<button type="button" class="button button_style-1 slick-next">${vector}</button>`,
+        prev_arrow = `<button type="button" class="button button_style-1 slick-prev">${vector}</button>`;
+
+    let autoplay = this.$element.getAttribute('data-autoplay-timeout') ? true : false,
+        autoplay_timeout = this.$element.getAttribute('data-autoplay-timeout') || 5000;
+
+    let arrows = this.$element.getAttribute('data-no-arrows')=='' ? false : true,
+        adaptiveHeight = this.$element.getAttribute('data-adaptive-height')=='' ? true : false;
+
+    let slides_count = +this.$element.getAttribute('data-slides') || 1,
+        slides_sm_count = +this.$element.getAttribute('data-sm-slides') || slides_count,
+        slides_md_count = +this.$element.getAttribute('data-md-slides') || slides_sm_count,
+        slides_lg_count = +this.$element.getAttribute('data-lg-slides') || slides_md_count,
+        slides_xl_count = +this.$element.getAttribute('data-xl-slides') || slides_lg_count;
+
+    let rows_count = +this.$element.getAttribute('data-rows') || 1,
+        rows_sm_count = +this.$element.getAttribute('data-sm-rows') || rows_count,
+        rows_md_count = +this.$element.getAttribute('data-md-rows') || rows_sm_count,
+        rows_lg_count = +this.$element.getAttribute('data-lg-rows') || rows_md_count,
+        rows_xl_count = +this.$element.getAttribute('data-xl-rows') || rows_lg_count;
+
+    $(this.$element).slick({
+      autoplay: autoplay,
+      autoplaySpeed: autoplay_timeout,
+      mobileFirst: true,
+      slidesToShow: slides_count,
+      slidesToScroll: slides_count,
+      rows: rows_count,
+      nextArrow: next_arrow,
+      prevArrow: prev_arrow,
+      arrows: arrows,
+      adaptiveHeight: adaptiveHeight,
+      dots: true,
+      responsive: [{
+        breakpoint: breakpoints.sm - 1,
+        settings: {
+          slidesToShow: slides_sm_count,
+          slidesToScroll: slides_sm_count,
+          rows: rows_sm_count
+        }
+      }, {
+        breakpoint: breakpoints.md - 1,
+        settings: {
+          slidesToShow: slides_md_count,
+          slidesToScroll: slides_md_count,
+          rows: rows_md_count
+        }
+      }, {
+        breakpoint: breakpoints.lg - 1,
+        settings: {
+          slidesToShow: slides_lg_count,
+          slidesToScroll: slides_lg_count,
+          rows: rows_lg_count
+        }
+      }, {
+        breakpoint: breakpoints.xl - 1,
+        settings: {
+          slidesToShow: slides_xl_count,
+          slidesToScroll: slides_xl_count,
+          rows: rows_xl_count
+        }
+      }]
+    })
   }
 }
