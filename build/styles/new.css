@@ -3847,6 +3847,11 @@ body {
   100% {
     color: #fff; } }
 
+.catalog-side__content ul li {
+  position: relative; }
+  .catalog-side__content ul li .submenu {
+    padding: 0; }
+
 img {
   display: block;
   user-select: none; }

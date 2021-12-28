@@ -301,3 +301,10 @@
     color: #fff;
   }
 }
+
+.catalog-side__content ul li {
+  position: relative;
+  .submenu {
+    padding: 0;
+  }
+}
