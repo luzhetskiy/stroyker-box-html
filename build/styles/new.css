@@ -3835,6 +3835,9 @@ body {
     .header-phones__phone[data-touch], .header-phones__phone[data-hover] {
       color: var(--color-hover); }
 
+.header-fixed-content {
+  gap: 15px; }
+
 @media (max-width: 1279.98px) {
   .top-header__phones {
     display: none; } }

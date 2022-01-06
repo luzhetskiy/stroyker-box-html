@@ -282,6 +282,10 @@
   }
 }
 
+.header-fixed-content {
+  gap: 15px;
+}
+
 .top-header {
   @include media-breakpoint-down(xl) {
     &__phones {
