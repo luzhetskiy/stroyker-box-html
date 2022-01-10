@@ -312,3 +312,18 @@
     padding: 0;
   }
 }
+
+.welcome {
+  &__content {
+    .catalog-menu + .conditional-section {
+      margin-top: 40px;
+    }
+  }
+  &__side {
+    @include media-breakpoint-down(xl) {
+      .new-banners {
+        display: none;
+      }
+    }
+  }
+}

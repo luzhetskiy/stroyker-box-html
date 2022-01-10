@@ -318,17 +318,50 @@ block content
                 span.catalog-menu-item__name Евровагонка из осины
             
             //new
-            .advertising.advertising_horizontal
-              .advertising__container
-                a(href="#").advertising__block
-                  img(src="/media/bnrs/images/%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80_%D0%B1%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%B91_2.jpg", alt="image")
-                a(href="#").advertising__block
-                  img(src="/media/bnrs/images/%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80_%D0%B1%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%B91_1.jpg", alt="image")
-                a(href="#").advertising__block
-                  img(src="/media/bnrs/images/%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80_%D0%B1%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%B91_2.jpg", alt="image")
-                a(href="#").advertising__block
-                  img(src="/media/bnrs/images/%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80_%D0%B1%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%B91_1.jpg", alt="image") 
-            
+            section.conditional-section
+              .slider-constructor(data-slides='2' data-md-slides='3' data-xl-slides='4' data-no-arrows)
+                a(href='#').content-image.image-zoom
+                  .image
+                    img(src="/media/bnrs/images/%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80_%D0%B1%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%B91_2.jpg", alt="image")
+                a(href='#').content-image.image-zoom
+                  .image
+                    img(src="/media/bnrs/images/%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80_%D0%B1%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%B91_2.jpg", alt="image")
+                a(href='#').content-image.image-zoom
+                  .image
+                    img(src="/media/bnrs/images/%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80_%D0%B1%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%B91_2.jpg", alt="image")
+                a(href='#').content-image.image-zoom
+                  .image
+                    img(src="/media/bnrs/images/%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80_%D0%B1%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D0%B91_2.jpg", alt="image")
+
+
+            //new
+            section.conditional-section
+              h2.mb-25 Превью 
+                span.text-color-accent 2.1
+              .slider-constructor(data-slides='1' data-rows='2' data-sm-slides='2' data-sm-rows='1' data-md-slides='3' data-xl-slides='4')
+                +product-card-v2({
+                  type: '2'
+                })
+                +product-card-v2({
+                  style: '2',
+                  type: '2'
+                })
+                +product-card-v2({
+                  style: '3',
+                  type: '2'
+                })
+                +product-card-v2({
+                  type: '2'
+                })
+                +product-card-v2({
+                  style: '2',
+                  type: '2'
+                })
+                +product-card-v2({
+                  style: '3',
+                  type: '2'
+                })
+
             .top-products-block
               h2 ТОП-товары Вагонка и Евровагонка
               .catalog-container

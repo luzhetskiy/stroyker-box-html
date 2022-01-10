@@ -107,7 +107,9 @@
     & > div:not([class]) {
       display: flex;
       & > * {
-        display: block !important;
+        &:not(.product-card-v2) {
+          display: block !important;
+        }
       }
     }
   }
@@ -151,11 +153,14 @@
     }
   }
   @include media-breakpoint-down(sm) {
+    margin: 0 calc(var(--container-padding-x) * -1);
+    padding: 0 var(--container-padding-x);
+    overflow: hidden;
     .slick-list {
       overflow: visible !important;
     }
     .slick-slide {
-      row-gap: 15px;
+      row-gap: var(--grid-gutter-width);
     }
     .slick-prev, .slick-next {
       display: none !important;
