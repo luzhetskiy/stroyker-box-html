@@ -4061,8 +4061,7 @@ img {
         width: calc(100% + var(--grid-gutter-width));
         height: calc(100% + var(--grid-gutter-width));
         top: calc(var(--grid-gutter-width) / -2);
-        left: calc(var(--grid-gutter-width) / -2);
-        display: none; }
+        left: calc(var(--grid-gutter-width) / -2); }
       .product-card-v2::before {
         content: '';
         display: block;

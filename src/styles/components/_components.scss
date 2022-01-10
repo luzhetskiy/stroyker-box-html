@@ -269,7 +269,6 @@ img {
       height: calc(100% + var(--grid-gutter-width));
       top: calc(var(--grid-gutter-width) / -2);
       left: calc(var(--grid-gutter-width) / -2);
-      display: none;
     }
     &::before {
       content: '';
