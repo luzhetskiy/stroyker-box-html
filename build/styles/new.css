@@ -4049,22 +4049,19 @@ img {
     width: 100%;
     height: 100%;
     top: 0;
-    left: 0;
-    display: none; }
+    left: 0; }
   .product-card-v2__image {
     position: relative;
     z-index: 1;
     height: 170px;
     flex: 0 0 auto; }
     .product-card-v2__image .image {
-      height: 100%;
-      z-index: 1; }
+      height: 100%; }
       .product-card-v2__image .image img {
+        padding: var(--pd);
         transition: opacity 0.15s ease-out, visibility 0.15s ease-out, transform 0.15s ease-out;
-        will-change: transform;
-        padding: var(--pd); }
+        will-change: transform; }
         .product-card-v2__image .image img:not(:first-child) {
-          z-index: 2;
           opacity: 0;
           visibility: hidden; }
       .product-card-v2__image .image_no-image {

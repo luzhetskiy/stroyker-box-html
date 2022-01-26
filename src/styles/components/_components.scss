@@ -99,7 +99,6 @@ img {
     height: 100%;
     top: 0;
     left: 0;
-    display: none;
   }
   &__image {
     position: relative;
@@ -108,13 +107,11 @@ img {
     flex: 0 0 auto;
     .image {
       height: 100%;
-      z-index: 1;
       img {
+        padding: var(--pd);
         transition: opacity $trs1, visibility $trs1, transform $trs1;
         will-change: transform;
-        padding: var(--pd);
         &:not(:first-child) {
-          z-index: 2;
           opacity: 0;
           visibility: hidden;
         }
