@@ -490,22 +490,7 @@ header {
   }
 }
 
-.product-item__link {
-  &:hover {
-    .product-item__image img {
-      transform: scale(1.1);
-    }
-  }
-}
-.product-item__image  {
-  background: transparent;
-  overflow: hidden;
-  img {
-    padding: 10px;
-    object-fit: contain;
-    transition: transform .25s ease-in-out;
-  }
-}
+
 
 .catalog-filter-accordion .opener {
   padding-right: 44px;

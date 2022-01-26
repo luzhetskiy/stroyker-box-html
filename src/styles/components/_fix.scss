@@ -134,6 +134,40 @@
 }
 
 .product-item {
+  &__link {
+    &:hover {
+      .product-item__image img {
+        transform: scale(1.05);
+        &:not(:last-child) {
+          opacity: 0;
+          visibility: hidden;
+        }
+        &:not(:first-child) {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+  &__image  {
+    background: transparent;
+    overflow: hidden;
+    img {
+      position: relative;
+      padding: 10px;
+      object-fit: contain;
+      transition: opacity $trs1, visibility $trs1, transform $trs1;
+      will-change: transform;
+      &:not(:first-child) {
+        z-index: 2;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
   &__content-top {
     padding: 10px 12px 0px 12px;
   }
@@ -155,7 +189,6 @@
   }
   &__cost-product {
     line-height: 18px;
-
   }
   @media (max-width: 767px) {
     height: 155px;

@@ -99,6 +99,7 @@ img {
     height: 100%;
     top: 0;
     left: 0;
+    display: none;
   }
   &__image {
     position: relative;
@@ -107,8 +108,16 @@ img {
     flex: 0 0 auto;
     .image {
       height: 100%;
+      z-index: 1;
       img {
+        transition: opacity $trs1, visibility $trs1, transform $trs1;
+        will-change: transform;
         padding: var(--pd);
+        &:not(:first-child) {
+          z-index: 2;
+          opacity: 0;
+          visibility: hidden;
+        }
       }
       &_no-image {
         background-color: #F5F5F5;
@@ -242,27 +251,29 @@ img {
       left: 0;
     }
   }
+  &[data-touch], &[data-hover] {
+    .product-card-v2__image {
+      .image {
+        img {
+          transform: scale(1.05);
+          &:not(:last-child) {
+            opacity: 0;
+            visibility: hidden;
+          }
+          &:not(:first-child) {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
   @include media-breakpoint-up(sm) {
     border: 1px solid var(--color-card-border, transparent);
     border-radius: 2px;
     transition: border-color $trs1;
-    &__image {
-      .image {
-        img {
-          transition: transform $trs1;
-          will-change: transform;
-        }
-      }
-    }
     &[data-touch], &[data-hover] {
       border-color: var(--color-card-hover-border, transparent);
-      .product-card-v2__image {
-        .image {
-          img {
-            transform: scale(1.05);
-          }
-        }
-      }
     }
   }
   @include media-breakpoint-down(sm) {
