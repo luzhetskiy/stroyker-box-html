@@ -13,11 +13,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var breakpoints = {
+  xs: 0,
   sm: 576,
   md: 768,
   lg: 1024,
-  xl: 1280,
-  xxl: 1600
+  xl: 1280
 };
 $(document).ready(function () {
   homeBanner();
@@ -33,10 +33,34 @@ $(document).ready(function () {
   }); //slider constructor
 
   document.querySelectorAll('.slider-constructor').forEach(function ($this) {
-    console.log('constructor');
     new SliderConstructor($this).init();
   });
 });
+
+function throttle(func, interval, context) {
+  var isCooldown = false;
+  return function () {
+    if (isCooldown) return;
+    func.apply(context || this, arguments);
+    isCooldown = true;
+    setTimeout(function () {
+      return isCooldown = false;
+    }, interval);
+  };
+}
+
+function debounce(func, interval, context) {
+  var timeout = false;
+  return function () {
+    var _arguments = arguments,
+        _this = this;
+
+    if (timeout) clearTimeout(timeout);
+    timeout = setTimeout(function () {
+      func.apply(context || _this, _arguments);
+    }, interval);
+  };
+}
 
 function homeBanner() {
   var $slider = $('.home-banner .owl-carousel'),
@@ -258,7 +282,7 @@ function chatBlock() {
 }
 
 var СustomInteraction = function СustomInteraction() {
-  var _this = this;
+  var _this2 = this;
 
   var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
@@ -269,7 +293,7 @@ var СustomInteraction = function СustomInteraction() {
 
   var events = function events(event) {
     var $targets = [];
-    $targets[0] = event.target !== document ? event.target.closest(_this.targets) : null;
+    $targets[0] = event.target !== document ? event.target.closest(_this2.targets) : null;
     var $element = $targets[0],
         i = 0;
 
@@ -288,8 +312,8 @@ var СustomInteraction = function СustomInteraction() {
 
 
     if (event.type == 'touchstart') {
-      _this.touched = true;
-      if (_this.timeout) clearTimeout(_this.timeout);
+      _this2.touched = true;
+      if (_this2.timeout) clearTimeout(_this2.timeout);
 
       if ($targets[0]) {
         var _iterator = _createForOfIteratorHelper($targets),
@@ -307,10 +331,10 @@ var СustomInteraction = function СustomInteraction() {
         }
       }
     } //touchend
-    else if (event.type == 'touchend' || event.type == 'contextmenu' && _this.touched) {
-        _this.timeout = setTimeout(function () {
-          _this.touched = false;
-        }, _this.touchendDelay);
+    else if (event.type == 'touchend' || event.type == 'contextmenu' && _this2.touched) {
+        _this2.timeout = setTimeout(function () {
+          _this2.touched = false;
+        }, _this2.touchendDelay);
 
         if ($targets[0]) {
           setTimeout(function () {
@@ -328,24 +352,24 @@ var СustomInteraction = function СustomInteraction() {
             } finally {
               _iterator2.f();
             }
-          }, _this.touchendDelay);
+          }, _this2.touchendDelay);
         }
       } //mouseenter
 
 
-    if (event.type == 'mouseenter' && !_this.touched && $targets[0] && $targets[0] == event.target) {
+    if (event.type == 'mouseenter' && !_this2.touched && $targets[0] && $targets[0] == event.target) {
       $targets[0].setAttribute('data-hover', '');
     } //mouseleave
-    else if (event.type == 'mouseleave' && !_this.touched && $targets[0] && $targets[0] == event.target) {
+    else if (event.type == 'mouseleave' && !_this2.touched && $targets[0] && $targets[0] == event.target) {
         $targets[0].removeAttribute('data-click');
         $targets[0].removeAttribute('data-hover');
       } //mousedown
 
 
-    if (event.type == 'mousedown' && !_this.touched && $targets[0]) {
+    if (event.type == 'mousedown' && !_this2.touched && $targets[0]) {
       $targets[0].setAttribute('data-click', '');
     } //mouseup
-    else if (event.type == 'mouseup' && !_this.touched && $targets[0]) {
+    else if (event.type == 'mouseup' && !_this2.touched && $targets[0]) {
         $targets[0].removeAttribute('data-click');
       }
   };
@@ -360,74 +384,127 @@ var СustomInteraction = function СustomInteraction() {
 };
 
 var SliderConstructor = /*#__PURE__*/function () {
-  function SliderConstructor($element) {
+  function SliderConstructor(element) {
     _classCallCheck(this, SliderConstructor);
 
-    this.$element = $element;
+    this.element = element;
   }
 
   _createClass(SliderConstructor, [{
     key: "init",
     value: function init() {
-      var vector = '<svg class="icon" fill="currentColor" viewBox="0 0 10.5 18.1"><path stroke="none" d="M9,0l1.4,1.4L2.8,9l7.6,7.6L9,18.1L0,9C0,9,9.1,0,9,0z"></path></svg>',
-          next_arrow = "<button type=\"button\" class=\"button button_style-1 slick-next\">".concat(vector, "</button>"),
-          prev_arrow = "<button type=\"button\" class=\"button button_style-1 slick-prev\">".concat(vector, "</button>");
-      var autoplay = this.$element.getAttribute('data-autoplay-timeout') ? true : false,
-          autoplay_timeout = this.$element.getAttribute('data-autoplay-timeout') || 5000;
-      var arrows = this.$element.getAttribute('data-no-arrows') == '' ? false : true,
-          adaptiveHeight = this.$element.getAttribute('data-adaptive-height') == '' ? true : false;
-      var slides_count = +this.$element.getAttribute('data-slides') || 1,
-          slides_sm_count = +this.$element.getAttribute('data-sm-slides') || slides_count,
-          slides_md_count = +this.$element.getAttribute('data-md-slides') || slides_sm_count,
-          slides_lg_count = +this.$element.getAttribute('data-lg-slides') || slides_md_count,
-          slides_xl_count = +this.$element.getAttribute('data-xl-slides') || slides_lg_count;
-      var rows_count = +this.$element.getAttribute('data-rows') || 1,
-          rows_sm_count = +this.$element.getAttribute('data-sm-rows') || rows_count,
-          rows_md_count = +this.$element.getAttribute('data-md-rows') || rows_sm_count,
-          rows_lg_count = +this.$element.getAttribute('data-lg-rows') || rows_md_count,
-          rows_xl_count = +this.$element.getAttribute('data-xl-rows') || rows_lg_count;
-      $(this.$element).slick({
-        autoplay: autoplay,
-        autoplaySpeed: autoplay_timeout,
+      var _this3 = this;
+
+      this.htmlElements = {};
+      this.htmlElements.vector = '<svg class="icon" fill="currentColor" viewBox="0 0 10.5 18.1"><path stroke="none" d="M9,0l1.4,1.4L2.8,9l7.6,7.6L9,18.1L0,9C0,9,9.1,0,9,0z"></path></svg>';
+      this.htmlElements.nextArrow = "<button type=\"button\" class=\"button button_style-1 slick-next\">".concat(this.htmlElements.vector, "</button>");
+      this.htmlElements.prevArrow = "<button type=\"button\" class=\"button button_style-1 slick-prev\">".concat(this.htmlElements.vector, "</button>");
+      this.params = {};
+      this.params.autoplay = this.element.getAttribute('data-autoplay-timeout') !== null;
+      this.params.autoplayTimeout = this.element.getAttribute('data-autoplay-timeout') || 5000;
+      this.params.arrows = this.element.getAttribute('data-no-arrows') === null ? true : false;
+      this.params.adaptiveHeight = this.element.getAttribute('data-adaptive-height') !== null;
+      this.params.count = {};
+      this.params.count.xs = +this.element.getAttribute('data-slides') || 1;
+      this.params.count.sm = +this.element.getAttribute('data-sm-slides') || this.params.count.xs;
+      this.params.count.md = +this.element.getAttribute('data-md-slides') || this.params.count.sm;
+      this.params.count.lg = +this.element.getAttribute('data-lg-slides') || this.params.count.md;
+      this.params.count.xl = +this.element.getAttribute('data-xl-slides') || this.params.count.lg;
+      this.params.rows = {};
+      this.params.rows.xs = +this.element.getAttribute('data-rows') || 1, this.params.rows.sm = +this.element.getAttribute('data-sm-rows') || this.params.rows.xs, this.params.rows.md = +this.element.getAttribute('data-md-rows') || this.params.rows.sm, this.params.rows.lg = +this.element.getAttribute('data-lg-rows') || this.params.rows.md, this.params.rows.xl = +this.element.getAttribute('data-xl-rows') || this.params.rows.lg;
+      this.params.state = {};
+      this.params.state.xs = this.checkActiveParam() !== false;
+      this.params.state.sm = this.checkActiveParam('sm') !== null ? this.checkActiveParam('sm') : this.params.state.xs;
+      this.params.state.md = this.checkActiveParam('md') !== null ? this.checkActiveParam('md') : this.params.state.sm;
+      this.params.state.lg = this.checkActiveParam('lg') !== null ? this.checkActiveParam('lg') : this.params.state.md;
+      this.params.state.xl = this.checkActiveParam('xl') !== null ? this.checkActiveParam('xl') : this.params.state.lg;
+      this.checkState();
+      this.checkStateDebounced = debounce(this.checkState, 500, this);
+      window.addEventListener('resize', function () {
+        _this3.checkStateDebounced();
+      });
+    }
+  }, {
+    key: "checkState",
+    value: function checkState() {
+      var state;
+
+      for (var breakpoint in breakpoints) {
+        if (window.innerWidth >= breakpoints[breakpoint]) {
+          state = this.params.state[breakpoint];
+        }
+      }
+
+      if (state) {
+        this.element.classList.remove('visible');
+        if (!this.state) this.createSlider();
+      } else {
+        this.element.classList.add('visible');
+        if (this.state) this.destroySlider();
+      }
+    }
+  }, {
+    key: "checkActiveParam",
+    value: function checkActiveParam(breakpointParam) {
+      var breakpoint = breakpointParam ? '-' + breakpointParam + '-' : '-';
+      var attr = this.element.getAttribute("data".concat(breakpoint, "mounted"));
+      if (attr === null) return null;
+      if (attr === 'true') return true;
+      return false;
+    }
+  }, {
+    key: "createSlider",
+    value: function createSlider() {
+      console.log(this.params.arrows);
+      $(this.element).slick({
+        autoplay: this.params.autoplay,
+        autoplaySpeed: this.params.autoplayTimeout,
         mobileFirst: true,
-        slidesToShow: slides_count,
-        slidesToScroll: slides_count,
-        rows: rows_count,
-        nextArrow: next_arrow,
-        prevArrow: prev_arrow,
-        arrows: arrows,
-        adaptiveHeight: adaptiveHeight,
+        slidesToShow: this.params.count.xs,
+        slidesToScroll: this.params.count.xs,
+        rows: this.params.rows.xs,
+        nextArrow: this.htmlElements.nextArrow,
+        prevArrow: this.htmlElements.prevArrow,
+        arrows: this.params.arrows,
+        adaptiveHeight: this.params.adaptiveHeight,
         dots: true,
         responsive: [{
           breakpoint: breakpoints.sm - 1,
           settings: {
-            slidesToShow: slides_sm_count,
-            slidesToScroll: slides_sm_count,
-            rows: rows_sm_count
+            slidesToShow: this.params.count.sm,
+            slidesToScroll: this.params.count.sm,
+            rows: this.params.rows.sm
           }
         }, {
           breakpoint: breakpoints.md - 1,
           settings: {
-            slidesToShow: slides_md_count,
-            slidesToScroll: slides_md_count,
-            rows: rows_md_count
+            slidesToShow: this.params.count.md,
+            slidesToScroll: this.params.count.md,
+            rows: this.params.rows.md
           }
         }, {
           breakpoint: breakpoints.lg - 1,
           settings: {
-            slidesToShow: slides_lg_count,
-            slidesToScroll: slides_lg_count,
-            rows: rows_lg_count
+            slidesToShow: this.params.count.lg,
+            slidesToScroll: this.params.count.lg,
+            rows: this.params.rows.lg
           }
         }, {
           breakpoint: breakpoints.xl - 1,
           settings: {
-            slidesToShow: slides_xl_count,
-            slidesToScroll: slides_xl_count,
-            rows: rows_xl_count
+            slidesToShow: this.params.count.xl,
+            slidesToScroll: this.params.count.xl,
+            rows: this.params.rows.xl
           }
         }]
       });
+      this.state = true;
+    }
+  }, {
+    key: "destroySlider",
+    value: function destroySlider() {
+      $(this.element).slick('unslick');
+      this.state = false;
     }
   }]);
 

@@ -1,3 +1,37 @@
+mixin product-card-1()
+  .product-item
+    a.product-item__link(href='/catalog/product/evrovagonka-khvoy-125-kh-97-10-17-m-sort-ab/')
+      span.product-item__image
+        img(src='/media/vagonkabrus_cache/8a/e0/8ae071a4d5f840cc98da8a382353226d.jpg' alt='Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ')
+        span.product-item__flag-content
+          span.product-item__flag.product-item__flag--hit хит
+      span.product-item__content-top
+        span.product-item__head
+          span.product-item__art с00004
+          span.product-item__rating
+            span.star.star--empty
+            span.star.star--empty
+            span.star.star--empty
+            span.star.star--empty
+            span.star.star--empty
+        span.product-item__name Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ
+        .product-item__status.product-item__status--many
+          | Кол-во: много
+        span.product-item__cost
+          span.product-item__cost-product
+            | 19,00
+            span  ₽/п.м.
+    .product-item__content-bottom
+      .product-item__btns
+        .shopping-cart-product
+          .input-number
+            .order-down
+            input#number(type='number' min='0' step='1' value='1' required='')
+            .order-up
+          a.shopping-cart-btn.add-to-cart(href='/cart/add/3557')
+            svg.icon
+              use(xlink:href='#shopping-cart')
+
 mixin product-card-v2(params = {})
   .product-card-v2(class=`${params.type=='2'?'product-card-v2_type-2':'product-card-v2_type-1'}` data-custom-interaction) 
     a(href="#").product-card-v2__link

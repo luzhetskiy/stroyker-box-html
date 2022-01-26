@@ -35,6 +35,19 @@ $utilities: map-merge(
         6: repeat(6, 1fr)
       )
     ),
+    "grid-span": (
+      property: grid-column,
+      class: grid-span,
+      responsive: true,
+      values: (
+        1: span 1,
+        2: span 2,
+        3: span 3,
+        4: span 4,
+        5: span 5,
+        6: span 6
+      )
+    ),
     "width": map-merge(
       map-get($utilities, "width"),
       ( responsive: true )
@@ -65,6 +78,7 @@ $utilities: map-get-multiple($utilities, (
   "width", 
   "column-gap", 
   "row-gap", 
-  "grid-columns"));
+  "grid-columns",
+  "grid-span"));
 
 @import "../../../node_modules/bootstrap/scss/utilities/api";

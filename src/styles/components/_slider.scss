@@ -83,10 +83,12 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity $trs1, visibility $trs1;
-  &.slick-initialized {
-    display: block;
+  &.visible, &.slick-initialized {
     opacity: 1;
     visibility: visible;
+  }
+  &.slick-initialized {
+    display: block;
   }
   .slick-list {
     margin: 0 calc(var(--grid-gutter-width) / -2);
@@ -150,6 +152,9 @@
     }
     .slick-prev, .slick-next {
       display: flex !important;
+    }
+    &:not([data-sm-mounted="false"]) {
+
     }
   }
   @include media-breakpoint-down(sm) {
