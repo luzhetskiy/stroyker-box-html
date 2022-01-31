@@ -3802,7 +3802,9 @@ body {
   background: transparent;
   overflow: hidden; }
   .product-item__image-inner {
-    position: relative; }
+    position: relative;
+    height: 100%;
+    width: 100%; }
   .product-item__image img {
     position: relative;
     padding: 10px;
