@@ -2,8 +2,9 @@ mixin product-card-1()
   .product-item
     a.product-item__link(href='/catalog/product/evrovagonka-khvoy-125-kh-97-10-17-m-sort-ab/')
       span.product-item__image
-        img(src='/media/vagonkabrus_cache/8a/e0/8ae071a4d5f840cc98da8a382353226d.jpg' alt='Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ')
-        img(src=`${href}/img/test.jpg`, alt="image")
+        .product-item__image-inner
+          img(src='/media/vagonkabrus_cache/8a/e0/8ae071a4d5f840cc98da8a382353226d.jpg' alt='Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ')
+          //img(src=`${href}/img/test.jpg`, alt="image")
         span.product-item__flag-content
           span.product-item__flag.product-item__flag--hit хит
       span.product-item__content-top

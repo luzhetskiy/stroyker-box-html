@@ -3801,6 +3801,8 @@ body {
 .product-item__image {
   background: transparent;
   overflow: hidden; }
+  .product-item__image-inner {
+    position: relative; }
   .product-item__image img {
     position: relative;
     padding: 10px;

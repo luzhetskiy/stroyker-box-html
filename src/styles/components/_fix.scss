@@ -152,6 +152,9 @@
   &__image  {
     background: transparent;
     overflow: hidden;
+    &-inner {
+      position: relative;
+    }
     img {
       position: relative;
       padding: 10px;
