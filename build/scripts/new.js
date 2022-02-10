@@ -395,13 +395,14 @@ var SliderConstructor = /*#__PURE__*/function () {
     value: function init() {
       var _this3 = this;
 
+      this.sliderWidth = window.innerWidth;
       this.htmlElements = {};
       this.htmlElements.vector = '<svg class="icon" fill="currentColor" viewBox="0 0 10.5 18.1"><path stroke="none" d="M9,0l1.4,1.4L2.8,9l7.6,7.6L9,18.1L0,9C0,9,9.1,0,9,0z"></path></svg>';
       this.htmlElements.nextArrow = "<button type=\"button\" class=\"button button_style-1 slick-next\">".concat(this.htmlElements.vector, "</button>");
       this.htmlElements.prevArrow = "<button type=\"button\" class=\"button button_style-1 slick-prev\">".concat(this.htmlElements.vector, "</button>");
       this.params = {};
       this.params.autoplay = this.element.getAttribute('data-autoplay-timeout') !== null;
-      this.params.autoplayTimeout = this.element.getAttribute('data-autoplay-timeout') || 5000;
+      this.params.autoplayTimeout = +this.element.getAttribute('data-autoplay-timeout') || 5000;
       this.params.arrows = this.element.getAttribute('data-no-arrows') === null ? true : false;
       this.params.adaptiveHeight = this.element.getAttribute('data-adaptive-height') !== null;
       this.params.count = {};
@@ -413,20 +414,45 @@ var SliderConstructor = /*#__PURE__*/function () {
       this.params.rows = {};
       this.params.rows.xs = +this.element.getAttribute('data-rows') || 1, this.params.rows.sm = +this.element.getAttribute('data-sm-rows') || this.params.rows.xs, this.params.rows.md = +this.element.getAttribute('data-md-rows') || this.params.rows.sm, this.params.rows.lg = +this.element.getAttribute('data-lg-rows') || this.params.rows.md, this.params.rows.xl = +this.element.getAttribute('data-xl-rows') || this.params.rows.lg;
       this.params.state = {};
-      this.params.state.xs = this.checkActiveParam() !== false;
-      this.params.state.sm = this.checkActiveParam('sm') !== null ? this.checkActiveParam('sm') : this.params.state.xs;
-      this.params.state.md = this.checkActiveParam('md') !== null ? this.checkActiveParam('md') : this.params.state.sm;
-      this.params.state.lg = this.checkActiveParam('lg') !== null ? this.checkActiveParam('lg') : this.params.state.md;
-      this.params.state.xl = this.checkActiveParam('xl') !== null ? this.checkActiveParam('xl') : this.params.state.lg;
-      this.checkState();
-      this.checkStateDebounced = debounce(this.checkState, 500, this);
-      window.addEventListener('resize', function () {
-        _this3.checkStateDebounced();
+      Object.keys(breakpoints).forEach(function (key, index) {
+        var breakpoint = index !== 0 ? '-' + key + '-' : '-';
+
+        var attr = _this3.element.getAttribute("data".concat(breakpoint, "mounted"));
+
+        if (attr === null && index !== 0) {
+          var prevKey = Object.keys(breakpoints)[index - 1];
+          _this3.params.state[key] = _this3.params.state[prevKey];
+        } else if (attr === 'true' || index === 0 && attr !== 'false') {
+          _this3.params.state[key] = true;
+        } else {
+          _this3.params.state[key] = false;
+        }
       });
+      this.slides = [];
+      this.containsMobileHiddenSlides = false;
+      this.element.childNodes.forEach(function (slide) {
+        if (!slide.tagName) return;
+
+        if (slide.getAttribute('data-slide-mobile-hidden') !== null) {
+          _this3.containsMobileHiddenSlides = true;
+        }
+
+        _this3.slides.push(slide);
+      });
+      this.checkSliderState();
+      this.checkSliderStateDebounced = debounce(this.checkSliderState, 500, this);
+      window.addEventListener('resize', this.checkSliderStateDebounced);
     }
   }, {
-    key: "checkState",
-    value: function checkState() {
+    key: "checkSliderState",
+    value: function checkSliderState() {
+      if (this.mounted && this.sliderWidth === window.innerWidth) return;
+      this.sliderWidth = window.innerWidth;
+
+      if (this.mounted) {
+        this.unmount();
+      }
+
       var state;
 
       for (var breakpoint in breakpoints) {
@@ -437,25 +463,36 @@ var SliderConstructor = /*#__PURE__*/function () {
 
       if (state) {
         this.element.classList.remove('visible');
-        if (!this.state) this.createSlider();
+
+        if (this.containsMobileHiddenSlides) {
+          this.checkSlidesVisibility();
+        }
+
+        this.mount();
       } else {
         this.element.classList.add('visible');
-        if (this.state) this.destroySlider();
       }
     }
   }, {
-    key: "checkActiveParam",
-    value: function checkActiveParam(breakpointParam) {
-      var breakpoint = breakpointParam ? '-' + breakpointParam + '-' : '-';
-      var attr = this.element.getAttribute("data".concat(breakpoint, "mounted"));
-      if (attr === null) return null;
-      if (attr === 'true') return true;
-      return false;
+    key: "checkSlidesVisibility",
+    value: function checkSlidesVisibility() {
+      var _this4 = this;
+
+      this.slides.forEach(function (slide) {
+        slide.remove();
+      });
+      this.slides.forEach(function (slide) {
+        var shouldBeHidden = slide.getAttribute('data-slide-mobile-hidden') !== null;
+        var breakpoint = window.innerWidth < breakpoints.sm;
+
+        if (!(shouldBeHidden && breakpoint)) {
+          _this4.element.insertAdjacentElement('beforeend', slide);
+        }
+      });
     }
   }, {
-    key: "createSlider",
-    value: function createSlider() {
-      console.log(this.params.arrows);
+    key: "mount",
+    value: function mount() {
       $(this.element).slick({
         autoplay: this.params.autoplay,
         autoplaySpeed: this.params.autoplayTimeout,
@@ -468,6 +505,7 @@ var SliderConstructor = /*#__PURE__*/function () {
         arrows: this.params.arrows,
         adaptiveHeight: this.params.adaptiveHeight,
         dots: true,
+        accessibility: false,
         responsive: [{
           breakpoint: breakpoints.sm - 1,
           settings: {
@@ -498,13 +536,13 @@ var SliderConstructor = /*#__PURE__*/function () {
           }
         }]
       });
-      this.state = true;
+      this.mounted = true;
     }
   }, {
-    key: "destroySlider",
-    value: function destroySlider() {
+    key: "unmount",
+    value: function unmount() {
       $(this.element).slick('unslick');
-      this.state = false;
+      this.mounted = false;
     }
   }]);
 

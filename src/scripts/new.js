@@ -354,6 +354,8 @@ class SliderConstructor {
   }
 
   init() {
+    this.sliderWidth = window.innerWidth;
+
     this.htmlElements = {};
     this.htmlElements.vector = '<svg class="icon" fill="currentColor" viewBox="0 0 10.5 18.1"><path stroke="none" d="M9,0l1.4,1.4L2.8,9l7.6,7.6L9,18.1L0,9C0,9,9.1,0,9,0z"></path></svg>';
     this.htmlElements.nextArrow = `<button type="button" class="button button_style-1 slick-next">${this.htmlElements.vector}</button>`;
@@ -362,7 +364,7 @@ class SliderConstructor {
     this.params = {};
 
     this.params.autoplay = this.element.getAttribute('data-autoplay-timeout') !== null;
-    this.params.autoplayTimeout = this.element.getAttribute('data-autoplay-timeout') || 5000;
+    this.params.autoplayTimeout = +this.element.getAttribute('data-autoplay-timeout') || 5000;
 
     this.params.arrows = this.element.getAttribute('data-no-arrows') === null ? true : false;
 
@@ -383,24 +385,45 @@ class SliderConstructor {
     this.params.rows.xl = +this.element.getAttribute('data-xl-rows') || this.params.rows.lg;
 
     this.params.state = {};
-    this.params.state.xs = this.checkActiveParam() !== false;
-    this.params.state.sm = this.checkActiveParam('sm') !== null ? this.checkActiveParam('sm') : this.params.state.xs;
-    this.params.state.md = this.checkActiveParam('md') !== null ? this.checkActiveParam('md') : this.params.state.sm;
-    this.params.state.lg = this.checkActiveParam('lg') !== null ? this.checkActiveParam('lg') : this.params.state.md;
-    this.params.state.xl = this.checkActiveParam('xl') !== null ? this.checkActiveParam('xl') : this.params.state.lg; 
+    Object.keys(breakpoints).forEach((key, index) => {
+      const breakpoint = index !== 0 ? '-' + key + '-' : '-';
+      const attr = this.element.getAttribute(`data${breakpoint}mounted`);
 
-    
-    this.checkState();
-    this.checkStateDebounced = debounce(this.checkState, 500, this);
-    window.addEventListener('resize', () => {
-      this.checkStateDebounced();
+      if (attr === null && index !== 0) {
+        const prevKey = Object.keys(breakpoints)[index - 1];
+        this.params.state[key] = this.params.state[prevKey];
+      } else if (attr === 'true' || (index === 0 && attr !== 'false')) {
+        this.params.state[key] = true;
+      } else {
+        this.params.state[key] = false;
+      }
     })
+
+    this.slides = [];
+    this.containsMobileHiddenSlides = false;
+    this.element.childNodes.forEach(slide => {
+      if (!slide.tagName) return;
+      if (slide.getAttribute('data-slide-mobile-hidden') !== null) {
+        this.containsMobileHiddenSlides = true;
+      }
+      this.slides.push(slide);
+    });
+    
+    this.checkSliderState();
+    this.checkSliderStateDebounced = debounce(this.checkSliderState, 500, this);
+    window.addEventListener('resize', this.checkSliderStateDebounced);
   }
 
-  checkState() {
-    let state;
+  checkSliderState() {
+    if (this.mounted && this.sliderWidth === window.innerWidth) return;
+    this.sliderWidth = window.innerWidth;
 
-    for (let breakpoint in breakpoints) {
+    if (this.mounted) {
+      this.unmount();
+    }
+
+    let state;
+    for (const breakpoint in breakpoints) {
       if (window.innerWidth >= breakpoints[breakpoint]) {
         state = this.params.state[breakpoint];
       }
@@ -408,24 +431,30 @@ class SliderConstructor {
 
     if (state) {
       this.element.classList.remove('visible');
-      if (!this.state) this.createSlider();
+      if (this.containsMobileHiddenSlides) {
+        this.checkSlidesVisibility();
+      }
+      this.mount();
     } else {
       this.element.classList.add('visible');
-      if (this.state) this.destroySlider();
     }
   }
 
-  checkActiveParam(breakpointParam) {
-    const breakpoint = breakpointParam ? '-' + breakpointParam + '-' : '-';
-    const attr = this.element.getAttribute(`data${breakpoint}mounted`);
-
-    if (attr === null) return null;
-    if (attr === 'true') return true;
-    return false;
+  checkSlidesVisibility() {
+    this.slides.forEach(slide => {
+      slide.remove();
+    })
+    
+    this.slides.forEach(slide => {
+      const shouldBeHidden = slide.getAttribute('data-slide-mobile-hidden') !== null;
+      const breakpoint = window.innerWidth < breakpoints.sm;
+      if (!(shouldBeHidden && breakpoint)) {
+        this.element.insertAdjacentElement('beforeend', slide);
+      } 
+    })
   }
 
-  createSlider() {
-    console.log(this.params.arrows)
+  mount() {
     $(this.element).slick({
       autoplay: this.params.autoplay,
       autoplaySpeed: this.params.autoplayTimeout,
@@ -438,6 +467,7 @@ class SliderConstructor {
       arrows: this.params.arrows,
       adaptiveHeight: this.params.adaptiveHeight,
       dots: true,
+      accessibility: false,
       responsive: [{
         breakpoint: breakpoints.sm - 1,
         settings: {
@@ -468,11 +498,11 @@ class SliderConstructor {
         }
       }]
     })
-    this.state = true;
+    this.mounted = true;
   }
 
-  destroySlider() {
+  unmount() {
     $(this.element).slick('unslick');
-    this.state = false;
+    this.mounted = false;
   }
 }

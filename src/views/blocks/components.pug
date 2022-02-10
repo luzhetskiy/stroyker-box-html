@@ -103,9 +103,12 @@ mixin product-card-v2(params = {})
                 span Много товара
                 span В корзину
 
-mixin content-placeholder()
-  .content-placeholder
-    span Просто заглушка
+mixin content-placeholder(params = {})
+  -const title = params.title || 'Просто заглушка';
+  -const classes = params.classes;
+  -const attrs = params.attributes;
+  .content-placeholder(class=classes)&attributes(attrs)
+    span !{title}
 
 mixin content-standard-box(params = {})
   -var imageSrc = params.imageSrc?params.imageSrc: href+'/img/e79cec4f0a120d2e96a1701cf4ef8db3.png'
