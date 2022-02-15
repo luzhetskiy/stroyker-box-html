@@ -5,4 +5,14 @@
   @include media-breakpoint-down(sm) {
     --grid-gutter-width: 16px;
   }
+
+  //animations
+  --animation-duration-1: 150ms;
+  --animation-duration-2: 300ms;
+  --animation-duration-3: 500ms;
+  --animation-duration-4: 1000ms;
+  --trs-1: var(--animation-duration-1) ease-out;
+  --trs-2: var(--animation-duration-2) ease-out;
+  --trs-3: var(--animation-duration-3) ease-out;
+  --trs-4: var(--animation-duration-4) ease-out;
 }

@@ -2439,7 +2439,15 @@
 
 :root {
   --grid-gutter-width: 20px;
-  --container-padding-x: 16px; }
+  --container-padding-x: 16px;
+  --animation-duration-1: 150ms;
+  --animation-duration-2: 300ms;
+  --animation-duration-3: 500ms;
+  --animation-duration-4: 1000ms;
+  --trs-1: var(--animation-duration-1) ease-out;
+  --trs-2: var(--animation-duration-2) ease-out;
+  --trs-3: var(--animation-duration-3) ease-out;
+  --trs-4: var(--animation-duration-4) ease-out; }
   @media (max-width: 575.98px) {
     :root {
       --grid-gutter-width: 16px; } }
@@ -3558,6 +3566,53 @@ body {
   font-weight: 700;
   text-decoration: none;
   font-size: 16px; }
+
+.button-theme {
+  transition: color var(--trs-1), background-color var(--trs-1), border-color var(--trs-1) !important;
+  border-style: solid !important;
+  border-width: 1px !important;
+  color: var(--color-text) !important;
+  background-color: var(--color-background) !important;
+  border-color: var(--color-border) !important; }
+  .button-theme:hover, .button-theme[data-touch], .button-theme[data-hover] {
+    color: var(--color-text-hover, var(--color-text)) !important;
+    background-color: var(--color-background-hover, var(--color-background-hover)) !important;
+    border-color: var(--color-border-hover, var(--color-border)) !important; }
+  .button-theme_primary {
+    --color-text: var(--color-button-primary-text, #fff);
+    --color-background: var(--color-button-primary-background, #2363D1);
+    --color-border: var(--color-button-primary-border, #2363D1);
+    --color-text-hover: var(--color-button-primary-text-hover, var(--color-text));
+    --color-background-hover: var(--color-button-primary-background-hover, var(--color-background));
+    --color-border-hover: var(--color-button-primary-border-hover, var(--color-border)); }
+  .button-theme_secondary {
+    --color-text: var(--color-button-secondary-text, #2363D1);
+    --color-background: var(--color-button-secondary-background, #fff);
+    --color-border: var(--color-button-secondary-border, #B7CBE5);
+    --color-text-hover: var(--color-button-secondary-text-hover, var(--color-text));
+    --color-background-hover: var(--color-button-secondary-background-hover, var(--color-background));
+    --color-border-hover: var(--color-button-secondary-border-hover, var(--color-border)); }
+  .button-theme_muted {
+    --color-text: var(--color-button-muted-text, #fff);
+    --color-background: var(--color-button-muted-background, #767676);
+    --color-border: var(--color-button-muted-border, #767676);
+    --color-text-hover: var(--color-button-muted-text-hover, var(--color-text));
+    --color-background-hover: var(--color-button-muted-background-hover, var(--color-background));
+    --color-border-hover: var(--color-button-muted-border-hover, var(--color-border)); }
+  .button-theme_callme {
+    --color-text: var(--color-button-callme-text, #2363D1);
+    --color-background: var(--color-button-callme-background, #fff);
+    --color-border: var(--color-button-callme-border, #B7CBE5);
+    --color-text-hover: var(--color-button-callme-text-hover, var(--color-text));
+    --color-background-hover: var(--color-button-callme-background-hover, var(--color-background));
+    --color-border-hover: var(--color-button-callme-border-hover, var(--color-border)); }
+  .button-theme_cart {
+    --color-text: var(--color-button-cart-text, #fff);
+    --color-background: var(--color-button-cart-background, #2363D1);
+    --color-border: var(--color-button-cart-border, #2363D1);
+    --color-text-hover: var(--color-button-cart-text-hover, var(--color-text));
+    --color-background-hover: var(--color-button-cart-background-hover, var(--color-background));
+    --color-border-hover: var(--color-button-cart-border-hover, var(--color-border)); }
 
 /* Slider */
 .slick-slider {

@@ -78,3 +78,65 @@
   text-decoration: none;
   font-size: 16px;
 }
+
+.button-theme {
+  transition: color var(--trs-1), background-color var(--trs-1), border-color var(--trs-1) !important;
+  border-style: solid !important;
+  border-width: 1px !important;
+
+  color: var(--color-text) !important;
+  background-color: var(--color-background) !important;
+  border-color: var(--color-border) !important;
+
+  &:hover, &[data-touch], &[data-hover] {
+    color: var(--color-text-hover, var(--color-text)) !important;
+    background-color: var(--color-background-hover, var(--color-background-hover)) !important;
+    border-color: var(--color-border-hover, var(--color-border)) !important;
+  }
+
+  &_primary {
+    --color-text: var(--color-button-primary-text, #fff);
+    --color-background: var(--color-button-primary-background, #2363D1);
+    --color-border: var(--color-button-primary-border, #2363D1);
+    --color-text-hover: var(--color-button-primary-text-hover, var(--color-text));
+    --color-background-hover: var(--color-button-primary-background-hover, var(--color-background));
+    --color-border-hover: var(--color-button-primary-border-hover, var(--color-border));
+  } 
+  &_secondary {
+    --color-text: var(--color-button-secondary-text, #2363D1);
+    --color-background: var(--color-button-secondary-background, #fff);
+    --color-border: var(--color-button-secondary-border, #B7CBE5);
+    --color-text-hover: var(--color-button-secondary-text-hover, var(--color-text));
+    --color-background-hover: var(--color-button-secondary-background-hover, var(--color-background));
+    --color-border-hover: var(--color-button-secondary-border-hover, var(--color-border));
+  }
+  &_muted {
+    --color-text: var(--color-button-muted-text, #fff);
+    --color-background: var(--color-button-muted-background, #767676);
+    --color-border: var(--color-button-muted-border, #767676);
+    --color-text-hover: var(--color-button-muted-text-hover, var(--color-text));
+    --color-background-hover: var(--color-button-muted-background-hover, var(--color-background));
+    --color-border-hover: var(--color-button-muted-border-hover, var(--color-border));
+  }
+  &_callme {
+    --color-text: var(--color-button-callme-text, #2363D1);
+    --color-background: var(--color-button-callme-background, #fff);
+    --color-border: var(--color-button-callme-border, #B7CBE5);
+    --color-text-hover: var(--color-button-callme-text-hover, var(--color-text));
+    --color-background-hover: var(--color-button-callme-background-hover, var(--color-background));
+    --color-border-hover: var(--color-button-callme-border-hover, var(--color-border));
+  }
+  &_cart {
+    --color-text: var(--color-button-cart-text, #fff);
+    --color-background: var(--color-button-cart-background, #2363D1);
+    --color-border: var(--color-button-cart-border, #2363D1);
+    --color-text-hover: var(--color-button-cart-text-hover, var(--color-text));
+    --color-background-hover: var(--color-button-cart-background-hover, var(--color-background));
+    --color-border-hover: var(--color-button-cart-border-hover, var(--color-border));
+  } 
+}
+
+
+.button-theme-secondary {
+
+}

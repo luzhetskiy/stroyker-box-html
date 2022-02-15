@@ -12,6 +12,36 @@
   --color-banner-content-bg: #fff;
   --color-faq-element-bg: #f5f5f5;
   --color-card-border: #D9D9DE;
-  --color-card-hover-border: #A7A7AB; }
+  --color-card-hover-border: #A7A7AB;
+  --color-button-primary-text: #fff;
+  --color-button-primary-background: #2363D1;
+  --color-button-primary-border: #2363D1;
+  --color-button-primary-text-hover: #fff;
+  --color-button-primary-background-hover: #1C52AC;
+  --color-button-primary-border-hover: #2363D1;
+  --color-button-secondary-text: #2363D1;
+  --color-button-secondary-background: #fff;
+  --color-button-secondary-border: #B7CBE5;
+  --color-button-secondary-text-hover: #1C52AC;
+  --color-button-secondary-background-hover: #E7EEF6;
+  --color-button-secondary-border-hover: #1C52AC;
+  --color-button-muted-text: #fff;
+  --color-button-muted-background: #767676;
+  --color-button-muted-border: #767676;
+  --color-button-muted-text-hover: #fff;
+  --color-button-muted-background-hover: #818181;
+  --color-button-muted-border-hover: #818181;
+  --color-button-callme-text: #2363D1;
+  --color-button-callme-background: #fff;
+  --color-button-callme-border: #B7CBE5;
+  --color-button-callme-text-hover: #1C52AC;
+  --color-button-callme-background-hover: #E7EEF6;
+  --color-button-callme-border-hover: #1C52AC;
+  --color-button-cart-text: #fff;
+  --color-button-cart-background: #2363D1;
+  --color-button-cart-border: #2363D1;
+  --color-button-cart-text-hover: #fff;
+  --color-button-cart-background-hover: #1C52AC;
+  --color-button-cart-border-hover: #2363D1; }
 
 /*# sourceMappingURL=maps/theme.css.map */

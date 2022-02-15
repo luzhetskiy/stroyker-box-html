@@ -1,4 +1,5 @@
 mixin product-card-1()
+  -const index = Math.round(Math.random());
   .product-item
     a.product-item__link(href='/catalog/product/evrovagonka-khvoy-125-kh-97-10-17-m-sort-ab/')
       span.product-item__image
@@ -26,13 +27,22 @@ mixin product-card-1()
     .product-item__content-bottom
       .product-item__btns
         .shopping-cart-product
-          .input-number
-            .order-down
-            input#number(type='number' min='0' step='1' value='1' required='')
-            .order-up
-          a.shopping-cart-btn.add-to-cart(href='/cart/add/3557')
-            svg.icon
-              use(xlink:href='#shopping-cart')
+          if (index !== 1)
+            .input-number
+              .order-down
+              input#number(type='number' min='0' step='1' value='1' required='')
+              .order-up
+
+          if (index === 1)
+            a.btn.btn-checkout.button_style-2.button_xl.product-card-v2__cart-button.button-theme.button-theme_cart(href='/cart/')
+              span.icon
+                svg.icon-svg
+                  use(xlink:href='#check-btn')
+              | Оформить
+          else
+            a.shopping-cart-btn.add-to-cart.button-theme.button-theme_primary(href='/cart/add/3557')
+              svg.icon
+                use(xlink:href='#shopping-cart')
 
 mixin product-card-v2(params = {})
   .product-card-v2(class=`${params.type=='2'?'product-card-v2_type-2':'product-card-v2_type-1'}` data-custom-interaction) 
@@ -84,19 +94,18 @@ mixin product-card-v2(params = {})
         .product-card-v2__buttons
           if params.style=='2'
 
-            button.button.button_disabled.button_xl.product-card-v2__cart-button
+            button.button.button_disabled.button_xl.product-card-v2__cart-button.button-theme.button-theme_muted
               span  
                 span Товар ожидается 
                 span узнать о наличии
 
           else if params.style=='3'
 
-            button.button.button_style-1.button_xl.product-card-v2__button 
+            button.button.button_style-1.button_xl.product-card-v2__button.button-theme.button-theme_secondary
               span Узнать стоимость
 
           else 
-
-            button.button.button_style-2.button_xl.product-card-v2__cart-button 
+            button.button.button_style-2.button_xl.product-card-v2__cart-button.button-theme.button-theme_primary
               svg.icon
                 use(xlink:href="#shopping-cart")
               span  
