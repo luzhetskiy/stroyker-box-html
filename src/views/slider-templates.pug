@@ -113,6 +113,86 @@ block content
         .image.image_cover
           img(src=href+'/img/image 35.jpg', alt="image")
 
+  section.conditional-section
+    .container
+      .welcome
+        .welcome__side 
+          #catalog-menu.catalog-side.mobile-hide
+            span.catalog-side__title
+              span.icon
+                svg(width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg')
+                  path(d='M0 0V2H16V0H0ZM0 8H16V6H0V8ZM0 14H16V12H0V14Z' fill='currentColor')
+              | Каталог продукции
+            .catalog-side__content
+              ul
+
+        .welcome__content
+          //тот же слайдер что и для wide мода
+          .home-banner
+            .owl-carousel
+              //slide
+              .home-banner__slide
+                .home-banner__slide-container.container
+                  //Если нужен фон, добавляется модификатор home-banner__slide-content_bg
+                  //Если вертикальное выравнивание по правой стороне, добавляется модификатор home-banner__slide-content_right
+                  .home-banner__slide-content
+                    h3 Заголовок слайда
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit sunt ipsum repellat.
+                    a(href="#").btn.btn--main-min Кнопка
+                //image
+                .image.image_cover
+                  img(src=href+'/img/image 35.jpg', alt="image")
+
+              //slide
+              .home-banner__slide
+                .home-banner__slide-container.container
+                  //Если нужен фон, добавляется модификатор home-banner__slide-content_bg
+                  //Если вертикальное выравнивание по правой стороне, добавляется модификатор home-banner__slide-content_right
+                  .home-banner__slide-content.home-banner__slide-content_bg 
+                    h3 Заголовок слайда
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit sunt ipsum repellat.
+                    a(href="#").btn.btn--main-min Кнопка
+                //image
+                .image.image_cover
+                  img(src=href+'/img/image 35.jpg', alt="image")
+
+              //slide
+              .home-banner__slide
+                .home-banner__slide-container.container
+                  //Если нужен фон, добавляется модификатор home-banner__slide-content_bg
+                  //Если вертикальное выравнивание по правой стороне, добавляется модификатор home-banner__slide-content_right
+                  .home-banner__slide-content.home-banner__slide-content_right
+                    h3 Заголовок слайда
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit sunt ipsum repellat.
+                    a(href="#").btn.btn--main-min Кнопка
+                //image
+                .image.image_cover
+                  img(src=href+'/img/image 35.jpg', alt="image")
+
+              //slide
+              .home-banner__slide
+                .home-banner__slide-container.container
+                  //Если нужен фон, добавляется модификатор home-banner__slide-content_bg
+                  //Если вертикальное выравнивание по правой стороне, добавляется модификатор home-banner__slide-content_right
+                  .home-banner__slide-content.home-banner__slide-content_bg.home-banner__slide-content_right
+                    h3 Заголовок слайда
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit sunt ipsum repellat.
+                    a(href="#").btn.btn--main-min Кнопка
+                //image
+                .image.image_cover
+                  img(src=href+'/img/image 35.jpg', alt="image")
+
+                  //.main-slider
+                    .owl-carousel(data-autoplay-timeout='5')
+                      .item
+                        .slide-img
+                          img(src=href+'/img/image 35.jpg' alt='Баннер 1')
+                        .home-banner__slide-container.container
+                          .home-banner__slide-content.home-banner__slide-content_bg
+                            h3 Заголовок слайда
+                            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit sunt ipsum repellat.
+                            a.btn.btn--main-min(href='#' target='_blank') Кнопка
+                      
 
   section.conditional-section
     .container

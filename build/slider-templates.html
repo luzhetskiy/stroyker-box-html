@@ -278,6 +278,95 @@
       </section>
       <section class="conditional-section">
         <div class="container">
+          <div class="welcome">
+            <div class="welcome__side"> 
+              <div class="catalog-side mobile-hide" id="catalog-menu"><span class="catalog-side__title"><span class="icon">
+                    <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 0V2H16V0H0ZM0 8H16V6H0V8ZM0 14H16V12H0V14Z" fill="currentColor"></path>
+                    </svg></span>Каталог продукции</span>
+                <div class="catalog-side__content">
+                  <ul></ul>
+                </div>
+              </div>
+            </div>
+            <div class="welcome__content">
+              <!--тот же слайдер что и для wide мода-->
+              <div class="home-banner">
+                <div class="owl-carousel">
+                  <!--slide-->
+                  <div class="home-banner__slide">
+                    <div class="home-banner__slide-container container">
+                      <!--Если нужен фон, добавляется модификатор home-banner__slide-content_bg-->
+                      <!--Если вертикальное выравнивание по правой стороне, добавляется модификатор home-banner__slide-content_right-->
+                      <div class="home-banner__slide-content">
+                        <h3>Заголовок слайда</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit sunt ipsum repellat.</p><a class="btn btn--main-min" href="#">Кнопка</a>
+                      </div>
+                    </div>
+                    <!--image-->
+                    <div class="image image_cover"><img src="https://ruslanmmr.github.io/k1stroyker/build/img/image 35.jpg" alt="image"></div>
+                  </div>
+                  <!--slide-->
+                  <div class="home-banner__slide">
+                    <div class="home-banner__slide-container container">
+                      <!--Если нужен фон, добавляется модификатор home-banner__slide-content_bg-->
+                      <!--Если вертикальное выравнивание по правой стороне, добавляется модификатор home-banner__slide-content_right-->
+                      <div class="home-banner__slide-content home-banner__slide-content_bg"> 
+                        <h3>Заголовок слайда</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit sunt ipsum repellat.</p><a class="btn btn--main-min" href="#">Кнопка</a>
+                      </div>
+                    </div>
+                    <!--image-->
+                    <div class="image image_cover"><img src="https://ruslanmmr.github.io/k1stroyker/build/img/image 35.jpg" alt="image"></div>
+                  </div>
+                  <!--slide-->
+                  <div class="home-banner__slide">
+                    <div class="home-banner__slide-container container">
+                      <!--Если нужен фон, добавляется модификатор home-banner__slide-content_bg-->
+                      <!--Если вертикальное выравнивание по правой стороне, добавляется модификатор home-banner__slide-content_right-->
+                      <div class="home-banner__slide-content home-banner__slide-content_right">
+                        <h3>Заголовок слайда</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit sunt ipsum repellat.</p><a class="btn btn--main-min" href="#">Кнопка</a>
+                      </div>
+                    </div>
+                    <!--image-->
+                    <div class="image image_cover"><img src="https://ruslanmmr.github.io/k1stroyker/build/img/image 35.jpg" alt="image"></div>
+                  </div>
+                  <!--slide-->
+                  <div class="home-banner__slide">
+                    <div class="home-banner__slide-container container">
+                      <!--Если нужен фон, добавляется модификатор home-banner__slide-content_bg-->
+                      <!--Если вертикальное выравнивание по правой стороне, добавляется модификатор home-banner__slide-content_right-->
+                      <div class="home-banner__slide-content home-banner__slide-content_bg home-banner__slide-content_right">
+                        <h3>Заголовок слайда</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit sunt ipsum repellat.</p><a class="btn btn--main-min" href="#">Кнопка</a>
+                      </div>
+                    </div>
+                    <!--image-->
+                    <div class="image image_cover"><img src="https://ruslanmmr.github.io/k1stroyker/build/img/image 35.jpg" alt="image">
+                      <!--.main-slider
+                      .owl-carousel(data-autoplay-timeout='5')
+                        .item
+                          .slide-img
+                            img(src=href+'/img/image 35.jpg' alt='Баннер 1')
+                          .home-banner__slide-container.container
+                            .home-banner__slide-content.home-banner__slide-content_bg
+                              h3 Заголовок слайда
+                              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit sunt ipsum repellat.
+                              a.btn.btn--main-min(href='#' target='_blank') Кнопка
+                        
+                      
+                      -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="conditional-section">
+        <div class="container">
           <div class="d-md-grid grid-columns-md-3 grid-columns-lg-4 grid-columns-xl-5 column-gap-grid">
             <div class="grid-span-1"></div>
             <div class="grid-span-md-2 grid-span-lg-3 grid-span-xl-4"> 
@@ -295,86 +384,6 @@
                       <div class="product-item__status product-item__status--many">Кол-во: много</div><span class="product-item__cost"><span class="product-item__cost-product">19,00<span> ₽/п.м.</span></span></span></span></a>
                   <div class="product-item__content-bottom">
                     <div class="product-item__btns">
-                      <div class="shopping-cart-product">
-                        <div class="input-number">
-                          <div class="order-down"></div>
-                          <input id="number" type="number" min="0" step="1" value="1" required=""/>
-                          <div class="order-up"></div>
-                        </div><a class="shopping-cart-btn add-to-cart button-theme button-theme_primary" href="/cart/add/3557">
-                          <svg class="icon">
-                            <use xlink:href="#shopping-cart"></use>
-                          </svg></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="product-item"><a class="product-item__link" href="/catalog/product/evrovagonka-khvoy-125-kh-97-10-17-m-sort-ab/"><span class="product-item__image">
-                      <div class="product-item__image-inner"><img src="/media/vagonkabrus_cache/8a/e0/8ae071a4d5f840cc98da8a382353226d.jpg" alt="Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ"/>
-                        <!--img(src=`${href}/img/test.jpg`, alt="image")-->
-                      </div><span class="product-item__flag-content"><span class="product-item__flag product-item__flag--hit">хит</span></span></span><span class="product-item__content-top"><span class="product-item__head"><span class="product-item__art">с00004</span><span class="product-item__rating"><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span></span></span><span class="product-item__name">Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ</span>
-                      <div class="product-item__status product-item__status--many">Кол-во: много</div><span class="product-item__cost"><span class="product-item__cost-product">19,00<span> ₽/п.м.</span></span></span></span></a>
-                  <div class="product-item__content-bottom">
-                    <div class="product-item__btns">
-                      <div class="shopping-cart-product">
-                        <div class="input-number">
-                          <div class="order-down"></div>
-                          <input id="number" type="number" min="0" step="1" value="1" required=""/>
-                          <div class="order-up"></div>
-                        </div><a class="shopping-cart-btn add-to-cart button-theme button-theme_primary" href="/cart/add/3557">
-                          <svg class="icon">
-                            <use xlink:href="#shopping-cart"></use>
-                          </svg></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="product-item"><a class="product-item__link" href="/catalog/product/evrovagonka-khvoy-125-kh-97-10-17-m-sort-ab/"><span class="product-item__image">
-                      <div class="product-item__image-inner"><img src="/media/vagonkabrus_cache/8a/e0/8ae071a4d5f840cc98da8a382353226d.jpg" alt="Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ"/>
-                        <!--img(src=`${href}/img/test.jpg`, alt="image")-->
-                      </div><span class="product-item__flag-content"><span class="product-item__flag product-item__flag--hit">хит</span></span></span><span class="product-item__content-top"><span class="product-item__head"><span class="product-item__art">с00004</span><span class="product-item__rating"><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span></span></span><span class="product-item__name">Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ</span>
-                      <div class="product-item__status product-item__status--many">Кол-во: много</div><span class="product-item__cost"><span class="product-item__cost-product">19,00<span> ₽/п.м.</span></span></span></span></a>
-                  <div class="product-item__content-bottom">
-                    <div class="product-item__btns">
-                      <div class="shopping-cart-product">
-                        <div class="input-number">
-                          <div class="order-down"></div>
-                          <input id="number" type="number" min="0" step="1" value="1" required=""/>
-                          <div class="order-up"></div>
-                        </div><a class="shopping-cart-btn add-to-cart button-theme button-theme_primary" href="/cart/add/3557">
-                          <svg class="icon">
-                            <use xlink:href="#shopping-cart"></use>
-                          </svg></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="product-item"><a class="product-item__link" href="/catalog/product/evrovagonka-khvoy-125-kh-97-10-17-m-sort-ab/"><span class="product-item__image">
-                      <div class="product-item__image-inner"><img src="/media/vagonkabrus_cache/8a/e0/8ae071a4d5f840cc98da8a382353226d.jpg" alt="Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ"/>
-                        <!--img(src=`${href}/img/test.jpg`, alt="image")-->
-                      </div><span class="product-item__flag-content"><span class="product-item__flag product-item__flag--hit">хит</span></span></span><span class="product-item__content-top"><span class="product-item__head"><span class="product-item__art">с00004</span><span class="product-item__rating"><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span></span></span><span class="product-item__name">Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ</span>
-                      <div class="product-item__status product-item__status--many">Кол-во: много</div><span class="product-item__cost"><span class="product-item__cost-product">19,00<span> ₽/п.м.</span></span></span></span></a>
-                  <div class="product-item__content-bottom">
-                    <div class="product-item__btns">
-                      <div class="shopping-cart-product">
-                        <div class="input-number">
-                          <div class="order-down"></div>
-                          <input id="number" type="number" min="0" step="1" value="1" required=""/>
-                          <div class="order-up"></div>
-                        </div><a class="shopping-cart-btn add-to-cart button-theme button-theme_primary" href="/cart/add/3557">
-                          <svg class="icon">
-                            <use xlink:href="#shopping-cart"></use>
-                          </svg></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="product-item"><a class="product-item__link" href="/catalog/product/evrovagonka-khvoy-125-kh-97-10-17-m-sort-ab/"><span class="product-item__image">
-                      <div class="product-item__image-inner"><img src="/media/vagonkabrus_cache/8a/e0/8ae071a4d5f840cc98da8a382353226d.jpg" alt="Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ"/>
-                        <!--img(src=`${href}/img/test.jpg`, alt="image")-->
-                      </div><span class="product-item__flag-content"><span class="product-item__flag product-item__flag--hit">хит</span></span></span><span class="product-item__content-top"><span class="product-item__head"><span class="product-item__art">с00004</span><span class="product-item__rating"><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span></span></span><span class="product-item__name">Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ</span>
-                      <div class="product-item__status product-item__status--many">Кол-во: много</div><span class="product-item__cost"><span class="product-item__cost-product">19,00<span> ₽/п.м.</span></span></span></span></a>
-                  <div class="product-item__content-bottom">
-                    <div class="product-item__btns">
                       <div class="shopping-cart-product"><a class="btn btn-checkout button_style-2 button_xl product-card-v2__cart-button button-theme button-theme_cart" href="/cart/"><span class="icon">
                             <svg class="icon-svg">
                               <use xlink:href="#check-btn"></use>
@@ -449,6 +458,66 @@
                           <svg class="icon">
                             <use xlink:href="#shopping-cart"></use>
                           </svg></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-item"><a class="product-item__link" href="/catalog/product/evrovagonka-khvoy-125-kh-97-10-17-m-sort-ab/"><span class="product-item__image">
+                      <div class="product-item__image-inner"><img src="/media/vagonkabrus_cache/8a/e0/8ae071a4d5f840cc98da8a382353226d.jpg" alt="Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ"/>
+                        <!--img(src=`${href}/img/test.jpg`, alt="image")-->
+                      </div><span class="product-item__flag-content"><span class="product-item__flag product-item__flag--hit">хит</span></span></span><span class="product-item__content-top"><span class="product-item__head"><span class="product-item__art">с00004</span><span class="product-item__rating"><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span></span></span><span class="product-item__name">Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ</span>
+                      <div class="product-item__status product-item__status--many">Кол-во: много</div><span class="product-item__cost"><span class="product-item__cost-product">19,00<span> ₽/п.м.</span></span></span></span></a>
+                  <div class="product-item__content-bottom">
+                    <div class="product-item__btns">
+                      <div class="shopping-cart-product"><a class="btn btn-checkout button_style-2 button_xl product-card-v2__cart-button button-theme button-theme_cart" href="/cart/"><span class="icon">
+                            <svg class="icon-svg">
+                              <use xlink:href="#check-btn"></use>
+                            </svg></span>Оформить</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-item"><a class="product-item__link" href="/catalog/product/evrovagonka-khvoy-125-kh-97-10-17-m-sort-ab/"><span class="product-item__image">
+                      <div class="product-item__image-inner"><img src="/media/vagonkabrus_cache/8a/e0/8ae071a4d5f840cc98da8a382353226d.jpg" alt="Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ"/>
+                        <!--img(src=`${href}/img/test.jpg`, alt="image")-->
+                      </div><span class="product-item__flag-content"><span class="product-item__flag product-item__flag--hit">хит</span></span></span><span class="product-item__content-top"><span class="product-item__head"><span class="product-item__art">с00004</span><span class="product-item__rating"><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span></span></span><span class="product-item__name">Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ</span>
+                      <div class="product-item__status product-item__status--many">Кол-во: много</div><span class="product-item__cost"><span class="product-item__cost-product">19,00<span> ₽/п.м.</span></span></span></span></a>
+                  <div class="product-item__content-bottom">
+                    <div class="product-item__btns">
+                      <div class="shopping-cart-product"><a class="btn btn-checkout button_style-2 button_xl product-card-v2__cart-button button-theme button-theme_cart" href="/cart/"><span class="icon">
+                            <svg class="icon-svg">
+                              <use xlink:href="#check-btn"></use>
+                            </svg></span>Оформить</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-item"><a class="product-item__link" href="/catalog/product/evrovagonka-khvoy-125-kh-97-10-17-m-sort-ab/"><span class="product-item__image">
+                      <div class="product-item__image-inner"><img src="/media/vagonkabrus_cache/8a/e0/8ae071a4d5f840cc98da8a382353226d.jpg" alt="Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ"/>
+                        <!--img(src=`${href}/img/test.jpg`, alt="image")-->
+                      </div><span class="product-item__flag-content"><span class="product-item__flag product-item__flag--hit">хит</span></span></span><span class="product-item__content-top"><span class="product-item__head"><span class="product-item__art">с00004</span><span class="product-item__rating"><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span></span></span><span class="product-item__name">Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ</span>
+                      <div class="product-item__status product-item__status--many">Кол-во: много</div><span class="product-item__cost"><span class="product-item__cost-product">19,00<span> ₽/п.м.</span></span></span></span></a>
+                  <div class="product-item__content-bottom">
+                    <div class="product-item__btns">
+                      <div class="shopping-cart-product"><a class="btn btn-checkout button_style-2 button_xl product-card-v2__cart-button button-theme button-theme_cart" href="/cart/"><span class="icon">
+                            <svg class="icon-svg">
+                              <use xlink:href="#check-btn"></use>
+                            </svg></span>Оформить</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-item"><a class="product-item__link" href="/catalog/product/evrovagonka-khvoy-125-kh-97-10-17-m-sort-ab/"><span class="product-item__image">
+                      <div class="product-item__image-inner"><img src="/media/vagonkabrus_cache/8a/e0/8ae071a4d5f840cc98da8a382353226d.jpg" alt="Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ"/>
+                        <!--img(src=`${href}/img/test.jpg`, alt="image")-->
+                      </div><span class="product-item__flag-content"><span class="product-item__flag product-item__flag--hit">хит</span></span></span><span class="product-item__content-top"><span class="product-item__head"><span class="product-item__art">с00004</span><span class="product-item__rating"><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span></span></span><span class="product-item__name">Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ</span>
+                      <div class="product-item__status product-item__status--many">Кол-во: много</div><span class="product-item__cost"><span class="product-item__cost-product">19,00<span> ₽/п.м.</span></span></span></span></a>
+                  <div class="product-item__content-bottom">
+                    <div class="product-item__btns">
+                      <div class="shopping-cart-product"><a class="btn btn-checkout button_style-2 button_xl product-card-v2__cart-button button-theme button-theme_cart" href="/cart/"><span class="icon">
+                            <svg class="icon-svg">
+                              <use xlink:href="#check-btn"></use>
+                            </svg></span>Оформить</a>
                       </div>
                     </div>
                   </div>
@@ -524,46 +593,6 @@
                       <div class="product-item__status product-item__status--many">Кол-во: много</div><span class="product-item__cost"><span class="product-item__cost-product">19,00<span> ₽/п.м.</span></span></span></span></a>
                   <div class="product-item__content-bottom">
                     <div class="product-item__btns">
-                      <div class="shopping-cart-product">
-                        <div class="input-number">
-                          <div class="order-down"></div>
-                          <input id="number" type="number" min="0" step="1" value="1" required=""/>
-                          <div class="order-up"></div>
-                        </div><a class="shopping-cart-btn add-to-cart button-theme button-theme_primary" href="/cart/add/3557">
-                          <svg class="icon">
-                            <use xlink:href="#shopping-cart"></use>
-                          </svg></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="product-item"><a class="product-item__link" href="/catalog/product/evrovagonka-khvoy-125-kh-97-10-17-m-sort-ab/"><span class="product-item__image">
-                      <div class="product-item__image-inner"><img src="/media/vagonkabrus_cache/8a/e0/8ae071a4d5f840cc98da8a382353226d.jpg" alt="Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ"/>
-                        <!--img(src=`${href}/img/test.jpg`, alt="image")-->
-                      </div><span class="product-item__flag-content"><span class="product-item__flag product-item__flag--hit">хит</span></span></span><span class="product-item__content-top"><span class="product-item__head"><span class="product-item__art">с00004</span><span class="product-item__rating"><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span></span></span><span class="product-item__name">Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ</span>
-                      <div class="product-item__status product-item__status--many">Кол-во: много</div><span class="product-item__cost"><span class="product-item__cost-product">19,00<span> ₽/п.м.</span></span></span></span></a>
-                  <div class="product-item__content-bottom">
-                    <div class="product-item__btns">
-                      <div class="shopping-cart-product">
-                        <div class="input-number">
-                          <div class="order-down"></div>
-                          <input id="number" type="number" min="0" step="1" value="1" required=""/>
-                          <div class="order-up"></div>
-                        </div><a class="shopping-cart-btn add-to-cart button-theme button-theme_primary" href="/cart/add/3557">
-                          <svg class="icon">
-                            <use xlink:href="#shopping-cart"></use>
-                          </svg></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="product-item"><a class="product-item__link" href="/catalog/product/evrovagonka-khvoy-125-kh-97-10-17-m-sort-ab/"><span class="product-item__image">
-                      <div class="product-item__image-inner"><img src="/media/vagonkabrus_cache/8a/e0/8ae071a4d5f840cc98da8a382353226d.jpg" alt="Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ"/>
-                        <!--img(src=`${href}/img/test.jpg`, alt="image")-->
-                      </div><span class="product-item__flag-content"><span class="product-item__flag product-item__flag--hit">хит</span></span></span><span class="product-item__content-top"><span class="product-item__head"><span class="product-item__art">с00004</span><span class="product-item__rating"><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span></span></span><span class="product-item__name">Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ</span>
-                      <div class="product-item__status product-item__status--many">Кол-во: много</div><span class="product-item__cost"><span class="product-item__cost-product">19,00<span> ₽/п.м.</span></span></span></span></a>
-                  <div class="product-item__content-bottom">
-                    <div class="product-item__btns">
                       <div class="shopping-cart-product"><a class="btn btn-checkout button_style-2 button_xl product-card-v2__cart-button button-theme button-theme_cart" href="/cart/"><span class="icon">
                             <svg class="icon-svg">
                               <use xlink:href="#check-btn"></use>
@@ -599,10 +628,15 @@
                       <div class="product-item__status product-item__status--many">Кол-во: много</div><span class="product-item__cost"><span class="product-item__cost-product">19,00<span> ₽/п.м.</span></span></span></span></a>
                   <div class="product-item__content-bottom">
                     <div class="product-item__btns">
-                      <div class="shopping-cart-product"><a class="btn btn-checkout button_style-2 button_xl product-card-v2__cart-button button-theme button-theme_cart" href="/cart/"><span class="icon">
-                            <svg class="icon-svg">
-                              <use xlink:href="#check-btn"></use>
-                            </svg></span>Оформить</a>
+                      <div class="shopping-cart-product">
+                        <div class="input-number">
+                          <div class="order-down"></div>
+                          <input id="number" type="number" min="0" step="1" value="1" required=""/>
+                          <div class="order-up"></div>
+                        </div><a class="shopping-cart-btn add-to-cart button-theme button-theme_primary" href="/cart/add/3557">
+                          <svg class="icon">
+                            <use xlink:href="#shopping-cart"></use>
+                          </svg></a>
                       </div>
                     </div>
                   </div>
@@ -614,10 +648,15 @@
                       <div class="product-item__status product-item__status--many">Кол-во: много</div><span class="product-item__cost"><span class="product-item__cost-product">19,00<span> ₽/п.м.</span></span></span></span></a>
                   <div class="product-item__content-bottom">
                     <div class="product-item__btns">
-                      <div class="shopping-cart-product"><a class="btn btn-checkout button_style-2 button_xl product-card-v2__cart-button button-theme button-theme_cart" href="/cart/"><span class="icon">
-                            <svg class="icon-svg">
-                              <use xlink:href="#check-btn"></use>
-                            </svg></span>Оформить</a>
+                      <div class="shopping-cart-product">
+                        <div class="input-number">
+                          <div class="order-down"></div>
+                          <input id="number" type="number" min="0" step="1" value="1" required=""/>
+                          <div class="order-up"></div>
+                        </div><a class="shopping-cart-btn add-to-cart button-theme button-theme_primary" href="/cart/add/3557">
+                          <svg class="icon">
+                            <use xlink:href="#shopping-cart"></use>
+                          </svg></a>
                       </div>
                     </div>
                   </div>
@@ -683,6 +722,46 @@
                             <svg class="icon-svg">
                               <use xlink:href="#check-btn"></use>
                             </svg></span>Оформить</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-item"><a class="product-item__link" href="/catalog/product/evrovagonka-khvoy-125-kh-97-10-17-m-sort-ab/"><span class="product-item__image">
+                      <div class="product-item__image-inner"><img src="/media/vagonkabrus_cache/8a/e0/8ae071a4d5f840cc98da8a382353226d.jpg" alt="Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ"/>
+                        <!--img(src=`${href}/img/test.jpg`, alt="image")-->
+                      </div><span class="product-item__flag-content"><span class="product-item__flag product-item__flag--hit">хит</span></span></span><span class="product-item__content-top"><span class="product-item__head"><span class="product-item__art">с00004</span><span class="product-item__rating"><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span></span></span><span class="product-item__name">Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ</span>
+                      <div class="product-item__status product-item__status--many">Кол-во: много</div><span class="product-item__cost"><span class="product-item__cost-product">19,00<span> ₽/п.м.</span></span></span></span></a>
+                  <div class="product-item__content-bottom">
+                    <div class="product-item__btns">
+                      <div class="shopping-cart-product">
+                        <div class="input-number">
+                          <div class="order-down"></div>
+                          <input id="number" type="number" min="0" step="1" value="1" required=""/>
+                          <div class="order-up"></div>
+                        </div><a class="shopping-cart-btn add-to-cart button-theme button-theme_primary" href="/cart/add/3557">
+                          <svg class="icon">
+                            <use xlink:href="#shopping-cart"></use>
+                          </svg></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-item"><a class="product-item__link" href="/catalog/product/evrovagonka-khvoy-125-kh-97-10-17-m-sort-ab/"><span class="product-item__image">
+                      <div class="product-item__image-inner"><img src="/media/vagonkabrus_cache/8a/e0/8ae071a4d5f840cc98da8a382353226d.jpg" alt="Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ"/>
+                        <!--img(src=`${href}/img/test.jpg`, alt="image")-->
+                      </div><span class="product-item__flag-content"><span class="product-item__flag product-item__flag--hit">хит</span></span></span><span class="product-item__content-top"><span class="product-item__head"><span class="product-item__art">с00004</span><span class="product-item__rating"><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span></span></span><span class="product-item__name">Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ</span>
+                      <div class="product-item__status product-item__status--many">Кол-во: много</div><span class="product-item__cost"><span class="product-item__cost-product">19,00<span> ₽/п.м.</span></span></span></span></a>
+                  <div class="product-item__content-bottom">
+                    <div class="product-item__btns">
+                      <div class="shopping-cart-product">
+                        <div class="input-number">
+                          <div class="order-down"></div>
+                          <input id="number" type="number" min="0" step="1" value="1" required=""/>
+                          <div class="order-up"></div>
+                        </div><a class="shopping-cart-btn add-to-cart button-theme button-theme_primary" href="/cart/add/3557">
+                          <svg class="icon">
+                            <use xlink:href="#shopping-cart"></use>
+                          </svg></a>
                       </div>
                     </div>
                   </div>
@@ -1716,6 +1795,21 @@
                   <div class="product-item__status product-item__status--many">Кол-во: много</div><span class="product-item__cost"><span class="product-item__cost-product">19,00<span> ₽/п.м.</span></span></span></span></a>
               <div class="product-item__content-bottom">
                 <div class="product-item__btns">
+                  <div class="shopping-cart-product"><a class="btn btn-checkout button_style-2 button_xl product-card-v2__cart-button button-theme button-theme_cart" href="/cart/"><span class="icon">
+                        <svg class="icon-svg">
+                          <use xlink:href="#check-btn"></use>
+                        </svg></span>Оформить</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product-item"><a class="product-item__link" href="/catalog/product/evrovagonka-khvoy-125-kh-97-10-17-m-sort-ab/"><span class="product-item__image">
+                  <div class="product-item__image-inner"><img src="/media/vagonkabrus_cache/8a/e0/8ae071a4d5f840cc98da8a382353226d.jpg" alt="Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ"/>
+                    <!--img(src=`${href}/img/test.jpg`, alt="image")-->
+                  </div><span class="product-item__flag-content"><span class="product-item__flag product-item__flag--hit">хит</span></span></span><span class="product-item__content-top"><span class="product-item__head"><span class="product-item__art">с00004</span><span class="product-item__rating"><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span></span></span><span class="product-item__name">Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ</span>
+                  <div class="product-item__status product-item__status--many">Кол-во: много</div><span class="product-item__cost"><span class="product-item__cost-product">19,00<span> ₽/п.м.</span></span></span></span></a>
+              <div class="product-item__content-bottom">
+                <div class="product-item__btns">
                   <div class="shopping-cart-product">
                     <div class="input-number">
                       <div class="order-down"></div>
@@ -1736,55 +1830,15 @@
                   <div class="product-item__status product-item__status--many">Кол-во: много</div><span class="product-item__cost"><span class="product-item__cost-product">19,00<span> ₽/п.м.</span></span></span></span></a>
               <div class="product-item__content-bottom">
                 <div class="product-item__btns">
-                  <div class="shopping-cart-product"><a class="btn btn-checkout button_style-2 button_xl product-card-v2__cart-button button-theme button-theme_cart" href="/cart/"><span class="icon">
-                        <svg class="icon-svg">
-                          <use xlink:href="#check-btn"></use>
-                        </svg></span>Оформить</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="product-item"><a class="product-item__link" href="/catalog/product/evrovagonka-khvoy-125-kh-97-10-17-m-sort-ab/"><span class="product-item__image">
-                  <div class="product-item__image-inner"><img src="/media/vagonkabrus_cache/8a/e0/8ae071a4d5f840cc98da8a382353226d.jpg" alt="Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ"/>
-                    <!--img(src=`${href}/img/test.jpg`, alt="image")-->
-                  </div><span class="product-item__flag-content"><span class="product-item__flag product-item__flag--hit">хит</span></span></span><span class="product-item__content-top"><span class="product-item__head"><span class="product-item__art">с00004</span><span class="product-item__rating"><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span></span></span><span class="product-item__name">Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ</span>
-                  <div class="product-item__status product-item__status--many">Кол-во: много</div><span class="product-item__cost"><span class="product-item__cost-product">19,00<span> ₽/п.м.</span></span></span></span></a>
-              <div class="product-item__content-bottom">
-                <div class="product-item__btns">
-                  <div class="shopping-cart-product"><a class="btn btn-checkout button_style-2 button_xl product-card-v2__cart-button button-theme button-theme_cart" href="/cart/"><span class="icon">
-                        <svg class="icon-svg">
-                          <use xlink:href="#check-btn"></use>
-                        </svg></span>Оформить</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="product-item"><a class="product-item__link" href="/catalog/product/evrovagonka-khvoy-125-kh-97-10-17-m-sort-ab/"><span class="product-item__image">
-                  <div class="product-item__image-inner"><img src="/media/vagonkabrus_cache/8a/e0/8ae071a4d5f840cc98da8a382353226d.jpg" alt="Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ"/>
-                    <!--img(src=`${href}/img/test.jpg`, alt="image")-->
-                  </div><span class="product-item__flag-content"><span class="product-item__flag product-item__flag--hit">хит</span></span></span><span class="product-item__content-top"><span class="product-item__head"><span class="product-item__art">с00004</span><span class="product-item__rating"><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span></span></span><span class="product-item__name">Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ</span>
-                  <div class="product-item__status product-item__status--many">Кол-во: много</div><span class="product-item__cost"><span class="product-item__cost-product">19,00<span> ₽/п.м.</span></span></span></span></a>
-              <div class="product-item__content-bottom">
-                <div class="product-item__btns">
-                  <div class="shopping-cart-product"><a class="btn btn-checkout button_style-2 button_xl product-card-v2__cart-button button-theme button-theme_cart" href="/cart/"><span class="icon">
-                        <svg class="icon-svg">
-                          <use xlink:href="#check-btn"></use>
-                        </svg></span>Оформить</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="product-item"><a class="product-item__link" href="/catalog/product/evrovagonka-khvoy-125-kh-97-10-17-m-sort-ab/"><span class="product-item__image">
-                  <div class="product-item__image-inner"><img src="/media/vagonkabrus_cache/8a/e0/8ae071a4d5f840cc98da8a382353226d.jpg" alt="Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ"/>
-                    <!--img(src=`${href}/img/test.jpg`, alt="image")-->
-                  </div><span class="product-item__flag-content"><span class="product-item__flag product-item__flag--hit">хит</span></span></span><span class="product-item__content-top"><span class="product-item__head"><span class="product-item__art">с00004</span><span class="product-item__rating"><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span></span></span><span class="product-item__name">Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ</span>
-                  <div class="product-item__status product-item__status--many">Кол-во: много</div><span class="product-item__cost"><span class="product-item__cost-product">19,00<span> ₽/п.м.</span></span></span></span></a>
-              <div class="product-item__content-bottom">
-                <div class="product-item__btns">
-                  <div class="shopping-cart-product"><a class="btn btn-checkout button_style-2 button_xl product-card-v2__cart-button button-theme button-theme_cart" href="/cart/"><span class="icon">
-                        <svg class="icon-svg">
-                          <use xlink:href="#check-btn"></use>
-                        </svg></span>Оформить</a>
+                  <div class="shopping-cart-product">
+                    <div class="input-number">
+                      <div class="order-down"></div>
+                      <input id="number" type="number" min="0" step="1" value="1" required=""/>
+                      <div class="order-up"></div>
+                    </div><a class="shopping-cart-btn add-to-cart button-theme button-theme_primary" href="/cart/add/3557">
+                      <svg class="icon">
+                        <use xlink:href="#shopping-cart"></use>
+                      </svg></a>
                   </div>
                 </div>
               </div>
@@ -1840,6 +1894,36 @@
                       <svg class="icon">
                         <use xlink:href="#shopping-cart"></use>
                       </svg></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product-item"><a class="product-item__link" href="/catalog/product/evrovagonka-khvoy-125-kh-97-10-17-m-sort-ab/"><span class="product-item__image">
+                  <div class="product-item__image-inner"><img src="/media/vagonkabrus_cache/8a/e0/8ae071a4d5f840cc98da8a382353226d.jpg" alt="Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ"/>
+                    <!--img(src=`${href}/img/test.jpg`, alt="image")-->
+                  </div><span class="product-item__flag-content"><span class="product-item__flag product-item__flag--hit">хит</span></span></span><span class="product-item__content-top"><span class="product-item__head"><span class="product-item__art">с00004</span><span class="product-item__rating"><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span></span></span><span class="product-item__name">Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ</span>
+                  <div class="product-item__status product-item__status--many">Кол-во: много</div><span class="product-item__cost"><span class="product-item__cost-product">19,00<span> ₽/п.м.</span></span></span></span></a>
+              <div class="product-item__content-bottom">
+                <div class="product-item__btns">
+                  <div class="shopping-cart-product"><a class="btn btn-checkout button_style-2 button_xl product-card-v2__cart-button button-theme button-theme_cart" href="/cart/"><span class="icon">
+                        <svg class="icon-svg">
+                          <use xlink:href="#check-btn"></use>
+                        </svg></span>Оформить</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product-item"><a class="product-item__link" href="/catalog/product/evrovagonka-khvoy-125-kh-97-10-17-m-sort-ab/"><span class="product-item__image">
+                  <div class="product-item__image-inner"><img src="/media/vagonkabrus_cache/8a/e0/8ae071a4d5f840cc98da8a382353226d.jpg" alt="Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ"/>
+                    <!--img(src=`${href}/img/test.jpg`, alt="image")-->
+                  </div><span class="product-item__flag-content"><span class="product-item__flag product-item__flag--hit">хит</span></span></span><span class="product-item__content-top"><span class="product-item__head"><span class="product-item__art">с00004</span><span class="product-item__rating"><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span><span class="star star--empty"></span></span></span><span class="product-item__name">Евровагонка (хвоя) 12,5 х 97 мм, 1.0-1.5 м, категория АВ</span>
+                  <div class="product-item__status product-item__status--many">Кол-во: много</div><span class="product-item__cost"><span class="product-item__cost-product">19,00<span> ₽/п.м.</span></span></span></span></a>
+              <div class="product-item__content-bottom">
+                <div class="product-item__btns">
+                  <div class="shopping-cart-product"><a class="btn btn-checkout button_style-2 button_xl product-card-v2__cart-button button-theme button-theme_cart" href="/cart/"><span class="icon">
+                        <svg class="icon-svg">
+                          <use xlink:href="#check-btn"></use>
+                        </svg></span>Оформить</a>
                   </div>
                 </div>
               </div>
