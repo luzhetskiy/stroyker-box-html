@@ -127,9 +127,10 @@
     padding: 0;
     border-radius: 20px;
     z-index: 2;
-    .icon {
-      width: 14px;
-      height: 14px;
+    img, svg {
+      display: block;
+      width: 16px;
+      height: 16px;
     }
   }
   .slick-prev, .slick-next {
@@ -140,9 +141,6 @@
   }
   .slick-next {
     right: 0;
-    .icon {
-      transform: rotate(180deg);
-    }
   }
   @include media-breakpoint-up(sm) {
     &:not([data-no-arrows]) {
@@ -152,9 +150,6 @@
     }
     .slick-prev, .slick-next {
       display: flex !important;
-    }
-    &:not([data-sm-mounted="false"]) {
-
     }
   }
   @include media-breakpoint-down(sm) {
@@ -170,5 +165,11 @@
     .slick-prev, .slick-next {
       display: none !important;
     }
+  }
+}
+
+.banners-slider {
+  .slick-track {
+    margin: 0 auto;
   }
 }

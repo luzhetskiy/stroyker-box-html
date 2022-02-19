@@ -281,8 +281,19 @@ block content
                     a(href='/catalog/propitki-dlya-drevesiny/') Пропитки для древесины
                   li.menu-item
                     a(href='/catalog/derevyannye-igrushki/') Деревянные игрушки
+            
+            .aside-banners-grid
+              +content-standard-box({
+                image: true,
+                imageSrc: href+'/img/banner-test-19.02.22.jpeg'
+              })
+              +content-standard-box({
+                image: true,
+                imageSrc: href+'/img/banner-test-19.02.22.jpeg'
+              })
+            
             //banners
-            .new-banners.owl-carousel
+            //.new-banners.owl-carousel
               .item
                 .product-item.product-item--banner
                   a(href='https://vagonka-brus-doska.ru/catalog/materialy-iz-listvennicy/' title='АКЦИЯ ПЛАНКЕН ЛИСТВЕННИЦА')

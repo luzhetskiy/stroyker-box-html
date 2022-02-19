@@ -354,13 +354,6 @@ class SliderConstructor {
   }
 
   init() {
-    this.sliderWidth = window.innerWidth;
-
-    this.htmlElements = {};
-    this.htmlElements.vector = '<svg class="icon" fill="currentColor" viewBox="0 0 10.5 18.1"><path stroke="none" d="M9,0l1.4,1.4L2.8,9l7.6,7.6L9,18.1L0,9C0,9,9.1,0,9,0z"></path></svg>';
-    this.htmlElements.nextArrow = `<button type="button" class="button button_style-1 slick-next">${this.htmlElements.vector}</button>`;
-    this.htmlElements.prevArrow = `<button type="button" class="button button_style-1 slick-prev">${this.htmlElements.vector}</button>`;
-
     this.params = {};
 
     this.params.autoplay = this.element.getAttribute('data-autoplay-timeout') !== null;
@@ -408,15 +401,52 @@ class SliderConstructor {
       }
       this.slides.push(slide);
     });
+
+    this.createIcons();
     
     this.checkSliderState();
     this.checkSliderStateDebounced = debounce(this.checkSliderState, 500, this);
     window.addEventListener('resize', this.checkSliderStateDebounced);
   }
 
+  createIcons() {
+    let leftIcon = `
+      <svg viewBox="0 0 11 19" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.4 18.1L0 16.7L7.6 9.10001L0 1.5L1.4 0L10.4 9.10001C10.4 9.10001 1.3 18.1 1.4 18.1Z"/>
+      </svg>
+    `;
+    let rightIcon = `
+      <svg viewBox="0 0 11 19" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9.00039 7.24792e-05L10.4004 1.40007L2.80039 9.00009L10.4004 16.6001L9.00039 18.1001L0.000391006 9.00009C0.000391006 9.00009 9.10039 7.24792e-05 9.00039 7.24792e-05Z"/>
+      </svg>
+    `; 
+    
+
+    const leftIconClass = 'custom-icon-left';
+    const rightIconClass = 'custom-icon-right';
+
+    const customIcons = this.element.querySelectorAll(`.${leftIconClass}, .${rightIconClass}`);
+    customIcons.forEach(icon => {
+      const isLeftIcon = icon.classList.contains(leftIconClass);
+      const isRightIcon = icon.classList.contains(rightIconClass);
+      if (isLeftIcon) {
+        icon.classList.remove(leftIconClass);
+        leftIcon = icon.outerHTML;
+      }
+      else if (isRightIcon) {
+        icon.classList.remove(rightIconClass);
+        rightIcon = icon.outerHTML;
+      }
+      icon.remove();
+    })
+
+    this.nextArrow = `<button type="button" class="button button_style-1 slick-next">${leftIcon}</button>`;
+    this.prevArrow = `<button type="button" class="button button_style-1 slick-prev">${rightIcon}</button>`;
+  }
+
   checkSliderState() {
-    if (this.mounted && this.sliderWidth === window.innerWidth) return;
-    this.sliderWidth = window.innerWidth;
+    if (this.mounted && this.savedWindowWidth === window.innerWidth) return;
+    this.savedWindowWidth = window.innerWidth;
 
     if (this.mounted) {
       this.unmount();
@@ -462,8 +492,8 @@ class SliderConstructor {
       slidesToShow: this.params.count.xs,
       slidesToScroll: this.params.count.xs,
       rows: this.params.rows.xs,
-      nextArrow: this.htmlElements.nextArrow,
-      prevArrow: this.htmlElements.prevArrow,
+      prevArrow: this.prevArrow,
+      nextArrow: this.nextArrow,
       arrows: this.params.arrows,
       adaptiveHeight: this.params.adaptiveHeight,
       dots: true,

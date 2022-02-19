@@ -494,8 +494,8 @@ img {
   }
 }
 
-.banners-slider {
-  .slick-track {
-    margin: 0 auto;
-  }
+.aside-banners-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
