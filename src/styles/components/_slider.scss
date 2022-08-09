@@ -183,12 +183,10 @@
 .swiper {
   width: 100%;
 }
-.swiper_home-banner {
-  .swiper-pagination {
-    bottom: 100px !important;
-    @media (max-width: 1024px) {
-      bottom: 20px !important;
-    }
+.swiper-pagination-big-bottom {
+  bottom: 100px !important;
+  @media (max-width: 1024px) {
+    bottom: 20px !important;
   }
 }
 .swiper-button-next,
@@ -248,6 +246,9 @@
   max-width: 80%;
   margin-left: auto;
   margin-right: auto;
+  .btn-green {
+    margin-left: 0;
+  }
   @media(max-width:576px) {
     position: relative;
   }
@@ -286,16 +287,7 @@
 
 .example-sidebar-wrapper {
   display: flex;
-  .swiper_home-banner {
-  .swiper-pagination {
-    bottom: 20px !important;
-    @media (max-width: 1024px) {
-      bottom: 20px !important;
-    }
-  }
 }
-}
-
 .example-sidebar {
   flex-basis: 20%;
   background-color: #ccc;

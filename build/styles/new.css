@@ -3759,10 +3759,10 @@ body {
 .swiper {
   width: 100%; }
 
-.swiper_home-banner .swiper-pagination {
+.swiper-pagination-big-bottom {
   bottom: 100px !important; }
   @media (max-width: 1024px) {
-    .swiper_home-banner .swiper-pagination {
+    .swiper-pagination-big-bottom {
       bottom: 20px !important; } }
 
 .swiper-button-next,
@@ -3817,6 +3817,8 @@ body {
   max-width: 80%;
   margin-left: auto;
   margin-right: auto; }
+  .home-banner__content .btn-green {
+    margin-left: 0; }
   @media (max-width: 576px) {
     .home-banner__content {
       position: relative; } }
@@ -3848,11 +3850,6 @@ body {
 
 .example-sidebar-wrapper {
   display: flex; }
-  .example-sidebar-wrapper .swiper_home-banner .swiper-pagination {
-    bottom: 20px !important; }
-    @media (max-width: 1024px) {
-      .example-sidebar-wrapper .swiper_home-banner .swiper-pagination {
-        bottom: 20px !important; } }
 
 .example-sidebar {
   flex-basis: 20%;
@@ -4534,9 +4531,6 @@ img {
 input,
 textarea {
   font-family: inherit !important; }
-
-.btn-green {
-  background-color: #318F35; }
 
 .grid {
   margin-bottom: -20px;
