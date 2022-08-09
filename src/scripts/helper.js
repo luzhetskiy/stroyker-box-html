@@ -2,6 +2,7 @@ window.addEventListener('load', ()=>{
   Helper.init();
 })
 
+
 //url clean
 function cleanUp(url) {
   var url = $.trim(url);
