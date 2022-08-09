@@ -341,6 +341,40 @@ block content
         +content-placeholder()
         +content-placeholder()
 
+  h2.example-h2.container на всю ширину экрана без контента
+  //на всю ширину  экрана без контента
+  section.home-banner-wrapper
+    //banner
+    .home-banner.swiper.swiper_home-banner
+      .swiper-wrapper
+        //slide
+        //image_left-crop/image_right-crop добавить класс для обрезки 2/3
+        .swiper-slide.home-banner__slide
+         .image.image_cover.image_left-crop
+          img(src=href+"/img/dd.jpg", alt="image")
+
+        //slide
+        .swiper-slide.home-banner__slide
+         .image.image_cover.image_right-crop
+          img(src=href+"/img/dd.jpg", alt="image")
+  
+      .swiper-pagination.swiper-pagination-big-bottom
+      .swiper-button-prev
+      .swiper-button-next 
+
+    //categories
+    section.home-categories
+     .container
+       // для 5+ элементов добавить класс grid_6items
+       .row.grid
+         include blocks/cards
+         -var grid = 'grid__block home-categories__block'
+         +card2('Деревянные дома', href+'/img/56dcc810efa71925168c0d36d5c3fbf7.png', grid)
+         +card2('Кровельные работы', href+'/img/7eaf93e9c47993e5b22277de3a30b89e.png', grid)
+         +card2('Пропитки для бревен', href+'/img/767773b7699f15e02052b250d92c0c7f.png', grid)
+         +card2('Проектирование', href+'/img/e79cec4f0a120d2e96a1701cf4ef8db3.png', grid)
+
+
   h2.example-h2.container на всю ширину экрана
   //на всю ширину  экрана
   section.home-banner-wrapper
