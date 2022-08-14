@@ -274,7 +274,6 @@
 @media(max-width:576px) {
   .home-banner__slide .image_cover {
     position: relative;
-    padding: 40px 0 60px;
     img {
       position: absolute !important;
       top: 0;
@@ -295,6 +294,22 @@
   @media(max-width:576px) {
     display: none;
   }
+}
+.example-sidebar-menu {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  &__li {
+    border-bottom: 1px solid #000;
+    padding: 15px 0;
+
+  }
+
+  &__li:last-child {
+    border: none;
+  }
+
 }
 
 .example-h2 {
