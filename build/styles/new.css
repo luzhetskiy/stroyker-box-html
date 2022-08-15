@@ -3763,7 +3763,7 @@ body {
   bottom: 100px !important; }
   @media (max-width: 1024px) {
     .swiper-pagination-big-bottom {
-      bottom: 20px !important; } }
+      bottom: 10px !important; } }
 
 .swiper-button-next,
 .swiper-button-prev {
@@ -3839,7 +3839,8 @@ body {
 
 @media (max-width: 576px) {
   .home-banner__slide .image_cover {
-    position: relative; }
+    position: relative;
+    padding: 40px 0; }
     .home-banner__slide .image_cover img {
       position: absolute !important;
       top: 0;

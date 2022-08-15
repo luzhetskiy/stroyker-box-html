@@ -186,7 +186,7 @@
 .swiper-pagination-big-bottom {
   bottom: 100px !important;
   @media (max-width: 1024px) {
-    bottom: 20px !important;
+    bottom: 10px !important;
   }
 }
 .swiper-button-next,
@@ -274,6 +274,7 @@
 @media(max-width:576px) {
   .home-banner__slide .image_cover {
     position: relative;
+    padding: 40px 0;
     img {
       position: absolute !important;
       top: 0;
