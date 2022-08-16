@@ -214,15 +214,21 @@ header(class=header_style=='landing'?'header_landing':'')
 
       
       
-      
       .catalog-header-content(style='display: none;')
-        ul
+        ul.catalog-header-content__ul
           li.menu-item
-            a(href='/catalog/brevno-ocilindrovannoe/') Бревно оцилиндрованное
+            a(href='/catalog/brevno-ocilindrovannoe/').menu-item__link-hover-color
+              span.catalog-header-content__span Бревно оцилиндрованное
+              img(src=href+"/img/icons/menu-icon.svg", alt="иконка стрелки").catalog-header-content__icon.catalog-header-content__icon_last
           li.menu-item
-            a(href='/catalog/vagonka-i-evrovagonka/') Вагонка и Евровагонка
+            a(href='/catalog/vagonka-i-evrovagonka/').menu-item__link-df-reverse.menu-item__link-hover-line
+              span.catalog-header-content__span Вагонка и Евровагонка
+              img(src=href+"/img/icons/menu-icon.svg", alt="иконка стрелки").catalog-header-content__icon.catalog-header-content__icon_first
           li.menu-item
-            a(href='/catalog/blok-haus/') Блок Хаус
+            a(href='/catalog/blok-haus/').menu-item__link
+              span.catalog-header-content__span  Блок Хаус
+              .menu-item-arrow-hover
+                img(src=href+"/img/icons/menu-icon.svg", alt="иконка стрелки").catalog-header-content__icon.catalog-header-content__icon_last
           li.menu-item
             a(href='/catalog/imitaciya-brusa/') Имитация бруса
           li.menu-item
