@@ -4732,9 +4732,6 @@ img {
 .header_gray .header-body__content-right {
   margin-left: 15px !important; }
 
-.header_gray header.fixed:not(.header_landing) .catalog-inner-btn {
-  margin-right: 10px; }
-
 @keyframes flickerOrange {
   0% {
     border-color: rgba(255, 255, 255, 0.555); }
