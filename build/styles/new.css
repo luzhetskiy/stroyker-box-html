@@ -4730,7 +4730,7 @@ img {
   margin-left: 15px; }
 
 .header_gray .header-body__content-right {
-  margin-left: 15px; }
+  margin-left: 0; }
 
 @keyframes flickerOrange {
   0% {
