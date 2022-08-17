@@ -1,5 +1,5 @@
--var href = 'https://luzhetskiy.github.io/stroyker-box-html/build'
-//- -var href = 'http://localhost:9000'
+//- -var href = 'https://luzhetskiy.github.io/stroyker-box-html/build'
+-var href = 'http://localhost:9000'
  
 block variables
 include ../blocks/components
@@ -27,9 +27,9 @@ html
     link(rel='stylesheet' href=href+'/styles/new.css')
   
   body.noselect(class=bodyClass)
-    include ../blocks/header
+    //- include ../blocks/header
     //- include ../blocks/header_gray_rubrikator
-    //- include ../blocks/header_gray
+    include ../blocks/header_gray
     main(class=header_style=='landing'?'main_landing':'')
       block content
     include ../blocks/footer

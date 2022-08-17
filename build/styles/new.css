@@ -4697,6 +4697,15 @@ img {
   width: 100%;
   color: #ff5f00; }
 
+.header_gray .header-user__link .icon {
+  margin-right: 2px; }
+
+.header_gray .header-cart {
+  padding-left: 27px; }
+
+.header_gray .header-body__content {
+  justify-content: flex-start; }
+
 @keyframes flickerOrange {
   0% {
     border-color: rgba(255, 255, 255, 0.555); }

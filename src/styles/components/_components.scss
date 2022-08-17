@@ -686,6 +686,15 @@ img {
     width: 100%;
     color:#ff5f00;
   }
+  .header-user__link .icon {
+    margin-right: 2px;
+  }
+  .header-cart {
+    padding-left: 27px;
+  }
+  .header-body__content {
+    justify-content: flex-start;
+  }
 }
 @keyframes flickerOrange {
   0% {
@@ -697,6 +706,7 @@ img {
   100% {
     border-color: rgba(255, 255, 255, 0.555);
   }
+  
 }
 
 .header_gray + main {
