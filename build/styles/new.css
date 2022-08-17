@@ -4729,6 +4729,9 @@ img {
 .header_gray .header-body__content-link:not(:first-child) {
   margin-left: 15px; }
 
+.header_gray .header-body__content-right {
+  margin-left: 15px; }
+
 @keyframes flickerOrange {
   0% {
     border-color: rgba(255, 255, 255, 0.555); }
