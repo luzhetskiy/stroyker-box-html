@@ -4707,7 +4707,7 @@ img {
   justify-content: flex-start; }
 
 .header_gray .catalog-inner-btn {
-  margin-right: 10px;
+  margin-right: 10px !important;
   margin-left: 60px; }
 
 .header_gray .header-fixed-content {
@@ -4730,7 +4730,7 @@ img {
   margin-left: 15px; }
 
 .header_gray .header-body__content-right {
-  margin-left: 0 !important; }
+  margin-left: 15px !important; }
 
 .header_gray header.fixed:not(.header_landing) .catalog-inner-btn {
   margin-right: 10px; }
