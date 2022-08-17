@@ -720,7 +720,10 @@ img {
     margin-left: 15px;
   }
   .header-body__content-right {
-    margin-left: 0;
+    margin-left: 0 !important;
+  }
+  header.fixed:not(.header_landing) .catalog-inner-btn {
+    margin-right: 10px;
   }
 
 }
