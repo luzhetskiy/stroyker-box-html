@@ -621,6 +621,72 @@ img {
 
 //серый хедер
 .header_gray {
+  .header-fixed-content {
+    font-size: 14px;
+    align-items: flex-start !important;
+  }
+  html,
+  body,
+  div,
+  span,
+  applet,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  font,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td {
+    font-size: 14px !important;
+  }
   .white-logo {
     display: none;
   }
@@ -706,14 +772,15 @@ img {
   .header-body__content-links {
     margin-left: 18px;
     margin-bottom: 10px;
+    font-size: 14px;
   }
   .header-body__content-link {
     color: #fff;
-    transition: all .3s;
+    transition: all 0.3s;
     font-size: 14px;
   }
   .header-body__content-link:hover {
-    color:#ff5f00;
+    color: #ff5f00;
     text-decoration: underline;
   }
   .header-body__content-link:not(:first-child) {
@@ -721,6 +788,12 @@ img {
   }
   .header-body__content-right {
     margin-left: 15px !important;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .catalog-header-content ul {
+    margin-top: -30px;
+    max-width: 80%;
   }
 }
 
@@ -753,7 +826,7 @@ img {
   top: 50%;
   transform: translateY(-50%);
   left: 0;
-  background-image: url("../img/btn-arrow.svg");
+  background-image: url("../img/btn-arrow.png");
   width: 15px;
   height: 15px;
 }

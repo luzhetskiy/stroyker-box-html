@@ -4634,6 +4634,72 @@ img {
 .header_rubrikator_gray .catalog-header-content a::before {
   display: none; }
 
+.header_gray .header-fixed-content {
+  font-size: 14px;
+  align-items: flex-start !important; }
+
+.header_gray html,
+.header_gray body,
+.header_gray div,
+.header_gray span,
+.header_gray applet,
+.header_gray h1,
+.header_gray h2,
+.header_gray h3,
+.header_gray h4,
+.header_gray h5,
+.header_gray h6,
+.header_gray p,
+.header_gray blockquote,
+.header_gray pre,
+.header_gray a,
+.header_gray abbr,
+.header_gray acronym,
+.header_gray address,
+.header_gray big,
+.header_gray cite,
+.header_gray code,
+.header_gray del,
+.header_gray dfn,
+.header_gray em,
+.header_gray font,
+.header_gray img,
+.header_gray ins,
+.header_gray kbd,
+.header_gray q,
+.header_gray s,
+.header_gray samp,
+.header_gray small,
+.header_gray strike,
+.header_gray strong,
+.header_gray sub,
+.header_gray sup,
+.header_gray tt,
+.header_gray var,
+.header_gray b,
+.header_gray u,
+.header_gray i,
+.header_gray center,
+.header_gray dl,
+.header_gray dt,
+.header_gray dd,
+.header_gray ol,
+.header_gray ul,
+.header_gray li,
+.header_gray fieldset,
+.header_gray form,
+.header_gray label,
+.header_gray legend,
+.header_gray table,
+.header_gray caption,
+.header_gray tbody,
+.header_gray tfoot,
+.header_gray thead,
+.header_gray tr,
+.header_gray th,
+.header_gray td {
+  font-size: 14px !important; }
+
 .header_gray .white-logo {
   display: none; }
 
@@ -4715,11 +4781,12 @@ img {
 
 .header_gray .header-body__content-links {
   margin-left: 18px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  font-size: 14px; }
 
 .header_gray .header-body__content-link {
   color: #fff;
-  transition: all .3s;
+  transition: all 0.3s;
   font-size: 14px; }
 
 .header_gray .header-body__content-link:hover {
@@ -4730,7 +4797,13 @@ img {
   margin-left: 15px; }
 
 .header_gray .header-body__content-right {
-  margin-left: 15px !important; }
+  margin-left: 15px !important;
+  font-size: 12px;
+  font-weight: bold; }
+
+.header_gray .catalog-header-content ul {
+  margin-top: -30px;
+  max-width: 80%; }
 
 @keyframes flickerOrange {
   0% {
@@ -4756,7 +4829,7 @@ img {
   top: 50%;
   transform: translateY(-50%);
   left: 0;
-  background-image: url("../img/btn-arrow.svg");
+  background-image: url("../img/btn-arrow.png");
   width: 15px;
   height: 15px; }
 
