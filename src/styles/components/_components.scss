@@ -715,6 +715,7 @@ img {
   .catalog-inner-btn {
     background-color: #474747;
     border: 1px solid #7c8994;
+    width: 200px !important;
   }
   .header-search {
     .icon-svg {
@@ -787,13 +788,22 @@ img {
     margin-left: 15px;
   }
   .header-body__content-right {
-    margin-left: 15px !important;
+    margin-left: 0;
     font-size: 12px;
     font-weight: bold;
   }
   .catalog-header-content ul {
     margin-top: -30px;
     max-width: 80%;
+  }
+  .header-body__content-right {
+    margin-left: 15px !important;
+  } 
+  header.fixed:not(.header_landing) .header-body__content-right {
+    margin-left: 0;
+  }
+  .header-user {
+    margin-left: 0;
   }
 }
 
@@ -826,7 +836,9 @@ img {
   top: 50%;
   transform: translateY(-50%);
   left: 0;
-  background-image: url("../img/btn-arrow.png");
+  background-image: url("../img/btn-arrow.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
   width: 15px;
   height: 15px;
 }
