@@ -4638,68 +4638,6 @@ img {
   font-size: 14px;
   align-items: flex-start !important; }
 
-.header_gray html,
-.header_gray body,
-.header_gray div,
-.header_gray span,
-.header_gray applet,
-.header_gray h1,
-.header_gray h2,
-.header_gray h3,
-.header_gray h4,
-.header_gray h5,
-.header_gray h6,
-.header_gray p,
-.header_gray blockquote,
-.header_gray pre,
-.header_gray a,
-.header_gray abbr,
-.header_gray acronym,
-.header_gray address,
-.header_gray big,
-.header_gray cite,
-.header_gray code,
-.header_gray del,
-.header_gray dfn,
-.header_gray em,
-.header_gray font,
-.header_gray img,
-.header_gray ins,
-.header_gray kbd,
-.header_gray q,
-.header_gray s,
-.header_gray samp,
-.header_gray small,
-.header_gray strike,
-.header_gray strong,
-.header_gray sub,
-.header_gray sup,
-.header_gray tt,
-.header_gray var,
-.header_gray b,
-.header_gray u,
-.header_gray i,
-.header_gray center,
-.header_gray dl,
-.header_gray dt,
-.header_gray dd,
-.header_gray ol,
-.header_gray ul,
-.header_gray li,
-.header_gray fieldset,
-.header_gray form,
-.header_gray label,
-.header_gray legend,
-.header_gray table,
-.header_gray caption,
-.header_gray tbody,
-.header_gray tfoot,
-.header_gray thead,
-.header_gray tr,
-.header_gray th,
-.header_gray td {
-  font-size: 14px !important; }
-
 .header_gray .white-logo {
   display: none; }
 
@@ -4757,7 +4695,8 @@ img {
   fill: transparent; }
 
 .header_gray .header-user__link {
-  color: #ff5f00; }
+  color: #ff5f00;
+  font-size: 12px; }
 
 .header_gray .header-cart span.cart-number {
   background-color: transparent;
