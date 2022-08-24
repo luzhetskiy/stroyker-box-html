@@ -536,6 +536,7 @@ img {
   align-items: center;
   height: 50px;
   width: 25%;
+  justify-content: flex-start;
 }
 .yellow-logo {
   display: none;
@@ -566,6 +567,7 @@ img {
   .catalog-header-content a {
     justify-content: space-between;
     padding-left: 0;
+    font-size: 14px;
   }
   .catalog-header-content a:hover {
     background-color: transparent;
@@ -734,11 +736,11 @@ img {
   }
   .catalog-header-content ul {
     margin-top: -30px;
-    max-width: 80%;
+    max-width: 100%;
   }
   .header-body__content-right {
     margin-left: 15px !important;
-  } 
+  }
   header.fixed:not(.header_landing) .header-body__content-right {
     margin-left: 0;
   }
