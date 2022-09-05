@@ -118,8 +118,6 @@ header {
         }
         .catalog-inner-btn {
           margin-right: 30px;
-          width: 200px;
-          flex-shrink: 0;
         }
         .header-search {
           width: auto;
@@ -2010,7 +2008,6 @@ header {
     display: flex;
     align-items: center;
     position: relative;
-    user-select: none;
     cursor: pointer;
     &:hover {
       .faq-element__trigger {

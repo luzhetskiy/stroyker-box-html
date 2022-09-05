@@ -29,6 +29,11 @@ $('.catalog-inner-btn').click(function (e) {
   $(this).toggleClass('open');
   $('.catalog-header-content').toggle(0);
 });
+$('.catalog-inner-btn-menu').click(function (e) {
+  e.preventDefault();
+  $(this).toggleClass('open');
+  $('.catalog-header-content-menu').toggle(0);
+});
 $('.catalog-inner-btn,.catalog-menu__head a').click(function (e) {
   e.preventDefault();
   $('.catalog-menu').toggle(0);

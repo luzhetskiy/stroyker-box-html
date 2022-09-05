@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="/static/css/jquery.fancybox.v3.5.7.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/custom.css" type="text/css">
     <link rel="stylesheet" href="/static/css/common.css" type="text/css">
-    <link rel="stylesheet" href="https://luzhetskiy.github.io/stroyker-box-html/build/styles/font-front-fix.css">
-    <link rel="stylesheet" href="https://luzhetskiy.github.io/stroyker-box-html/build/styles/theme.css">
+    <link rel="stylesheet" href="http://localhost:9000/styles/font-front-fix.css">
+    <link rel="stylesheet" href="http://localhost:9000/styles/theme.css">
     <!--new-->
-    <link rel="stylesheet" href="https://luzhetskiy.github.io/stroyker-box-html/build/styles/new.css">
+    <link rel="stylesheet" href="http://localhost:9000/styles/new.css">
   </head>
   <body>
     <header>
@@ -220,123 +220,822 @@
       </div>
     </header>
     <main>
-      <section class="section">
+      <section class="conditional-section">
         <div class="container">
-          <div class="catalog-side mobile-show"><span class="catalog-side__title"><span class="icon">
-                <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0 0V2H16V0H0ZM0 8H16V6H0V8ZM0 14H16V12H0V14Z" fill="currentColor"></path>
-                </svg></span>Каталог продукции</span>
-            <div class="catalog-side__content">
-              <ul>
-                <li class="menu-item current"><a href="/catalog/brevno-ocilindrovannoe/">Бревно оцилиндрованное</a></li>
-                <li class="menu-item current"><a href="/catalog/vagonka-i-evrovagonka/">Вагонка и Евровагонка</a></li>
-                <li class="menu-item current"><a href="/catalog/blok-haus/">Блок Хаус</a></li>
-                <li class="menu-item current"><a href="/catalog/imitaciya-brusa/">Имитация бруса</a></li>
-                <li class="menu-item current"><a href="/catalog/doska-pola/">Доска пола</a></li>
-                <li class="menu-item current"><a href="/catalog/brus-i-doska-suhie-strogannye/">Брус и Доска</a></li>
-                <li class="menu-item current"><a href="/catalog/derevianniy-dekor/">Деревянный декор</a></li>
-                <li class="menu-item current"><a href="/catalog/elementy-lestnic/">Элементы лестниц</a></li>
-                <li class="menu-item current"><a href="/catalog/dveri-i-okna/">Двери и окна</a></li>
-                <li class="menu-item current"><a href="/catalog/materialy-iz-lipy/">Материалы из липы и абаши</a></li>
-                <li class="menu-item current"><a href="/catalog/materialy-iz-listvennicy/">Материалы из лиственницы</a></li>
-                <li class="menu-item current"><a href="/catalog/materialy-ih-osiny-i-abashi/">Материалы из осины</a></li>
-                <li class="menu-item current"><a href="/catalog/fanera-osb-dsp-dvp-tssp/">Фанера, ОСБ, ДСП, ДВП</a></li>
-                <li class="menu-item current"><a href="/catalog/utepliteli/">Утеплители</a></li>
-                <li class="menu-item current"><a href="/catalog/rulonnie-izoliyzionnie-materialy/">Рулонные изоляционные материалы</a></li>
-                <li class="menu-item current"><a href="/catalog/propitki-dlya-drevesiny/">Пропитки для древесины</a></li>
-                <li class="menu-item current"><a href="/catalog/derevyannye-igrushki/">Деревянные игрушки</a></li>
-              </ul>
-            </div>
+          <div class="mb-25">
+            <h2>Кнопки</h2>
           </div>
-          <div class="page-head">
-            <div class="breadcrumbs breadcrumbs--lk" itemscope="" itemtype="http://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" title="Главная" href="/">Главная
-                  <meta itemprop="name" content="Главная"></a>
-                <meta itemprop="position" content="1"></span><span class="sep"></span>        Личный кабинет</div>
+          <div class="d-flex flex-wrap column-gap-grid row-gap-20">
+            <div class="d-flex flex-column align-items-start row-gap-15"><a class="button button_xl button-theme button-theme_primary" href="#">
+                <svg class="icon">
+                  <use xlink:href="#shopping-cart"></use>
+                </svg><span>primary</span></a><a class="button button_xl button-theme button-theme_primary" href="#"><span>primary</span>
+                <svg class="icon">
+                  <use xlink:href="#shopping-cart"></use>
+                </svg></a><a class="button button-theme button-theme_primary" href="#">
+                <svg class="icon">
+                  <use xlink:href="#shopping-cart"></use>
+                </svg><span>primary</span></a><a class="button button-theme button-theme_primary" href="#"><span>primary</span>
+                <svg class="icon">
+                  <use xlink:href="#shopping-cart"></use>
+                </svg></a></div>
+            <div class="d-flex flex-column align-items-start row-gap-15"><a class="button button_xl button-theme button-theme_secondary" href="#"> 
+                <svg class="icon">
+                  <use xlink:href="#shopping-cart"></use>
+                </svg><span>secondary</span></a><a class="button button_xl button-theme button-theme_secondary" href="#"> <span>secondary</span>
+                <svg class="icon">
+                  <use xlink:href="#shopping-cart"> </use>
+                </svg></a><a class="button button-theme button-theme_secondary" href="#"> 
+                <svg class="icon">
+                  <use xlink:href="#shopping-cart"></use>
+                </svg><span>secondary</span></a><a class="button button-theme button-theme_secondary" href="#"> <span>secondary</span>
+                <svg class="icon">
+                  <use xlink:href="#shopping-cart"> </use>
+                </svg></a></div>
+            <div class="d-flex flex-column align-items-start row-gap-15"><a class="button button_xl button-theme button-theme_muted" href="#">
+                <svg class="icon">
+                  <use xlink:href="#shopping-cart"></use>
+                </svg><span>muted</span></a><a class="button button_xl button-theme button-theme_muted" href="#"><span>muted</span>
+                <svg class="icon">
+                  <use xlink:href="#shopping-cart"></use>
+                </svg></a><a class="button button-theme button-theme_muted" href="#">
+                <svg class="icon">
+                  <use xlink:href="#shopping-cart"></use>
+                </svg><span>muted</span></a><a class="button button-theme button-theme_muted" href="#"><span>muted</span>
+                <svg class="icon">
+                  <use xlink:href="#shopping-cart"></use>
+                </svg></a></div>
+            <div class="d-flex flex-column align-items-start row-gap-15"><a class="button button_xl button-theme button-theme_callme" href="#">
+                <svg class="icon">
+                  <use xlink:href="#shopping-cart"></use>
+                </svg><span>callme</span></a><a class="button button_xl button-theme button-theme_callme" href="#"><span>callme</span>
+                <svg class="icon">
+                  <use xlink:href="#shopping-cart"></use>
+                </svg></a><a class="button button-theme button-theme_callme" href="#">
+                <svg class="icon">
+                  <use xlink:href="#shopping-cart"></use>
+                </svg><span>callme</span></a><a class="button button-theme button-theme_callme" href="#"><span>callme</span>
+                <svg class="icon">
+                  <use xlink:href="#shopping-cart"></use>
+                </svg></a></div>
+            <div class="d-flex flex-column align-items-start row-gap-15"><a class="button button_xl button-theme button-theme_cart" href="#">
+                <svg class="icon">
+                  <use xlink:href="#shopping-cart"></use>
+                </svg><span>cart</span></a><a class="button button_xl button-theme button-theme_cart" href="#"><span>cart</span>
+                <svg class="icon">
+                  <use xlink:href="#shopping-cart"></use>
+                </svg></a><a class="button button-theme button-theme_cart" href="#">
+                <svg class="icon">
+                  <use xlink:href="#shopping-cart"></use>
+                </svg><span>cart</span></a><a class="button button-theme button-theme_cart" href="#"><span>cart</span>
+                <svg class="icon">
+                  <use xlink:href="#shopping-cart"></use>
+                </svg></a></div>
           </div>
-          <div class="content-block">
-            <div class="lk-main-page">
-              <h1>Личный кабинет</h1>
-              <div class="lk-main-page__head">
-                <div class="user-data"><span class="user-data__avatar">
-                    <svg class="icon-svg">
-                      <use xlink:href="#user-icon"></use>
-                    </svg></span>
-                  <div class="user-data__content"><span class="user-data__name">info@stroyker.pro</span><a class="btn-border btn-exit lk-exit" href="/account/logout/">
+        </div>
+      </section>
+      <section class="conditional-section">
+        <div class="container"> 
+          <div class="mb-25">
+            <h2 class="mb-20">Превью товаров <span class="text-color-accent">2.0</span></h2>
+            <p>Меняется только класс у родителя <strong>product-card-v2_type-1</strong></p>
+          </div>
+          <div class="d-grid gap-grid row-gap-sm-20 grid-columns-2 grid-columns-md-3 grid-columns-lg-4 grid-columns-xl-5">
+            <div class="product-card-v2 product-card-v2_type-1" data-custom-interaction="data-custom-interaction"> <a class="product-card-v2__link" href="#"></a>
+              <div class="product-card-v2__image"> 
+                <div class="image image_contain"><img src="http://localhost:9000/img/b49c856cb0b15abac9a63bda5f241eff.jpeg" alt="image"/><img src="http://localhost:9000/img/test.jpg" alt="image"/></div>
+                <div class="product-card-v2__rating"><img class="product-card-v2__rating-stars" src="http://localhost:9000/img/icons/rating.svg" alt="image"/></div>
+                <div class="product-card-v2__labels">
+                  <div class="card-label card-label_style-sale product-card-v2__label">Распродажа</div>
+                  <div class="card-label card-label_style-hit product-card-v2__label">Хит </div>
+                </div>
+              </div>
+              <div class="product-card-v2__content"> 
+                <div class="product-card-v2__title"> Фанера влагостойкая 12x2500х1250 mm
+                </div>
+                <div class="product-card-v2__content-bottom">
+                  <div class="product-card-v2__pricing">
+                    <div class="product-card-v2__old-price">99 999,99</div>
+                    <div class="product-card-v2__price text-color-accent">92986,50 <span>₽/шт.</span></div>
+                    <div class="product-card-v2__pricing-txt">Цена со скиндкой через корзину:</div>
+                    <div class="product-card-v2__price">89537,50 <span>₽/шт.</span></div>
+                  </div>
+                  <div class="product-card-v2__buttons">
+                    <button class="button button_style-2 button_xl product-card-v2__cart-button button-theme button-theme_primary">
                       <svg class="icon">
-                        <use xlink:href="#exit"></use>
-                      </svg>Выйти</a></div>
+                        <use xlink:href="#shopping-cart"></use>
+                      </svg><span> <span>Много товара</span><span>В корзину</span></span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-            <section class="lf-main-container">
-              <div class="container"><a class="mobile-menu-item" href="/user/orders/">История заказов<span class="icon">
-                    <svg class="icon-svg">
-                      <use xlink:href="#tab-arrow"></use>
-                    </svg></span></a><a class="mobile-menu-item" href="/user/docs/">Документооборот<span class="icon">
-                    <svg class="icon-svg">
-                      <use xlink:href="#tab-arrow"></use>
-                    </svg></span></a><a class="mobile-menu-item" href="/user/profile/edit/">Личные данные<span class="icon">
-                    <svg class="icon-svg">
-                      <use xlink:href="#tab-arrow"></use>
-                    </svg></span></a>
-                <div class="lk-main-menu"><a class="lk-menu-item" href="/user/orders/">
-                    <svg class="icon">
-                      <use xlink:href="#box"></use>
-                    </svg><span class="lk-menu-item__name">История заказов</span><span class="lk-menu-item__text">Просмотр, повтор, сохранение истории ваших покупок</span>
-                    <svg class="arrow">
-                      <use xlink:href="#arrow-right"></use>
-                    </svg></a><a class="lk-menu-item" href="/user/docs/">
-                    <svg class="icon">
-                      <use xlink:href="#subtract"></use>
-                    </svg><span class="lk-menu-item__name">Документооборот</span><span class="lk-menu-item__text">Счета, акты и сметы. У нас ничего не теряется</span>
-                    <svg class="arrow">
-                      <use xlink:href="#arrow-right"></use>
-                    </svg></a><a class="lk-menu-item" href="/user/profile/edit/">
-                    <svg class="icon">
-                      <use xlink:href="#pencil"></use>
-                    </svg><span class="lk-menu-item__name">Личные данные</span><span class="lk-menu-item__text">Пароль, логин и реквизиты</span>
-                    <svg class="arrow">
-                      <use xlink:href="#arrow-right"></use>
-                    </svg></a></div>
+            <div class="product-card-v2 product-card-v2_type-1" data-custom-interaction="data-custom-interaction"> <a class="product-card-v2__link" href="#"></a>
+              <div class="product-card-v2__image"> 
+                <div class="image image_contain"><img src="http://localhost:9000/img/b49c856cb0b15abac9a63bda5f241eff.jpeg" alt="image"/><img src="http://localhost:9000/img/test.jpg" alt="image"/></div>
+                <div class="product-card-v2__rating"><img class="product-card-v2__rating-stars" src="http://localhost:9000/img/icons/rating.svg" alt="image"/></div>
+                <div class="product-card-v2__labels">
+                  <div class="card-label card-label_style-stock product-card-v2__label">Уценка</div>
+                </div>
               </div>
-            </section>
+              <div class="product-card-v2__content"> 
+                <div class="product-card-v2__title"> Фанера влагостойкая 12x2500х1250 мм (длинное название товара, которое не влезает)
+                </div>
+                <div class="product-card-v2__content-bottom">
+                  <div class="product-card-v2__pricing">
+                    <div class="product-card-v2__pricing-txt">Последний раз товар был продан по этой цене:</div>
+                    <div class="product-card-v2__price text-color-light">89537,50 <span>₽/шт.</span></div>
+                  </div>
+                  <div class="product-card-v2__buttons">
+                    <button class="button button_disabled button_xl product-card-v2__cart-button button-theme button-theme_muted"><span> <span>Товар ожидается </span><span>узнать о наличии</span></span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product-card-v2 product-card-v2_type-1" data-custom-interaction="data-custom-interaction"> <a class="product-card-v2__link" href="#"></a>
+              <div class="product-card-v2__image"> 
+                <div class="image image_contain image_no-image"><img src="http://localhost:9000/img/icons/product-placeholder.svg" alt="image"/></div>
+                <div class="product-card-v2__rating"><img class="product-card-v2__rating-stars" src="http://localhost:9000/img/icons/rating.svg" alt="image"/></div>
+              </div>
+              <div class="product-card-v2__content"> 
+                <div class="product-card-v2__title"> Фанера влагостойкая
+                </div>
+                <div class="product-card-v2__content-bottom">
+                  <div class="product-card-v2__buttons">
+                    <button class="button button_style-1 button_xl product-card-v2__button button-theme button-theme_secondary"><span>Узнать стоимость</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-      <section class="section-dark feedback-form">
+      <section class="conditional-section">
+        <div class="container"> 
+          <div class="mb-25">
+            <h2 class="mb-20">Превью товаров <span class="text-color-accent">2.1</span></h2>
+            <p>
+              Отличие по стилю в мобильной версии.<br> Меняется только класс у родителя <strong>product-card-v2_type-2</strong></p>
+          </div>
+          <div class="d-grid gap-grid row-gap-sm-20 grid-columns-sm-2 grid-columns-md-3 grid-columns-lg-4 grid-columns-xl-5">
+            <div class="product-card-v2 product-card-v2_type-2" data-custom-interaction="data-custom-interaction"> <a class="product-card-v2__link" href="#"></a>
+              <div class="product-card-v2__image"> 
+                <div class="image image_contain"><img src="http://localhost:9000/img/b49c856cb0b15abac9a63bda5f241eff.jpeg" alt="image"/><img src="http://localhost:9000/img/test.jpg" alt="image"/></div>
+                <div class="product-card-v2__rating"><img class="product-card-v2__rating-stars" src="http://localhost:9000/img/icons/rating.svg" alt="image"/></div>
+                <div class="product-card-v2__labels">
+                  <div class="card-label card-label_style-sale product-card-v2__label">Распродажа</div>
+                  <div class="card-label card-label_style-hit product-card-v2__label">Хит </div>
+                </div>
+              </div>
+              <div class="product-card-v2__content"> 
+                <div class="product-card-v2__title"> Фанера влагостойкая 12x2500х1250 mm
+                </div>
+                <div class="product-card-v2__content-bottom">
+                  <div class="product-card-v2__pricing">
+                    <div class="product-card-v2__old-price">99 999,99</div>
+                    <div class="product-card-v2__price text-color-accent">92986,50 <span>₽/шт.</span></div>
+                    <div class="product-card-v2__pricing-txt">Цена со скиндкой через корзину:</div>
+                    <div class="product-card-v2__price">89537,50 <span>₽/шт.</span></div>
+                  </div>
+                  <div class="product-card-v2__buttons">
+                    <button class="button button_style-2 button_xl product-card-v2__cart-button button-theme button-theme_primary">
+                      <svg class="icon">
+                        <use xlink:href="#shopping-cart"></use>
+                      </svg><span> <span>Много товара</span><span>В корзину</span></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product-card-v2 product-card-v2_type-2" data-custom-interaction="data-custom-interaction"> <a class="product-card-v2__link" href="#"></a>
+              <div class="product-card-v2__image"> 
+                <div class="image image_contain"><img src="http://localhost:9000/img/b49c856cb0b15abac9a63bda5f241eff.jpeg" alt="image"/><img src="http://localhost:9000/img/test.jpg" alt="image"/></div>
+                <div class="product-card-v2__rating"><img class="product-card-v2__rating-stars" src="http://localhost:9000/img/icons/rating.svg" alt="image"/></div>
+                <div class="product-card-v2__labels">
+                  <div class="card-label card-label_style-stock product-card-v2__label">Уценка</div>
+                </div>
+              </div>
+              <div class="product-card-v2__content"> 
+                <div class="product-card-v2__title"> Фанера влагостойкая 12x2500х1250 мм (длинное название товара, которое не влезает)
+                </div>
+                <div class="product-card-v2__content-bottom">
+                  <div class="product-card-v2__pricing">
+                    <div class="product-card-v2__pricing-txt">Последний раз товар был продан по этой цене:</div>
+                    <div class="product-card-v2__price text-color-light">89537,50 <span>₽/шт.</span></div>
+                  </div>
+                  <div class="product-card-v2__buttons">
+                    <button class="button button_disabled button_xl product-card-v2__cart-button button-theme button-theme_muted"><span> <span>Товар ожидается </span><span>узнать о наличии</span></span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product-card-v2 product-card-v2_type-2" data-custom-interaction="data-custom-interaction"> <a class="product-card-v2__link" href="#"></a>
+              <div class="product-card-v2__image"> 
+                <div class="image image_contain image_no-image"><img src="http://localhost:9000/img/icons/product-placeholder.svg" alt="image"/></div>
+                <div class="product-card-v2__rating"><img class="product-card-v2__rating-stars" src="http://localhost:9000/img/icons/rating.svg" alt="image"/></div>
+              </div>
+              <div class="product-card-v2__content"> 
+                <div class="product-card-v2__title"> Фанера влагостойкая
+                </div>
+                <div class="product-card-v2__content-bottom">
+                  <div class="product-card-v2__buttons">
+                    <button class="button button_style-1 button_xl product-card-v2__button button-theme button-theme_secondary"><span>Узнать стоимость</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="conditional-section">
+        <div class="container"> 
+          <div class="mb-25">
+            <h2 class="mb-20">Сетка для каталога с фильтром <span class="text-color-accent">2.0</span></h2>
+          </div>
+          <div class="catalog-container"> 
+            <div class="catalog-filter"> 
+              <h4>Фильтр</h4>
+            </div>
+            <div class="catalog-body">
+              <!--меняется родительский div для карточек-->
+              <div class="d-grid gap-grid row-gap-sm-20 grid-columns-2 grid-columns-lg-3 grid-columns-xl-4">
+                <div class="product-card-v2 product-card-v2_type-1" data-custom-interaction="data-custom-interaction"> <a class="product-card-v2__link" href="#"></a>
+                  <div class="product-card-v2__image"> 
+                    <div class="image image_contain"><img src="http://localhost:9000/img/b49c856cb0b15abac9a63bda5f241eff.jpeg" alt="image"/><img src="http://localhost:9000/img/test.jpg" alt="image"/></div>
+                    <div class="product-card-v2__rating"><img class="product-card-v2__rating-stars" src="http://localhost:9000/img/icons/rating.svg" alt="image"/></div>
+                    <div class="product-card-v2__labels">
+                      <div class="card-label card-label_style-sale product-card-v2__label">Распродажа</div>
+                      <div class="card-label card-label_style-hit product-card-v2__label">Хит </div>
+                    </div>
+                  </div>
+                  <div class="product-card-v2__content"> 
+                    <div class="product-card-v2__title"> Фанера влагостойкая 12x2500х1250 mm
+                    </div>
+                    <div class="product-card-v2__content-bottom">
+                      <div class="product-card-v2__pricing">
+                        <div class="product-card-v2__old-price">99 999,99</div>
+                        <div class="product-card-v2__price text-color-accent">92986,50 <span>₽/шт.</span></div>
+                        <div class="product-card-v2__pricing-txt">Цена со скиндкой через корзину:</div>
+                        <div class="product-card-v2__price">89537,50 <span>₽/шт.</span></div>
+                      </div>
+                      <div class="product-card-v2__buttons">
+                        <button class="button button_style-2 button_xl product-card-v2__cart-button button-theme button-theme_primary">
+                          <svg class="icon">
+                            <use xlink:href="#shopping-cart"></use>
+                          </svg><span> <span>Много товара</span><span>В корзину</span></span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-card-v2 product-card-v2_type-1" data-custom-interaction="data-custom-interaction"> <a class="product-card-v2__link" href="#"></a>
+                  <div class="product-card-v2__image"> 
+                    <div class="image image_contain"><img src="http://localhost:9000/img/b49c856cb0b15abac9a63bda5f241eff.jpeg" alt="image"/><img src="http://localhost:9000/img/test.jpg" alt="image"/></div>
+                    <div class="product-card-v2__rating"><img class="product-card-v2__rating-stars" src="http://localhost:9000/img/icons/rating.svg" alt="image"/></div>
+                    <div class="product-card-v2__labels">
+                      <div class="card-label card-label_style-stock product-card-v2__label">Уценка</div>
+                    </div>
+                  </div>
+                  <div class="product-card-v2__content"> 
+                    <div class="product-card-v2__title"> Фанера влагостойкая 12x2500х1250 мм (длинное название товара, которое не влезает)
+                    </div>
+                    <div class="product-card-v2__content-bottom">
+                      <div class="product-card-v2__pricing">
+                        <div class="product-card-v2__pricing-txt">Последний раз товар был продан по этой цене:</div>
+                        <div class="product-card-v2__price text-color-light">89537,50 <span>₽/шт.</span></div>
+                      </div>
+                      <div class="product-card-v2__buttons">
+                        <button class="button button_disabled button_xl product-card-v2__cart-button button-theme button-theme_muted"><span> <span>Товар ожидается </span><span>узнать о наличии</span></span></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-card-v2 product-card-v2_type-1" data-custom-interaction="data-custom-interaction"> <a class="product-card-v2__link" href="#"></a>
+                  <div class="product-card-v2__image"> 
+                    <div class="image image_contain image_no-image"><img src="http://localhost:9000/img/icons/product-placeholder.svg" alt="image"/></div>
+                    <div class="product-card-v2__rating"><img class="product-card-v2__rating-stars" src="http://localhost:9000/img/icons/rating.svg" alt="image"/></div>
+                  </div>
+                  <div class="product-card-v2__content"> 
+                    <div class="product-card-v2__title"> Фанера влагостойкая
+                    </div>
+                    <div class="product-card-v2__content-bottom">
+                      <div class="product-card-v2__buttons">
+                        <button class="button button_style-1 button_xl product-card-v2__button button-theme button-theme_secondary"><span>Узнать стоимость</span></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-card-v2 product-card-v2_type-1" data-custom-interaction="data-custom-interaction"> <a class="product-card-v2__link" href="#"></a>
+                  <div class="product-card-v2__image"> 
+                    <div class="image image_contain"><img src="http://localhost:9000/img/b49c856cb0b15abac9a63bda5f241eff.jpeg" alt="image"/><img src="http://localhost:9000/img/test.jpg" alt="image"/></div>
+                    <div class="product-card-v2__rating"><img class="product-card-v2__rating-stars" src="http://localhost:9000/img/icons/rating.svg" alt="image"/></div>
+                    <div class="product-card-v2__labels">
+                      <div class="card-label card-label_style-sale product-card-v2__label">Распродажа</div>
+                      <div class="card-label card-label_style-hit product-card-v2__label">Хит </div>
+                    </div>
+                  </div>
+                  <div class="product-card-v2__content"> 
+                    <div class="product-card-v2__title"> Фанера влагостойкая 12x2500х1250 mm
+                    </div>
+                    <div class="product-card-v2__content-bottom">
+                      <div class="product-card-v2__pricing">
+                        <div class="product-card-v2__old-price">99 999,99</div>
+                        <div class="product-card-v2__price text-color-accent">92986,50 <span>₽/шт.</span></div>
+                        <div class="product-card-v2__pricing-txt">Цена со скиндкой через корзину:</div>
+                        <div class="product-card-v2__price">89537,50 <span>₽/шт.</span></div>
+                      </div>
+                      <div class="product-card-v2__buttons">
+                        <button class="button button_style-2 button_xl product-card-v2__cart-button button-theme button-theme_primary">
+                          <svg class="icon">
+                            <use xlink:href="#shopping-cart"></use>
+                          </svg><span> <span>Много товара</span><span>В корзину</span></span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="conditional-section">
+        <div class="container"> 
+          <div class="mb-25">
+            <h2 class="mb-20">Сетка для каталога с фильтром <span class="text-color-accent">2.1</span></h2>
+          </div>
+          <div class="catalog-container"> 
+            <div class="catalog-filter"> 
+              <h4>Фильтр</h4>
+            </div>
+            <div class="catalog-body">
+              <!--меняется родительский div для карточек-->
+              <div class="d-grid gap-grid row-gap-sm-20 grid-columns-sm-2 grid-columns-lg-3 grid-columns-xl-4">
+                <div class="product-card-v2 product-card-v2_type-2" data-custom-interaction="data-custom-interaction"> <a class="product-card-v2__link" href="#"></a>
+                  <div class="product-card-v2__image"> 
+                    <div class="image image_contain"><img src="http://localhost:9000/img/b49c856cb0b15abac9a63bda5f241eff.jpeg" alt="image"/><img src="http://localhost:9000/img/test.jpg" alt="image"/></div>
+                    <div class="product-card-v2__rating"><img class="product-card-v2__rating-stars" src="http://localhost:9000/img/icons/rating.svg" alt="image"/></div>
+                    <div class="product-card-v2__labels">
+                      <div class="card-label card-label_style-sale product-card-v2__label">Распродажа</div>
+                      <div class="card-label card-label_style-hit product-card-v2__label">Хит </div>
+                    </div>
+                  </div>
+                  <div class="product-card-v2__content"> 
+                    <div class="product-card-v2__title"> Фанера влагостойкая 12x2500х1250 mm
+                    </div>
+                    <div class="product-card-v2__content-bottom">
+                      <div class="product-card-v2__pricing">
+                        <div class="product-card-v2__old-price">99 999,99</div>
+                        <div class="product-card-v2__price text-color-accent">92986,50 <span>₽/шт.</span></div>
+                        <div class="product-card-v2__pricing-txt">Цена со скиндкой через корзину:</div>
+                        <div class="product-card-v2__price">89537,50 <span>₽/шт.</span></div>
+                      </div>
+                      <div class="product-card-v2__buttons">
+                        <button class="button button_style-2 button_xl product-card-v2__cart-button button-theme button-theme_primary">
+                          <svg class="icon">
+                            <use xlink:href="#shopping-cart"></use>
+                          </svg><span> <span>Много товара</span><span>В корзину</span></span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-card-v2 product-card-v2_type-2" data-custom-interaction="data-custom-interaction"> <a class="product-card-v2__link" href="#"></a>
+                  <div class="product-card-v2__image"> 
+                    <div class="image image_contain"><img src="http://localhost:9000/img/b49c856cb0b15abac9a63bda5f241eff.jpeg" alt="image"/><img src="http://localhost:9000/img/test.jpg" alt="image"/></div>
+                    <div class="product-card-v2__rating"><img class="product-card-v2__rating-stars" src="http://localhost:9000/img/icons/rating.svg" alt="image"/></div>
+                    <div class="product-card-v2__labels">
+                      <div class="card-label card-label_style-stock product-card-v2__label">Уценка</div>
+                    </div>
+                  </div>
+                  <div class="product-card-v2__content"> 
+                    <div class="product-card-v2__title"> Фанера влагостойкая 12x2500х1250 мм (длинное название товара, которое не влезает)
+                    </div>
+                    <div class="product-card-v2__content-bottom">
+                      <div class="product-card-v2__pricing">
+                        <div class="product-card-v2__pricing-txt">Последний раз товар был продан по этой цене:</div>
+                        <div class="product-card-v2__price text-color-light">89537,50 <span>₽/шт.</span></div>
+                      </div>
+                      <div class="product-card-v2__buttons">
+                        <button class="button button_disabled button_xl product-card-v2__cart-button button-theme button-theme_muted"><span> <span>Товар ожидается </span><span>узнать о наличии</span></span></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-card-v2 product-card-v2_type-2" data-custom-interaction="data-custom-interaction"> <a class="product-card-v2__link" href="#"></a>
+                  <div class="product-card-v2__image"> 
+                    <div class="image image_contain image_no-image"><img src="http://localhost:9000/img/icons/product-placeholder.svg" alt="image"/></div>
+                    <div class="product-card-v2__rating"><img class="product-card-v2__rating-stars" src="http://localhost:9000/img/icons/rating.svg" alt="image"/></div>
+                  </div>
+                  <div class="product-card-v2__content"> 
+                    <div class="product-card-v2__title"> Фанера влагостойкая
+                    </div>
+                    <div class="product-card-v2__content-bottom">
+                      <div class="product-card-v2__buttons">
+                        <button class="button button_style-1 button_xl product-card-v2__button button-theme button-theme_secondary"><span>Узнать стоимость</span></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-card-v2 product-card-v2_type-2" data-custom-interaction="data-custom-interaction"> <a class="product-card-v2__link" href="#"></a>
+                  <div class="product-card-v2__image"> 
+                    <div class="image image_contain"><img src="http://localhost:9000/img/b49c856cb0b15abac9a63bda5f241eff.jpeg" alt="image"/><img src="http://localhost:9000/img/test.jpg" alt="image"/></div>
+                    <div class="product-card-v2__rating"><img class="product-card-v2__rating-stars" src="http://localhost:9000/img/icons/rating.svg" alt="image"/></div>
+                    <div class="product-card-v2__labels">
+                      <div class="card-label card-label_style-sale product-card-v2__label">Распродажа</div>
+                      <div class="card-label card-label_style-hit product-card-v2__label">Хит </div>
+                    </div>
+                  </div>
+                  <div class="product-card-v2__content"> 
+                    <div class="product-card-v2__title"> Фанера влагостойкая 12x2500х1250 mm
+                    </div>
+                    <div class="product-card-v2__content-bottom">
+                      <div class="product-card-v2__pricing">
+                        <div class="product-card-v2__old-price">99 999,99</div>
+                        <div class="product-card-v2__price text-color-accent">92986,50 <span>₽/шт.</span></div>
+                        <div class="product-card-v2__pricing-txt">Цена со скиндкой через корзину:</div>
+                        <div class="product-card-v2__price">89537,50 <span>₽/шт.</span></div>
+                      </div>
+                      <div class="product-card-v2__buttons">
+                        <button class="button button_style-2 button_xl product-card-v2__cart-button button-theme button-theme_primary">
+                          <svg class="icon">
+                            <use xlink:href="#shopping-cart"></use>
+                          </svg><span> <span>Много товара</span><span>В корзину</span></span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="conditional-section">
         <div class="container">
-          <div class="question-main" id="question-main">
-            <div class="question-form"><span class="content-title center h2">Остались вопросы?</span>
-              <form id="feedback-message-request-form" action="/crm/message/" method="post">
-                <input type="hidden" name="csrfmiddlewaretoken" value="Z1nXnOAF14323XP6UnBCLwRWonV0tvg3nC7uR3fS0PueV52w5KMX21eB7S6nEME0">
-                <div class="question-form__column">
-                  <div class="form-group">
-                    <input class="form-control" type="text" name="name" autocomplete="off" required="">
-                    <label class="label-name" for="name"><span class="content-name">Имя*</span></label>
-                  </div>
-                  <div class="form-group">
-                    <input class="form-control phone" type="phone" value="70000000000" name="phone" autocomplete="off" required="">
-                    <label class="label-name" for="phone"><span class="content-name">Телефон</span></label>
-                  </div>
-                  <div class="form-group">
-                    <input class="form-control" type="mail" value="info@stroyker.pro" name="email" autocomplete="off" required="">
-                    <label class="label-name" for="text"><span class="content-name">e-mail</span></label>
-                  </div>
+          <h2 class="mb-25">Текст(опционально) + Картинка на фоне(опционально) + Цвет фона(опционально)</h2>
+          <div class="d-grid row-gap-25 column-gap-grid grid-columns-md-2 grid-columns-lg-3">
+            <!--если нужно, родительский .content-background-box может быть ссылкой-->
+            <div class="content-background-box image-zoom">
+              <div class="content-background-box__container">
+                <div class="content-background-box__background" style="background-color:#F5F5F5;"></div>
+                <div class="content-background-box__text-content">
+                  <h3>Lorem ipsum dolor</h3>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum eveniet quae ducimus voluptatibus? Fuga labore corrupti cupiditate.</p>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum eveniet quae ducimus voluptatibus? Fuga labore corrupti cupiditate.</p>
                 </div>
-                <div class="question-form__column">
-                  <div class="form-group">
-                    <textarea class="form-control" name="message" autocomplete="off" required=""></textarea>
-                    <label class="label-name" for="message"><span class="content-name">Комментарий</span></label>
-                  </div>
-                  <input id="id_url" type="hidden" name="url">
-                  <button class="btn btn--main-min" type="submit">Отправить</button>
+              </div>
+            </div>
+            <!--если нужно, родительский .content-background-box может быть ссылкой-->
+            <div class="content-background-box image-zoom">
+              <div class="content-background-box__container">
+                <div class="content-background-box__background-image"> 
+                  <div class="image image_cover"><img src="http://localhost:9000/img/e79cec4f0a120d2e96a1701cf4ef8db3.png" alt="image"/></div>
                 </div>
-              </form>
-              <p>Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь с нашей политикой конфиденциальности</p>
+                <div class="content-background-box__text-content">
+                  <h3>Lorem ipsum dolor</h3>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum eveniet quae ducimus voluptatibus? Fuga labore corrupti cupiditate.</p>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum eveniet quae ducimus voluptatibus? Fuga labore corrupti cupiditate.</p>
+                </div>
+              </div>
+            </div>
+            <!--если нужно, родительский .content-background-box может быть ссылкой-->
+            <div class="content-background-box image-zoom">
+              <div class="content-background-box__container">
+                <div class="content-background-box__background-image"> 
+                  <div class="image image_cover"><img src="http://localhost:9000/img/e79cec4f0a120d2e96a1701cf4ef8db3.png" alt="image"/></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
+      <section class="conditional-section">
+        <div class="container">
+          <h2 class="mb-25">Картинка(опционально) + галерея(опционально) + текст(опционально)</h2>
+          <div class="d-grid row-gap-25 column-gap-grid grid-columns-md-2 grid-columns-lg-3">
+            <div class="content-standard-box">
+              <div class="content-standard-box__container">
+                <div class="content-image image-zoom">
+                  <div class="image"><img src="http://localhost:9000/img/e79cec4f0a120d2e96a1701cf4ef8db3.png" alt="image"/></div>
+                </div>
+              </div>
+            </div>
+            <div class="content-standard-box">
+              <div class="content-standard-box__container"><a class="content-image image-zoom" href="http://localhost:9000/img/e79cec4f0a120d2e96a1701cf4ef8db3.png" data-fancybox="data-fancybox">
+                  <div class="image"><img src="http://localhost:9000/img/e79cec4f0a120d2e96a1701cf4ef8db3.png" alt="image"/></div></a>
+                <div class="content-standard-box__text-content">
+                  <h3>Lorem ipsum dolor</h3>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum eveniet quae ducimus voluptatibus? Fuga labore corrupti cupiditate.</p>
+                </div>
+              </div>
+            </div>
+            <div class="content-standard-box">
+              <div class="content-standard-box__container">
+                <div class="content-standard-box__text-content">
+                  <h3>Lorem ipsum dolor</h3>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum eveniet quae ducimus voluptatibus? Fuga labore corrupti cupiditate.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="conditional-section">
+        <div class="container">
+          <h2 class="mb-25">Сетка для контента <span class="text-color-accent">3 в ряд</span></h2>
+          <div class="d-grid row-gap-25 column-gap-grid grid-columns-md-2 grid-columns-lg-3">
+            <div class="content-placeholder"><span>Просто заглушка</span></div>
+            <div class="content-placeholder"><span>Просто заглушка</span></div>
+            <div class="content-placeholder"><span>Просто заглушка</span></div>
+          </div>
+        </div>
+      </section>
+      <section class="conditional-section">
+        <div class="container">
+          <h2 class="mb-25">Сетка для контента <span class="text-color-accent">2 в ряд</span></h2>
+          <div class="d-grid row-gap-25 column-gap-grid grid-columns-md-2">
+            <div class="content-placeholder"><span>Просто заглушка</span></div>
+            <div class="content-placeholder"><span>Просто заглушка</span></div>
+          </div>
+        </div>
+      </section>
+      <section class="conditional-section">
+        <div class="container">
+          <h2 class="mb-25">Слайдер для контента <span class="text-color-accent">3 в ряд</span></h2>
+          <div class="slider-constructor" data-slides="1" data-md-slides="2" data-lg-slides="3" data-adaptive-height>
+            <div class="content-placeholder"><span>Просто заглушка</span></div>
+            <div class="content-placeholder"><span>Просто заглушка</span></div>
+            <div class="content-placeholder"><span>Просто заглушка</span></div>
+            <div class="content-placeholder"><span>Просто заглушка</span></div>
+          </div>
+        </div>
+      </section>
+      <section class="conditional-section">
+        <div class="container">
+          <h2 class="mb-25">Слайдер для контента <span class="text-color-accent">4 в ряд</span></h2>
+          <div class="slider-constructor" data-slides="1" data-md-slides="2" data-lg-slides="3" data-xl-slides="4" data-adaptive-height>
+            <div class="content-placeholder"><span>Просто заглушка</span></div>
+            <div class="content-placeholder"><span>Просто заглушка</span></div>
+            <div class="content-placeholder"><span>Просто заглушка</span></div>
+            <div class="content-placeholder"><span>Просто заглушка</span></div>
+            <div class="content-placeholder"><span>Просто заглушка</span></div>
+          </div>
+        </div>
+      </section>
+      <section class="conditional-section">
+        <div class="container">
+          <h2 class="mb-25">Слайдер для контента <span class="text-color-accent">6 в ряд</span></h2>
+          <div class="slider-constructor" data-slides="2" data-sm-slides="3" data-md-slides="4" data-lg-slides="5" data-xl-slides="6" data-adaptive-height> 
+            <div class="content-placeholder"><span>Просто заглушка</span></div>
+            <div class="content-placeholder"><span>Просто заглушка</span></div>
+            <div class="content-placeholder"><span>Просто заглушка</span></div>
+            <div class="content-placeholder"><span>Просто заглушка</span></div>
+            <div class="content-placeholder"><span>Просто заглушка</span></div>
+            <div class="content-placeholder"><span>Просто заглушка</span></div>
+            <div class="content-placeholder"><span>Просто заглушка</span></div>
+          </div>
+        </div>
+      </section>
+      <section class="conditional-section">
+        <div class="container">
+          <h2 class="mb-20 mb-sm-25">Автопрокрутка, динамические слайды</h2>
+          <div class="slider-constructor test" data-slides="1" data-md-slides="2" data-lg-slides="3" data-adaptive-height data-autoplay-timeout="5000">
+            <div class="content-placeholder" data-slide-mobile-hidden=""><span>Удален в мобильной версии</span></div>
+            <div class="content-placeholder"><span>Просто заглушка</span></div>
+            <div class="content-placeholder"><span>Просто заглушка</span></div>
+            <div class="content-placeholder"><span>Просто заглушка</span></div>
+          </div>
+        </div>
+      </section>
+      <h2 class="example-h2 container">на всю ширину экрана без контента</h2>
+      <!--на всю ширину  экрана без контента-->
+      <section class="home-banner-wrapper">
+        <!--banner-->
+        <div class="home-banner swiper swiper_home-banner">
+          <div class="swiper-wrapper">
+            <!--slide-->
+            <!--image_left-crop/image_right-crop добавить класс для обрезки 2/3-->
+            <div class="swiper-slide home-banner__slide">
+              <div class="image image_cover image_left-crop"><img src="http://localhost:9000/img/dd.jpg" alt="image"></div>
+            </div>
+            <!--slide-->
+            <div class="swiper-slide home-banner__slide">
+              <div class="image image_cover image_right-crop"><img src="http://localhost:9000/img/dd.jpg" alt="image"></div>
+            </div>
+          </div>
+          <div class="swiper-pagination swiper-pagination-big-bottom"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"> </div>
+        </div>
+        <!--categories-->
+        <section class="home-categories">
+          <div class="container">
+            <!-- для 5+ элементов добавить класс grid_6items-->
+            <div class="row grid">
+                            <div class="category-card grid__block home-categories__block"><a class="category-card__container" href="service.html">
+                                <div class="image image_cover"><img src="http://localhost:9000/img/56dcc810efa71925168c0d36d5c3fbf7.png" alt="image"></div>
+                                <h3 class="category-card__title">Деревянные дома
+                                  <svg class="icon" viewBox="0 0 10.5 18.1">
+                                    <path d="M1.4,18.1L0,16.7l7.6-7.6L0,1.5L1.4,0l9,9.1C10.4,9.1,1.3,18.1,1.4,18.1z"></path>
+                                  </svg>
+                                </h3></a></div>
+                            <div class="category-card grid__block home-categories__block"><a class="category-card__container" href="service.html">
+                                <div class="image image_cover"><img src="http://localhost:9000/img/7eaf93e9c47993e5b22277de3a30b89e.png" alt="image"></div>
+                                <h3 class="category-card__title">Кровельные работы
+                                  <svg class="icon" viewBox="0 0 10.5 18.1">
+                                    <path d="M1.4,18.1L0,16.7l7.6-7.6L0,1.5L1.4,0l9,9.1C10.4,9.1,1.3,18.1,1.4,18.1z"></path>
+                                  </svg>
+                                </h3></a></div>
+                            <div class="category-card grid__block home-categories__block"><a class="category-card__container" href="service.html">
+                                <div class="image image_cover"><img src="http://localhost:9000/img/767773b7699f15e02052b250d92c0c7f.png" alt="image"></div>
+                                <h3 class="category-card__title">Пропитки для бревен
+                                  <svg class="icon" viewBox="0 0 10.5 18.1">
+                                    <path d="M1.4,18.1L0,16.7l7.6-7.6L0,1.5L1.4,0l9,9.1C10.4,9.1,1.3,18.1,1.4,18.1z"></path>
+                                  </svg>
+                                </h3></a></div>
+                            <div class="category-card grid__block home-categories__block"><a class="category-card__container" href="service.html">
+                                <div class="image image_cover"><img src="http://localhost:9000/img/e79cec4f0a120d2e96a1701cf4ef8db3.png" alt="image"></div>
+                                <h3 class="category-card__title">Проектирование
+                                  <svg class="icon" viewBox="0 0 10.5 18.1">
+                                    <path d="M1.4,18.1L0,16.7l7.6-7.6L0,1.5L1.4,0l9,9.1C10.4,9.1,1.3,18.1,1.4,18.1z"></path>
+                                  </svg>
+                                </h3></a></div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <h2 class="example-h2 container">на всю ширину экрана</h2>
+      <!--на всю ширину  экрана-->
+      <section class="home-banner-wrapper">
+        <!--banner-->
+        <div class="home-banner swiper swiper_home-banner">
+          <div class="swiper-wrapper">
+            <!--slide-->
+            <!--image_left-crop/image_right-crop добавить класс для обрезки 2/3-->
+            <div class="swiper-slide home-banner__slide">
+              <div class="image image_cover image_left-crop"><img src="http://localhost:9000/img/dd.jpg" alt="image">
+                <div class="home-banner__content">
+                  <div class="home-banner__content-left">
+                    <div class="home-banner__content-wrapper">
+                      <h3 class="home-banner__h3">Заголовок слайда</h3>
+                      <p class="home-banner__p">Здесь текст слайда Здесь текст слайда Здесь текст слайда</p><a class="btn-border btn-green btn-border--lg" href="#">Кнопка</a>
+                    </div>
+                  </div>
+                  <div class="home-banner__content-right"></div>
+                </div>
+              </div>
+            </div>
+            <!--slide-->
+            <div class="swiper-slide home-banner__slide">
+              <div class="image image_cover image_right-crop"><img src="http://localhost:9000/img/dd.jpg" alt="image">
+                <div class="home-banner__content">
+                  <div class="home-banner__content-left"></div>
+                  <div class="home-banner__content-right">
+                    <div class="home-banner__content-wrapper">
+                      <h3 class="home-banner__h3">Заголовок слайда</h3>
+                      <p class="home-banner__p">Здесь текст слайда Здесь текст слайда Здесь текст слайда</p><a class="btn-border btn-green btn-border--lg" href="#">Кнопка   </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination swiper-pagination-big-bottom"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"> </div>
+        </div>
+        <!--categories-->
+        <section class="home-categories">
+          <div class="container">
+            <!-- для 5+ элементов добавить класс grid_6items-->
+            <div class="row grid">
+                            <div class="category-card grid__block home-categories__block"><a class="category-card__container" href="service.html">
+                                <div class="image image_cover"><img src="http://localhost:9000/img/56dcc810efa71925168c0d36d5c3fbf7.png" alt="image"></div>
+                                <h3 class="category-card__title">Деревянные дома
+                                  <svg class="icon" viewBox="0 0 10.5 18.1">
+                                    <path d="M1.4,18.1L0,16.7l7.6-7.6L0,1.5L1.4,0l9,9.1C10.4,9.1,1.3,18.1,1.4,18.1z"></path>
+                                  </svg>
+                                </h3></a></div>
+                            <div class="category-card grid__block home-categories__block"><a class="category-card__container" href="service.html">
+                                <div class="image image_cover"><img src="http://localhost:9000/img/7eaf93e9c47993e5b22277de3a30b89e.png" alt="image"></div>
+                                <h3 class="category-card__title">Кровельные работы
+                                  <svg class="icon" viewBox="0 0 10.5 18.1">
+                                    <path d="M1.4,18.1L0,16.7l7.6-7.6L0,1.5L1.4,0l9,9.1C10.4,9.1,1.3,18.1,1.4,18.1z"></path>
+                                  </svg>
+                                </h3></a></div>
+                            <div class="category-card grid__block home-categories__block"><a class="category-card__container" href="service.html">
+                                <div class="image image_cover"><img src="http://localhost:9000/img/767773b7699f15e02052b250d92c0c7f.png" alt="image"></div>
+                                <h3 class="category-card__title">Пропитки для бревен
+                                  <svg class="icon" viewBox="0 0 10.5 18.1">
+                                    <path d="M1.4,18.1L0,16.7l7.6-7.6L0,1.5L1.4,0l9,9.1C10.4,9.1,1.3,18.1,1.4,18.1z"></path>
+                                  </svg>
+                                </h3></a></div>
+                            <div class="category-card grid__block home-categories__block"><a class="category-card__container" href="service.html">
+                                <div class="image image_cover"><img src="http://localhost:9000/img/e79cec4f0a120d2e96a1701cf4ef8db3.png" alt="image"></div>
+                                <h3 class="category-card__title">Проектирование
+                                  <svg class="icon" viewBox="0 0 10.5 18.1">
+                                    <path d="M1.4,18.1L0,16.7l7.6-7.6L0,1.5L1.4,0l9,9.1C10.4,9.1,1.3,18.1,1.4,18.1z"></path>
+                                  </svg>
+                                </h3></a></div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <h2 class="example-h2 container">в контейнере</h2>
+      <!--в контейнере-->
+      <section class="home-banner-wrapper container">
+        <!--banner-->
+        <div class="home-banner swiper swiper_home-banner">
+          <div class="swiper-wrapper">
+            <!--slide-->
+            <!--image_left-crop/image_right-crop добавить класс для обрезки 2/3-->
+            <div class="swiper-slide home-banner__slide">
+              <div class="image image_cover image_left-crop"><img src="http://localhost:9000/img/dd.jpg" alt="image">
+                <div class="home-banner__content">
+                  <div class="home-banner__content-left">
+                    <div class="home-banner__content-wrapper">
+                      <h3 class="home-banner__h3">Заголовок слайда</h3>
+                      <p class="home-banner__p">Здесь текст слайда Здесь текст слайда Здесь текст слайда</p><a class="btn-border btn-green btn-border--lg" href="#">Кнопка</a>
+                    </div>
+                  </div>
+                  <div class="home-banner__content-right"></div>
+                </div>
+              </div>
+            </div>
+            <!--slide-->
+            <div class="swiper-slide home-banner__slide">
+              <div class="image image_cover image_right-crop"><img src="http://localhost:9000/img/dd.jpg" alt="image">
+                <div class="home-banner__content">
+                  <div class="home-banner__content-left"></div>
+                  <div class="home-banner__content-right">
+                    <div class="home-banner__content-wrapper">
+                      <h3 class="home-banner__h3">Заголовок слайда</h3>
+                      <p class="home-banner__p">Здесь текст слайда Здесь текст слайда Здесь текст слайда</p><a class="btn-border btn-green btn-border--lg" href="#">Кнопка   </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"> </div>
+        </div>
+      </section>
+      <h2 class="example-h2 container">с сайдбаром</h2>
+      <!--в контейнере с сайдбаром-->
+      <div class="example-sidebar-wrapper container"> 
+        <aside class="example-sidebar"> 
+          <ul class="example-sidebar-menu">
+            <li class="example-sidebar-menu__li">пункт 1</li>
+            <li class="example-sidebar-menu__li">пункт 2</li>
+            <li class="example-sidebar-menu__li">пункт 3</li>
+            <li class="example-sidebar-menu__li">пункт 4</li>
+            <li class="example-sidebar-menu__li">пункт 5</li>
+            <li class="example-sidebar-menu__li">пункт 6</li>
+          </ul>
+        </aside>
+        <section class="home-banner-wrapper container">
+          <!--banner-->
+          <div class="home-banner swiper swiper_home-banner">
+            <div class="swiper-wrapper">
+              <!--slide-->
+              <!--image_left-crop/image_right-crop добавить класс для обрезки 2/3-->
+              <div class="swiper-slide home-banner__slide">
+                <div class="image image_cover image_left-crop"><img src="http://localhost:9000/img/dd.jpg" alt="image">
+                  <div class="home-banner__content">
+                    <div class="home-banner__content-left">
+                      <div class="home-banner__content-wrapper">
+                        <h3 class="home-banner__h3">Заголовок слайда</h3>
+                        <p class="home-banner__p">Здесь текст слайда Здесь текст слайда Здесь текст слайда</p><a class="btn-border btn-green btn-border--lg" href="#">Кнопка</a>
+                      </div>
+                    </div>
+                    <div class="home-banner__content-right"></div>
+                  </div>
+                </div>
+              </div>
+              <!--slide-->
+              <div class="swiper-slide home-banner__slide">
+                <div class="image image_cover image_right-crop"><img src="http://localhost:9000/img/dd.jpg" alt="image">
+                  <div class="home-banner__content">
+                    <div class="home-banner__content-left"></div>
+                    <div class="home-banner__content-right">
+                      <div class="home-banner__content-wrapper">
+                        <h3 class="home-banner__h3">Заголовок слайда</h3>
+                        <p class="home-banner__p">Здесь текст слайда Здесь текст слайда Здесь текст слайда</p><a class="btn-border btn-green btn-border--lg" href="#">Кнопка   </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"> </div>
+          </div>
+        </section>
+      </div>
     </main>
     <footer>
       <div class="container">
@@ -644,18 +1343,27 @@
     <script src="/static/js/contentSelectionDisable.js"></script>
     <script src="/static/commerce/js/cart.js"></script>
     <script src="/static/catalog/js/catalog.js"></script>
+    <script>
+      var BNR_URLS = {
+      'inc_views': '/bnrs/ajax/view-cnt-incr',
+      'inc_clicks': '/bnrs/ajax/clck-cnt-incr'
+      };
+    </script>
+    <script src="/static/banners/js/bnrs.js"></script>
     <script type="text/javascript" src="/static/crm/js/crm_forms.js"></script>
+    <script src="/static/addresses/js/addresses_yamap.js"></script>
+    <script src="/static/js/frontpage.js"></script>
     <script type="text/javascript" src="/static/subscription/js/subscription.js"></script>
     <script src="/static/js/scripts.js"></script>
     <!--некоторые библиотеки из к2-->
-    <script src="https://luzhetskiy.github.io/stroyker-box-html/build/libs/fancybox/jquery.fancybox.min.js"></script>
-    <link rel="stylesheet" href="https://luzhetskiy.github.io/stroyker-box-html/build/libs/fancybox/jquery.fancybox.min.css">
-    <script src="https://luzhetskiy.github.io/stroyker-box-html/build/libs/slick/slick.js"></script>
+    <script src="http://localhost:9000/libs/fancybox/jquery.fancybox.min.js"></script>
+    <link rel="stylesheet" href="http://localhost:9000/libs/fancybox/jquery.fancybox.min.css">
+    <script src="http://localhost:9000/libs/slick/slick.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <!--обновленный файл со скриптами-->
-    <script src="https://luzhetskiy.github.io/stroyker-box-html/build/scripts/new.js"></script>
-    <link rel="stylesheet" href="https://luzhetskiy.github.io/stroyker-box-html/build/styles/helper.css">
+    <script src="http://localhost:9000/scripts/new.js"></script>
+    <link rel="stylesheet" href="http://localhost:9000/styles/helper.css">
     <div class="helper"><a class="helper__trigger" href="javascript:void(0);"> 
         <svg class="icon" viewBox="0 0 100 100" fill="currentColor">
           <g transform="translate(50 50)">
@@ -667,16 +1375,16 @@
         </svg></a>
       <div class="helper__container">
         <div class="helper__section"><span class="helper__section-title">Компоненты:</span>
-          <div class="helper__section-content"><a class="helper__section-button" href="https://luzhetskiy.github.io/stroyker-box-html/build/components.html">Компоненты</a><a class="helper__section-button" href="https://luzhetskiy.github.io/stroyker-box-html/build/slider-templates.html">Шаблоны слайдеров</a><a class="helper__section-button" href="https://luzhetskiy.github.io/stroyker-box-html/build/header_gray.html">slim v1</a><a class="helper__section-button" href="https://luzhetskiy.github.io/stroyker-box-html/build/header_grayV2.html">slim v2</a><a class="helper__section-button" href="https://luzhetskiy.github.io/stroyker-box-html/build/header_grayV2fat.html">fat v2</a><a class="helper__section-button" href="https://luzhetskiy.github.io/stroyker-box-html/build/header_gray_small.html">slim v3</a></div>
+          <div class="helper__section-content"><a class="helper__section-button" href="http://localhost:9000/components.html">Компоненты</a><a class="helper__section-button" href="http://localhost:9000/slider-templates.html">Шаблоны слайдеров</a><a class="helper__section-button" href="http://localhost:9000/header_gray.html">slim v1</a><a class="helper__section-button" href="http://localhost:9000/header_grayV2.html">slim v2</a><a class="helper__section-button" href="http://localhost:9000/header_grayV2fat.html">fat v2</a><a class="helper__section-button" href="http://localhost:9000/header_gray_small.html">slim v3</a></div>
         </div>
         <div class="helper__section"><span class="helper__section-title">Контент:</span>
-          <div class="helper__section-content"><a class="helper__section-button" href="https://luzhetskiy.github.io/stroyker-box-html/build/index.html">Главная</a><a class="helper__section-button" href="https://luzhetskiy.github.io/stroyker-box-html/build/contacts.html">Контакты</a><a class="helper__section-button" href="https://luzhetskiy.github.io/stroyker-box-html/build/catalogue.html">Каталог</a><a class="helper__section-button" href="https://luzhetskiy.github.io/stroyker-box-html/build/catalogue2.html">Каталог (тип 2)</a><a class="helper__section-button" href="https://luzhetskiy.github.io/stroyker-box-html/build/card.html">Карточка товара</a><a class="helper__section-button" href="https://luzhetskiy.github.io/stroyker-box-html/build/landing.html">Лендинг</a><a class="helper__section-button" href="https://luzhetskiy.github.io/stroyker-box-html/build/wiki.html">Вики</a><a class="helper__section-button" href="https://luzhetskiy.github.io/stroyker-box-html/build/article.html">Статья</a><a class="helper__section-button" href="https://luzhetskiy.github.io/stroyker-box-html/build/partners.html">Партнеры</a><a class="helper__section-button" href="https://luzhetskiy.github.io/stroyker-box-html/build/cart.html">Корзина</a><a class="helper__section-button" href="https://luzhetskiy.github.io/stroyker-box-html/build/cart-final.html">Корзина - финал</a></div>
+          <div class="helper__section-content"><a class="helper__section-button" href="http://localhost:9000/index.html">Главная</a><a class="helper__section-button" href="http://localhost:9000/contacts.html">Контакты</a><a class="helper__section-button" href="http://localhost:9000/catalogue.html">Каталог</a><a class="helper__section-button" href="http://localhost:9000/catalogue2.html">Каталог (тип 2)</a><a class="helper__section-button" href="http://localhost:9000/card.html">Карточка товара</a><a class="helper__section-button" href="http://localhost:9000/landing.html">Лендинг</a><a class="helper__section-button" href="http://localhost:9000/wiki.html">Вики</a><a class="helper__section-button" href="http://localhost:9000/article.html">Статья</a><a class="helper__section-button" href="http://localhost:9000/partners.html">Партнеры</a><a class="helper__section-button" href="http://localhost:9000/cart.html">Корзина</a><a class="helper__section-button" href="http://localhost:9000/cart-final.html">Корзина - финал</a></div>
         </div>
         <div class="helper__section"><span class="helper__section-title">ЛК:</span>
-          <div class="helper__section-content"><a class="helper__section-button" href="https://luzhetskiy.github.io/stroyker-box-html/build/lk0.html">Лк - Старт</a></div>
+          <div class="helper__section-content"><a class="helper__section-button" href="http://localhost:9000/lk0.html">Лк - Старт</a></div>
         </div>
       </div>
     </div>
-    <script src="https://luzhetskiy.github.io/stroyker-box-html/build/scripts/helper.js"></script>
+    <script src="http://localhost:9000/scripts/helper.js"></script>
   </body>
 </html>

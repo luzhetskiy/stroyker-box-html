@@ -1,0 +1,499 @@
+﻿extends layout/header_gray_small_layout
+
+block scripts 
+  script(type='text/javascript' src='/static/js/jquery-3.2.1.min.js')
+  script(type='text/javascript' src='/static/js/jquery.fancybox.v3.5.7.min.js')
+  script(type='text/javascript' src='/static/js/owl.carousel.js')
+  script(type='text/javascript' src='/static/js/jquery.mask.min.js')
+  script(type='text/javascript').
+    window.onload = windowload;
+    window.onresize = AppendScript;
+    function windowload() {
+    AppendScript();
+    }
+    function AppendScript() {
+    if (window.innerWidth >= 767) {
+    Include('/static/js/scripts-desktop.js', 'on')
+    } else {
+    Include('/static/js/scripts-mobile.js', 'on')
+    }
+    }
+    function Include(filename, status) {
+    var head = document.getElementsByTagName('head')[0];
+    if (status == 'on') {
+    script = document.createElement('script');
+    script.src = filename;
+    script.type = 'text/javascript';
+    head.appendChild(script)
+    } else if (status == 'off') {
+    var scripts = head.getElementsByTagName('script');
+    if (scripts.length > 0) {
+    head.removeChild(scripts[1]);
+    }
+    }
+    }
+  script(type='text/javascript').
+    // This url dictionary is used in js scripts instead of direct links.
+    const URLS = {
+    static: "/static/",
+    cart: "/cart/",
+    register: "/account/register/",
+    }
+  script(src='/static/js/notify.min.js')
+  script(src='/static/js/ajax_setup.js')
+  script(src='/static/catalog/js/search.js')
+  script(src='/static/js/common.js')
+  script(src='/static/js/contentSelectionDisable.js')
+  script(src='/static/commerce/js/cart.js')
+  script(src='/static/catalog/js/catalog.js')
+  script.
+    var BNR_URLS = {
+    'inc_views': '/bnrs/ajax/view-cnt-incr',
+    'inc_clicks': '/bnrs/ajax/clck-cnt-incr'
+    };
+  script(src='/static/banners/js/bnrs.js')
+  script(type='text/javascript' src='/static/crm/js/crm_forms.js')
+  script(src='/static/addresses/js/addresses_yamap.js')
+  script(src='/static/js/frontpage.js')
+  script(type='text/javascript' src='/static/subscription/js/subscription.js')
+  script(src=href+'/scripts/scripts.js')
+  
+block content
+
+  section.conditional-section
+    .container
+      .mb-25
+        h2 Кнопки
+
+      .d-flex.flex-wrap.column-gap-grid.row-gap-20
+      
+        .d-flex.flex-column.align-items-start.row-gap-15
+          a(href="#").button.button_xl.button-theme.button-theme_primary
+            svg.icon
+              use(xlink:href="#shopping-cart")
+            span primary
+          a(href="#").button.button_xl.button-theme.button-theme_primary
+            span primary
+            svg.icon
+              use(xlink:href="#shopping-cart")
+          a(href="#").button.button-theme.button-theme_primary
+            svg.icon
+              use(xlink:href="#shopping-cart")
+            span primary
+          a(href="#").button.button-theme.button-theme_primary
+            span primary
+            svg.icon
+              use(xlink:href="#shopping-cart")
+
+        .d-flex.flex-column.align-items-start.row-gap-15
+          a(href="#").button.button_xl.button-theme.button-theme_secondary 
+            svg.icon
+              use(xlink:href="#shopping-cart")
+            span secondary
+          a(href="#").button.button_xl.button-theme.button-theme_secondary  
+            span secondary
+            svg.icon
+              use(xlink:href="#shopping-cart") 
+          a(href="#").button.button-theme.button-theme_secondary 
+            svg.icon
+              use(xlink:href="#shopping-cart")
+            span secondary
+          a(href="#").button.button-theme.button-theme_secondary 
+            span secondary
+            svg.icon
+              use(xlink:href="#shopping-cart") 
+
+        .d-flex.flex-column.align-items-start.row-gap-15
+          a(href="#").button.button_xl.button-theme.button-theme_muted
+            svg.icon
+              use(xlink:href="#shopping-cart")
+            span muted
+          a(href="#").button.button_xl.button-theme.button-theme_muted
+            span muted
+            svg.icon
+              use(xlink:href="#shopping-cart")
+          a(href="#").button.button-theme.button-theme_muted
+            svg.icon
+              use(xlink:href="#shopping-cart")
+            span muted
+          a(href="#").button.button-theme.button-theme_muted
+            span muted
+            svg.icon
+              use(xlink:href="#shopping-cart")
+
+        .d-flex.flex-column.align-items-start.row-gap-15
+          a(href="#").button.button_xl.button-theme.button-theme_callme
+            svg.icon
+              use(xlink:href="#shopping-cart")
+            span callme
+          a(href="#").button.button_xl.button-theme.button-theme_callme
+            span callme
+            svg.icon
+              use(xlink:href="#shopping-cart")
+          a(href="#").button.button-theme.button-theme_callme
+            svg.icon
+              use(xlink:href="#shopping-cart")
+            span callme
+          a(href="#").button.button-theme.button-theme_callme
+            span callme
+            svg.icon
+              use(xlink:href="#shopping-cart")
+
+        .d-flex.flex-column.align-items-start.row-gap-15
+          a(href="#").button.button_xl.button-theme.button-theme_cart
+            svg.icon
+              use(xlink:href="#shopping-cart")
+            span cart
+          a(href="#").button.button_xl.button-theme.button-theme_cart
+            span cart
+            svg.icon
+              use(xlink:href="#shopping-cart")
+          a(href="#").button.button-theme.button-theme_cart
+            svg.icon
+              use(xlink:href="#shopping-cart")
+            span cart
+          a(href="#").button.button-theme.button-theme_cart
+            span cart
+            svg.icon
+              use(xlink:href="#shopping-cart")
+
+
+    
+  section.conditional-section
+    .container  
+      .mb-25
+        h2.mb-20 Превью товаров 
+          span.text-color-accent 2.0
+        p Меняется только класс у родителя <strong>product-card-v2_type-1</strong>
+
+      .d-grid.gap-grid.row-gap-sm-20.grid-columns-2.grid-columns-md-3.grid-columns-lg-4.grid-columns-xl-5
+        +product-card-v2()
+        +product-card-v2({
+          style: '2'
+        })
+        +product-card-v2({
+          style: '3'
+        })
+
+  section.conditional-section
+    .container  
+      .mb-25
+        h2.mb-20 Превью товаров 
+          span.text-color-accent 2.1
+        p Отличие по стилю в мобильной версии.<br> 
+          | Меняется только класс у родителя <strong>product-card-v2_type-2</strong>
+
+      .d-grid.gap-grid.row-gap-sm-20.grid-columns-sm-2.grid-columns-md-3.grid-columns-lg-4.grid-columns-xl-5
+        +product-card-v2({
+          type: '2'
+        })
+        +product-card-v2({
+          style: '2',
+          type: '2'
+        })
+        +product-card-v2({
+          style: '3',
+          type: '2'
+        })
+
+  section.conditional-section
+    .container  
+      .mb-25
+        h2.mb-20 Сетка для каталога с фильтром 
+          span.text-color-accent 2.0
+
+      .catalog-container 
+        .catalog-filter 
+          h4 Фильтр
+        .catalog-body
+          //меняется родительский div для карточек
+          .d-grid.gap-grid.row-gap-sm-20.grid-columns-2.grid-columns-lg-3.grid-columns-xl-4
+            +product-card-v2()
+            +product-card-v2({
+              style: '2'
+            })
+            +product-card-v2({
+              style: '3'
+            })
+            +product-card-v2()
+
+  section.conditional-section
+    .container  
+      .mb-25
+        h2.mb-20 Сетка для каталога с фильтром 
+          span.text-color-accent 2.1
+          
+      .catalog-container 
+        .catalog-filter 
+          h4 Фильтр
+        .catalog-body
+          //меняется родительский div для карточек
+          .d-grid.gap-grid.row-gap-sm-20.grid-columns-sm-2.grid-columns-lg-3.grid-columns-xl-4
+            +product-card-v2({
+              type: '2'
+            })
+            +product-card-v2({
+              style: '2',
+              type: '2'
+            })
+            +product-card-v2({
+              style: '3',
+              type: '2'
+            })
+            +product-card-v2({
+              type: '2'
+            })
+
+  section.conditional-section
+    .container
+      h2.mb-25 Текст(опционально) + Картинка на фоне(опционально) + Цвет фона(опционально)
+      .d-grid.row-gap-25.column-gap-grid.grid-columns-md-2.grid-columns-lg-3
+        +content-background-box({
+          background: true,
+          text: true
+        })
+        +content-background-box({
+          image: true,
+          text: true
+        })
+        +content-background-box({
+          image: true
+        })
+
+  section.conditional-section
+    .container
+      h2.mb-25 Картинка(опционально) + галерея(опционально) + текст(опционально)
+      .d-grid.row-gap-25.column-gap-grid.grid-columns-md-2.grid-columns-lg-3
+        +content-standard-box({
+          image: true
+        })
+        +content-standard-box({
+          image: true,
+          gallery: true,
+          text: true
+        })
+        +content-standard-box({
+          text: true
+        })
+
+  section.conditional-section
+    .container
+      h2.mb-25 Сетка для контента 
+        span.text-color-accent 3 в ряд
+      .d-grid.row-gap-25.column-gap-grid.grid-columns-md-2.grid-columns-lg-3
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+
+  section.conditional-section
+    .container
+      h2.mb-25 Сетка для контента 
+        span.text-color-accent 2 в ряд
+      .d-grid.row-gap-25.column-gap-grid.grid-columns-md-2
+        +content-placeholder()
+        +content-placeholder()
+
+  section.conditional-section
+    .container
+      h2.mb-25 Слайдер для контента 
+         span.text-color-accent 3 в ряд
+      .slider-constructor(data-slides='1' data-md-slides='2' data-lg-slides='3' data-adaptive-height)
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+
+  section.conditional-section
+    .container
+      h2.mb-25 Слайдер для контента 
+        span.text-color-accent 4 в ряд
+      .slider-constructor(data-slides='1' data-md-slides='2' data-lg-slides='3' data-xl-slides='4' data-adaptive-height)
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder() 
+
+  section.conditional-section
+    .container
+      h2.mb-25 Слайдер для контента 
+        span.text-color-accent 6 в ряд
+      .slider-constructor(data-slides='2' data-sm-slides='3' data-md-slides='4' data-lg-slides='5' data-xl-slides='6' data-adaptive-height)  
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+
+  section.conditional-section
+    .container
+      h2.mb-20.mb-sm-25 Автопрокрутка, динамические слайды
+      .slider-constructor.test(data-slides='1' data-md-slides='2' data-lg-slides='3' data-adaptive-height data-autoplay-timeout="5000")
+        +content-placeholder({
+          title: 'Удален в мобильной версии',
+          attributes: {
+            'data-slide-mobile-hidden': ''
+          }
+        })
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+
+  h2.example-h2.container на всю ширину экрана без контента
+  //на всю ширину  экрана без контента
+  section.home-banner-wrapper
+    //banner
+    .home-banner.swiper.swiper_home-banner
+      .swiper-wrapper
+        //slide
+        //image_left-crop/image_right-crop добавить класс для обрезки 2/3
+        .swiper-slide.home-banner__slide
+         .image.image_cover.image_left-crop
+          img(src=href+"/img/dd.jpg", alt="image")
+
+        //slide
+        .swiper-slide.home-banner__slide
+         .image.image_cover.image_right-crop
+          img(src=href+"/img/dd.jpg", alt="image")
+  
+      .swiper-pagination.swiper-pagination-big-bottom
+      .swiper-button-prev
+      .swiper-button-next 
+
+    //categories
+    section.home-categories
+     .container
+       // для 5+ элементов добавить класс grid_6items
+       .row.grid
+         include blocks/cards
+         -var grid = 'grid__block home-categories__block'
+         +card2('Деревянные дома', href+'/img/56dcc810efa71925168c0d36d5c3fbf7.png', grid)
+         +card2('Кровельные работы', href+'/img/7eaf93e9c47993e5b22277de3a30b89e.png', grid)
+         +card2('Пропитки для бревен', href+'/img/767773b7699f15e02052b250d92c0c7f.png', grid)
+         +card2('Проектирование', href+'/img/e79cec4f0a120d2e96a1701cf4ef8db3.png', grid)
+
+
+  h2.example-h2.container на всю ширину экрана
+  //на всю ширину  экрана
+  section.home-banner-wrapper
+    //banner
+    .home-banner.swiper.swiper_home-banner
+      .swiper-wrapper
+        //slide
+        //image_left-crop/image_right-crop добавить класс для обрезки 2/3
+        .swiper-slide.home-banner__slide
+         .image.image_cover.image_left-crop
+          img(src=href+"/img/dd.jpg", alt="image")
+          .home-banner__content
+           .home-banner__content-left
+            .home-banner__content-wrapper
+             h3.home-banner__h3 Заголовок слайда
+             p.home-banner__p Здесь текст слайда Здесь текст слайда Здесь текст слайда
+             a(href="#").btn-border.btn-green.btn-border--lg Кнопка
+           .home-banner__content-right
+        //slide
+        .swiper-slide.home-banner__slide
+         .image.image_cover.image_right-crop
+          img(src=href+"/img/dd.jpg", alt="image")
+          .home-banner__content
+           .home-banner__content-left
+           .home-banner__content-right
+            .home-banner__content-wrapper
+             h3.home-banner__h3 Заголовок слайда
+             p.home-banner__p Здесь текст слайда Здесь текст слайда Здесь текст слайда
+             a(href="#").btn-border.btn-green.btn-border--lg Кнопка   
+      .swiper-pagination.swiper-pagination-big-bottom
+      .swiper-button-prev
+      .swiper-button-next 
+
+    //categories
+    section.home-categories
+     .container
+       // для 5+ элементов добавить класс grid_6items
+       .row.grid
+         include blocks/cards
+         -var grid = 'grid__block home-categories__block'
+         +card2('Деревянные дома', href+'/img/56dcc810efa71925168c0d36d5c3fbf7.png', grid)
+         +card2('Кровельные работы', href+'/img/7eaf93e9c47993e5b22277de3a30b89e.png', grid)
+         +card2('Пропитки для бревен', href+'/img/767773b7699f15e02052b250d92c0c7f.png', grid)
+         +card2('Проектирование', href+'/img/e79cec4f0a120d2e96a1701cf4ef8db3.png', grid)
+
+  h2.example-h2.container в контейнере
+  //в контейнере
+  section.home-banner-wrapper.container
+    //banner
+    .home-banner.swiper.swiper_home-banner
+      .swiper-wrapper
+        //slide
+        //image_left-crop/image_right-crop добавить класс для обрезки 2/3
+        .swiper-slide.home-banner__slide
+         .image.image_cover.image_left-crop
+          img(src=href+"/img/dd.jpg", alt="image")
+          .home-banner__content
+           .home-banner__content-left
+            .home-banner__content-wrapper
+             h3.home-banner__h3 Заголовок слайда
+             p.home-banner__p Здесь текст слайда Здесь текст слайда Здесь текст слайда
+             a(href="#").btn-border.btn-green.btn-border--lg Кнопка
+           .home-banner__content-right
+        //slide
+        .swiper-slide.home-banner__slide
+         .image.image_cover.image_right-crop
+          img(src=href+"/img/dd.jpg", alt="image")
+          .home-banner__content
+           .home-banner__content-left
+           .home-banner__content-right
+            .home-banner__content-wrapper
+             h3.home-banner__h3 Заголовок слайда
+             p.home-banner__p Здесь текст слайда Здесь текст слайда Здесь текст слайда
+             a(href="#").btn-border.btn-green.btn-border--lg Кнопка   
+      .swiper-pagination
+      .swiper-button-prev
+      .swiper-button-next 
+
+  h2.example-h2.container с сайдбаром
+  //в контейнере с сайдбаром
+  .example-sidebar-wrapper.container 
+   aside.example-sidebar 
+    ul.example-sidebar-menu
+     li.example-sidebar-menu__li пункт 1
+     li.example-sidebar-menu__li пункт 2
+     li.example-sidebar-menu__li пункт 3
+     li.example-sidebar-menu__li пункт 4
+     li.example-sidebar-menu__li пункт 5
+     li.example-sidebar-menu__li пункт 6
+   section.home-banner-wrapper.container
+    //banner
+    .home-banner.swiper.swiper_home-banner
+      .swiper-wrapper
+        //slide
+        //image_left-crop/image_right-crop добавить класс для обрезки 2/3
+        .swiper-slide.home-banner__slide
+         .image.image_cover.image_left-crop
+          img(src=href+"/img/dd.jpg", alt="image")
+          .home-banner__content
+           .home-banner__content-left
+            .home-banner__content-wrapper
+             h3.home-banner__h3 Заголовок слайда
+             p.home-banner__p Здесь текст слайда Здесь текст слайда Здесь текст слайда
+             a(href="#").btn-border.btn-green.btn-border--lg Кнопка
+           .home-banner__content-right
+        //slide
+        .swiper-slide.home-banner__slide
+         .image.image_cover.image_right-crop
+          img(src=href+"/img/dd.jpg", alt="image")
+          .home-banner__content
+           .home-banner__content-left
+           .home-banner__content-right
+            .home-banner__content-wrapper
+             h3.home-banner__h3 Заголовок слайда
+             p.home-banner__p Здесь текст слайда Здесь текст слайда Здесь текст слайда
+             a(href="#").btn-border.btn-green.btn-border--lg Кнопка   
+      .swiper-pagination
+      .swiper-button-prev
+      .swiper-button-next 
+
+
+  

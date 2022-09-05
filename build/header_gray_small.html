@@ -20,150 +20,13 @@
     <link rel="stylesheet" href="https://luzhetskiy.github.io/stroyker-box-html/build/styles/new.css">
   </head>
   <body>
-    <header>
-      <div class="top-header">
-        <div class="container">
-          <div class="top-header__content">
-            <div class="top-header__content-left"><a class="logo" href="/"><img src="/media/ЛОГОТИП СЛК СВГ (1).svg" alt="Северная Лесная Компания"></a>
-              <div class="main-menu">
-                <ul>
-                  <li><a title="Новости и акции" href="/news/">Новости и акции</a></li>
-                  <li><a title="Наши Партнеры" href="/addresses/partners/">Партнеры</a></li>
-                  <li><a title="Статьи" href="/articles/">Статьи</a></li>
-                  <li><a title="Контакты" href="/contacts/">Контакты</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="top-header__content-right">
-              <div class="header-phones top-header__phones">
-                <!--если номера не нужно скрывать, просто убрать это кнопку-->
-                <button class="header-phones__toggle" onclick="document.querySelectorAll('.header-phones__toggle').forEach($this=&gt;{$this.remove()});" type="button">Показать 443-37-77<br>номера... 711-93-93</button>
-                <!--1 или 2 номера-->
-                <div class="header-phones__inner"><a class="header-phones__phone" href="tel:+79874433777">+7 987 443-37-77</a><a class="header-phones__phone" href="tel:+79874433777">+7 927 711-93-93</a></div>
-              </div>
-              <!--a.header-phone.phone(href='tel:+78469228548') 78469228548--><a class="btn-border callme-button mobile-hide button-theme button-theme_callme" data-fancybox="callme-modal" data-src="#callme-modal" href="javascript:;">Заказать звонок</a>
-            </div>
-            <div class="burger-menu">
-              <div class="burger"></div>
-            </div>
-            <div class="mobile-menu">
-              <div class="mobile-menu__item mobile-show">
-                <div class="header-user"><a class="header-user__link" href="/account/login/"><span class="icon">
-                      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15.9987 13.3346C17.0535 13.3346 18.0847 13.0218 18.9617 12.4358C19.8388 11.8498 20.5224 11.0168 20.9261 10.0423C21.3297 9.06774 21.4353 7.99539 21.2296 6.96082C21.0238 5.92626 20.5158 4.97595 19.7699 4.23007C19.0241 3.48419 18.0737 2.97624 17.0392 2.77045C16.0046 2.56466 14.9323 2.67028 13.9577 3.07395C12.9832 3.47761 12.1502 4.1612 11.5642 5.03826C10.9782 5.91533 10.6654 6.94647 10.6654 8.0013C10.6654 9.41579 11.2273 10.7723 12.2275 11.7725C13.2277 12.7727 14.5842 13.3346 15.9987 13.3346ZM26.2787 21.6013C23.5494 18.8802 19.8527 17.3522 15.9987 17.3522C12.1447 17.3522 8.44796 18.8802 5.7187 21.6013L5.33203 22.0013V28.0013H26.6654V22.0013L26.2787 21.6013Z"></path>
-                      </svg></span>Авторизация
-                    <svg class="icon-arrow">
-                      <use xlink:href="#tab-arrow"></use>
-                    </svg></a></div>
-              </div>
-              <div class="mobile-menu__item mobile-show"></div>
-              <div class="mobile-menu__item mobile-show">
-                <div class="header-search">
-                  <input class="search_input" name="q" type="text" autocomplete="off" value="" data-search-url="/catalog/search" placeholder="Введите название, артикул, бренд...">
-                  <button>
-                    <svg class="icon-svg">
-                      <use xlink:href="#search-icon"></use>
-                    </svg>
-                  </button>
-                  <div class="header-search-results" id="search-result-container" style="display:none;"><a class="search-result-item" href="/catalog/product/vagonka-lipa-16-kh-90-17m-sort-ab/"><img class="search-result-item__image" src="https://vagonka-brus-doska.ru/media/vagonkabrus_cache/5b/94/5b94a9e8281ac988e782e500406b353c.jpg" alt="image">
-                      <div class="search-result-item__content"><span class="search-result-item__name">Вагонка (липа) 16х90мм 1,7м категория АВ</span><span class="search-result-item__cost">106,00 ₽/шт.</span></div></a><a class="search-result-item" href="/catalog/product/vagonka-lipa-16-kh-90-3m-sort-bc/">
-                      <div class="search-result-item__content"><span class="search-result-item__name">Вагонка (липа) 16х90мм 3м категория BC</span><span class="search-result-item__cost">193,00 ₽/шт.</span></div></a></div>
-                </div>
-              </div>
-              <div class="mobile-ul">
-                <ul class="catalog-menu-mobile">
-                  <li class="catalog-opened mobile-show"><a>Каталог
-                      <svg class="icon">
-                        <use xlink:href="#tab-arrow"></use>
-                      </svg></a>
-                    <ul class="submenu">
-                      <li class="menu-item current"><a href="/catalog/brevno-ocilindrovannoe/">Бревно оцилиндрованное
-                          <svg class="icon">
-                            <use xlink:href="#tab-arrow"></use>
-                          </svg></a></li>
-                      <li class="menu-item current"><a href="/catalog/vagonka-i-evrovagonka/">Вагонка и Евровагонка
-                          <svg class="icon">
-                            <use xlink:href="#tab-arrow"></use>
-                          </svg></a></li>
-                      <li class="menu-item current"><a href="/catalog/blok-haus/">Блок Хаус
-                          <svg class="icon">
-                            <use xlink:href="#tab-arrow"></use>
-                          </svg></a></li>
-                      <li class="menu-item current"><a href="/catalog/imitaciya-brusa/">Имитация бруса</a></li>
-                      <li class="menu-item current"><a href="/catalog/doska-pola/">Доска пола
-                          <svg class="icon">
-                            <use xlink:href="#tab-arrow"></use>
-                          </svg></a></li>
-                      <li class="menu-item current"><a href="/catalog/brus-i-doska-suhie-strogannye/">Брус и Доска
-                          <svg class="icon">
-                            <use xlink:href="#tab-arrow"></use>
-                          </svg></a></li>
-                      <li class="menu-item current"><a href="/catalog/derevianniy-dekor/">Деревянный декор
-                          <svg class="icon">
-                            <use xlink:href="#tab-arrow"></use>
-                          </svg></a></li>
-                      <li class="menu-item current"><a href="/catalog/elementy-lestnic/">Элементы лестниц
-                          <svg class="icon">
-                            <use xlink:href="#tab-arrow"></use>
-                          </svg></a></li>
-                      <li class="menu-item current"><a href="/catalog/dveri-i-okna/">Двери и окна
-                          <svg class="icon">
-                            <use xlink:href="#tab-arrow"></use>
-                          </svg></a></li>
-                      <li class="menu-item current"><a href="/catalog/materialy-iz-lipy/">Материалы из липы и абаши
-                          <svg class="icon">
-                            <use xlink:href="#tab-arrow"></use>
-                          </svg></a></li>
-                      <li class="menu-item current"><a href="/catalog/materialy-iz-listvennicy/">Материалы из лиственницы
-                          <svg class="icon">
-                            <use xlink:href="#tab-arrow"></use>
-                          </svg></a></li>
-                      <li class="menu-item current"><a href="/catalog/materialy-ih-osiny-i-abashi/">Материалы из осины
-                          <svg class="icon">
-                            <use xlink:href="#tab-arrow"></use>
-                          </svg></a></li>
-                      <li class="menu-item current"><a href="/catalog/fanera-osb-dsp-dvp-tssp/">Фанера, ОСБ, ДСП, ДВП
-                          <svg class="icon">
-                            <use xlink:href="#tab-arrow"></use>
-                          </svg></a></li>
-                      <li class="menu-item current"><a href="/catalog/utepliteli/">Утеплители
-                          <svg class="icon">
-                            <use xlink:href="#tab-arrow"></use>
-                          </svg></a></li>
-                      <li class="menu-item current"><a href="/catalog/rulonnie-izoliyzionnie-materialy/">Рулонные изоляционные материалы
-                          <svg class="icon">
-                            <use xlink:href="#tab-arrow"></use>
-                          </svg></a></li>
-                      <li class="menu-item current"><a href="/catalog/propitki-dlya-drevesiny/">Пропитки для древесины
-                          <svg class="icon">
-                            <use xlink:href="#tab-arrow"></use>
-                          </svg></a></li>
-                      <li class="menu-item current"><a href="/catalog/derevyannye-igrushki/">Деревянные игрушки
-                          <svg class="icon">
-                            <use xlink:href="#tab-arrow"></use>
-                          </svg></a></li>
-                    </ul>
-                  </li>
-                </ul>
-                <ul>
-                  <li><a title="Калькулятор доставки" href="/cart/delivery_calculator/">Калькулятор доставки</a></li>
-                  <li><a title="Новости и акции" href="/news/">Новости и акции</a></li>
-                  <li><a title="Статьи" href="/articles/">Статьи</a></li>
-                  <li><a title="Контакты" href="/contacts/">Контакты</a></li>
-                </ul>
-              </div>
-              <div class="mobile-phone mobile-show"><span class="icon"><img src="/static/images/phone-mobile-icon.svg" alt=""></span><a class="phone" href="tel:+78469228548">78469228548</a></div>
-              <div class="mobile-btn mobile-show"><a class="btn btn--rubber" data-fancybox="callme-modal-mobile" data-src="#callme-modal-mobile" href="javascript:;">Заказать звонок</a></div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <header class="header_gray header_rubrikator_gray header_rubrikator_gray_small">
       <div class="header-body">
         <div class="container">
-          <div class="header-body__content"><a class="catalog-inner-btn">
+          <div class="header-body__content"><a href="/" target="_self"><img class="yellow-logo" src="https://luzhetskiy.github.io/stroyker-box-html/build/img/logo.svg" alt="Северная Лесная Компания"></a><a class="catalog-inner-btn">
               <div class="burger-catalog">
                 <div class="burger"></div>
-              </div>                            Каталог продукции</a>
+              </div>                            Каталог товаров</a>
             <div class="header-search mobile-hide header-search--inner">
               <input class="search_input" name="q" type="text" autocomplete="off" value="" data-search-url="/catalog/search" placeholder="Введите название, артикул, бренд...">
               <button>
@@ -177,31 +40,50 @@
                   <div class="search-result-item__content"><span class="search-result-item__name">Вагонка (липа) 16х90мм 1,7м категория АВ</span><span class="search-result-item__cost">106,00 ₽/шт.</span></div></a><a class="search-result-item" href="/catalog/product/vagonka-lipa-16-kh-90-3m-sort-bc/">
                   <div class="search-result-item__content"><span class="search-result-item__name">Вагонка (липа) 16х90мм 3м категория BC</span><span class="search-result-item__cost">193,00 ₽/шт.</span></div></a></div>
             </div>
-            <div class="header-body__content-right">
-              <div class="header-user mobile-hide"><a class="header-user__link" href="/account/login/"><span class="icon">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M15.9987 13.3346C17.0535 13.3346 18.0847 13.0218 18.9617 12.4358C19.8388 11.8498 20.5224 11.0168 20.9261 10.0423C21.3297 9.06774 21.4353 7.99539 21.2296 6.96082C21.0238 5.92626 20.5158 4.97595 19.7699 4.23007C19.0241 3.48419 18.0737 2.97624 17.0392 2.77045C16.0046 2.56466 14.9323 2.67028 13.9577 3.07395C12.9832 3.47761 12.1502 4.1612 11.5642 5.03826C10.9782 5.91533 10.6654 6.94647 10.6654 8.0013C10.6654 9.41579 11.2273 10.7723 12.2275 11.7725C13.2277 12.7727 14.5842 13.3346 15.9987 13.3346ZM26.2787 21.6013C23.5494 18.8802 19.8527 17.3522 15.9987 17.3522C12.1447 17.3522 8.44796 18.8802 5.7187 21.6013L5.33203 22.0013V28.0013H26.6654V22.0013L26.2787 21.6013Z"></path>
-                    </svg></span>Авторизация</a></div><a class="header-cart" href="/cart/"><i class="icon">
-                  <svg class="icon-svg">
-                    <use xlink:href="#shopping-cart"></use>
-                  </svg></i><span class="cart-number">0</span></a>
+            <div class="header-menu-wrapper"><a class="catalog-inner-btn-menu">
+                <div class="burger-catalog">
+                  <div class="burger"></div>
+                </div>                            Меню</a>
+              <div class="catalog-header-content-menu" style="display: none;">
+                <ul class="catalog-header-content__ul">
+                  <li class="menu-item"><a class="menu-item__link-hover-color" href="/catalog/brevno-ocilindrovannoe/"><span class="catalog-header-content__span">Бревно оцилиндрованное</span><img class="catalog-header-content__icon catalog-header-content__icon_last" src="https://luzhetskiy.github.io/stroyker-box-html/build/img/icons/menu-icon.svg" alt="иконка стрелки"></a></li>
+                  <li class="menu-item"><a class="menu-item__link-df-reverse menu-item__link-hover-line" href="/catalog/vagonka-i-evrovagonka/"><span class="catalog-header-content__span">Вагонка и Евровагонка</span><img class="catalog-header-content__icon catalog-header-content__icon_first" src="https://luzhetskiy.github.io/stroyker-box-html/build/img/icons/menu-icon.svg" alt="иконка стрелки"></a></li>
+                  <li class="menu-item"><a class="menu-item__link" href="/catalog/blok-haus/"><span class="catalog-header-content__span"> Блок Хаус</span>
+                      <div class="menu-item-arrow-hover"><img class="catalog-header-content__icon catalog-header-content__icon_last" src="https://luzhetskiy.github.io/stroyker-box-html/build/img/icons/menu-icon.svg" alt="иконка стрелки"></div></a></li>
+                  <li class="menu-item"><a href="/catalog/imitaciya-brusa/"> <span class="catalog-header-content__span"> Имитация бруса
+                        <div class="menu-item-arrow-hover"></div></span></a></li>
+                  <li class="menu-item"><a href="/catalog/doska-pola/">Доска пола</a></li>
+                </ul>
+              </div>
             </div>
-            <div class="header-fixed-content">
-              <div class="header-phones">
-                <!--если номера не нужно скрывать, просто убрать это кнопку-->
-                <button class="header-phones__toggle" onclick="document.querySelectorAll('.header-phones__toggle').forEach($this=&gt;{$this.remove()});" type="button">Показать 443-37-77<br>номера... 711-93-93</button>
-                <!--1 или 2 номера-->
-                <div class="header-phones__inner"><a class="header-phones__phone" href="tel:+79874433777">+7 987 443-37-77</a><a class="header-phones__phone" href="tel:+79874433777">+7 927 711-93-93</a></div>
-              </div><a class="btn-border callme-button mobile-hide button-theme button-theme_callme" data-fancybox="callme-modal-1" data-src="#callme-modal" href="javascript:;">Заказать звонок</a>
+            <div class="header-body__content-right__wrapper"> 
+              <div class="header-body__content-links"> <a class="header-cart" href="/cart/"><i class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" viewBox="0 0 30 25" fill="none">
+<path d="M22.5986 12.7959C24.6524 12.5473 26.25 10.8099 26.25 8.70603C26.25 6.43217 24.385 4.58255 22.0932 4.58255C20.0113 4.58255 18.2876 6.11021 17.9879 8.09376L8.63865 6.98185L7.95592 3.03027H4.5V4.5231H6.68702L7.0795 6.79643L7.04785 6.79271L8.84618 16.6457H8.88405L9.10297 17.5335C8.03752 17.7098 7.222 18.6285 7.222 19.7349C7.222 20.9672 8.23245 21.9697 9.47437 21.9697C10.7163 21.9697 11.7268 20.9672 11.7268 19.7349C11.7268 19.4746 11.6794 19.2258 11.5967 18.9935H18.4705C18.3877 19.226 18.3401 19.4749 18.3401 19.7349C18.3401 20.9672 19.3505 21.9697 20.5928 21.9697C21.8345 21.9697 22.845 20.9672 22.845 19.7349C22.845 18.5028 21.8345 17.5006 20.5928 17.5006H10.6435L10.4329 16.6457H21.7074L22.5986 12.7959ZM20.5935 18.9935C21.0053 18.9935 21.3409 19.3261 21.3409 19.7349C21.3409 20.1441 21.0053 20.4769 20.5935 20.4769C20.1809 20.4769 19.8456 20.144 19.8456 19.7349C19.8456 19.3259 20.1812 18.9935 20.5935 18.9935ZM22.0933 6.07567C23.5555 6.07567 24.7453 7.25575 24.7453 8.70626C24.7453 10.1569 23.5555 11.3369 22.0933 11.3369C20.6311 11.3369 19.4418 10.1569 19.4418 8.70626C19.4418 7.25575 20.6311 6.07567 22.0933 6.07567ZM9.4749 20.4769C9.06262 20.4769 8.7273 20.144 8.7273 19.7349C8.7273 19.3259 9.06262 18.9935 9.4749 18.9935C9.88717 18.9935 10.2225 19.3261 10.2225 19.7349C10.2225 20.1441 9.88717 20.4769 9.4749 20.4769ZM20.5091 15.1526H10.1031V15.1529L9.10868 9.7033L8.90378 8.51694L18.0389 9.60353C18.3798 11.12 19.5643 12.3205 21.0769 12.6997L20.5091 15.1526Z" fill="#FF5F00"/>
+<path d="M22.5 6.81812H21.75V10.606H22.5V6.81812Z" fill="#FF5F00"/>
+<path d="M24 9.09083V8.33325H20.25V9.09083H24Z" fill="#FF5F00"/></i><span class="cart-number">0</span></a></div>
+              <div class="header-body__content-right">
+                <div class="header-fixed-content">
+                  <div class="header-phones">
+                    <!--если номера не нужно скрывать, просто убрать это кнопку-->
+                    <button class="header-phones__toggle" onclick="document.querySelectorAll('.header-phones__toggle').forEach($this=&gt;{$this.remove()});" type="button">Показать 443-37-77</button>
+                    <!--1 или 2 номера-->
+                    <div class="header-phones__inner"><a class="header-phones__phone" href="tel:+79874433777">+7 987 443-37-77</a></div>
+                  </div><a class="btn-arrow" data-fancybox="callme-modal-1" data-src="#callme-modal" href="javascript:;">Заказать звонок</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="catalog-header-content" style="display: none;">
+      </div>
+      <div class="catalog-header-content" style="display: none;">
+        <div class="container">
           <ul class="catalog-header-content__ul">
-            <li class="menu-item"><a href="/catalog/brevno-ocilindrovannoe/">Бревно оцилиндрованное</a></li>
-            <li class="menu-item"><a href="/catalog/vagonka-i-evrovagonka/">Вагонка и Евровагонка</a></li>
-            <li class="menu-item"><a href="/catalog/blok-haus/">Блок Хаус</a></li>
-            <li class="menu-item"><a href="/catalog/imitaciya-brusa/">Имитация бруса</a></li>
+            <li class="menu-item"><a class="menu-item__link-hover-color" href="/catalog/brevno-ocilindrovannoe/"><span class="catalog-header-content__span">Бревно оцилиндрованное</span><img class="catalog-header-content__icon catalog-header-content__icon_last" src="https://luzhetskiy.github.io/stroyker-box-html/build/img/icons/menu-icon.svg" alt="иконка стрелки"></a></li>
+            <li class="menu-item"><a class="menu-item__link-df-reverse menu-item__link-hover-line" href="/catalog/vagonka-i-evrovagonka/"><span class="catalog-header-content__span">Вагонка и Евровагонка</span><img class="catalog-header-content__icon catalog-header-content__icon_first" src="https://luzhetskiy.github.io/stroyker-box-html/build/img/icons/menu-icon.svg" alt="иконка стрелки"></a></li>
+            <li class="menu-item"><a class="menu-item__link" href="/catalog/blok-haus/"><span class="catalog-header-content__span"> Блок Хаус</span>
+                <div class="menu-item-arrow-hover"><img class="catalog-header-content__icon catalog-header-content__icon_last" src="https://luzhetskiy.github.io/stroyker-box-html/build/img/icons/menu-icon.svg" alt="иконка стрелки"></div></a></li>
+            <li class="menu-item"><a href="/catalog/imitaciya-brusa/"> <span class="catalog-header-content__span"> Имитация бруса
+                  <div class="menu-item-arrow-hover"></div></span></a></li>
             <li class="menu-item"><a href="/catalog/doska-pola/">Доска пола</a></li>
             <li class="menu-item"><a href="/catalog/brus-i-doska-suhie-strogannye/">Брус и Доска</a></li>
             <li class="menu-item"><a href="/catalog/derevianniy-dekor/">Деревянный декор</a></li>
@@ -1354,7 +1236,7 @@
     <script src="/static/addresses/js/addresses_yamap.js"></script>
     <script src="/static/js/frontpage.js"></script>
     <script type="text/javascript" src="/static/subscription/js/subscription.js"></script>
-    <script src="/static/js/scripts.js"></script>
+    <script src="https://luzhetskiy.github.io/stroyker-box-html/build/scripts/scripts.js"></script>
     <!--некоторые библиотеки из к2-->
     <script src="https://luzhetskiy.github.io/stroyker-box-html/build/libs/fancybox/jquery.fancybox.min.js"></script>
     <link rel="stylesheet" href="https://luzhetskiy.github.io/stroyker-box-html/build/libs/fancybox/jquery.fancybox.min.css">
