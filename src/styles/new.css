@@ -3618,7 +3618,6 @@ border-color: var(--color-border-hover, var(--color-border)) !important; }
 .slick-slider {
     position: relative;
     display: block;
-    user-select: none;
     touch-action: pan-y;
 outline: none; }
 .slick-slider * {
@@ -4040,7 +4039,7 @@ display: none; } }
 
 img {
     display: block;
-user-select: none; }
+}
 img.lazyload, img.lazyloading {
     opacity: 0;
 visibility: hidden; }
@@ -5929,7 +5928,6 @@ margin-bottom: 15px; }
     display: flex;
     align-items: center;
     position: relative;
-    user-select: none;
 cursor: pointer; }
 .faq-element__head:hover .faq-element__trigger {
     background-color: #F3F6FB;
