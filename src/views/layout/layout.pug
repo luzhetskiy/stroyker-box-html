@@ -1,4 +1,4 @@
--var href = 'https://rusfdev.github.io/k1stroyker/build'
+-var href = 'https://luzhetskiy.github.io/stroyker-box-html/build'
 //-var href = 'http://localhost:9000'
 
 block variables
@@ -21,10 +21,10 @@ html
     link(rel='stylesheet', href='/static/css/custom.css', type='text/css')
     link(rel='stylesheet', href='/static/css/common.css', type='text/css')
     block styles
-    link(rel='stylesheet' href=href+'/styles/font-front-fix.css')
-    link(rel='stylesheet' href=href+'/styles/theme.css')
+    link(rel='stylesheet' href='/styles/font-front-fix.css')
+    link(rel='stylesheet' href='/styles/theme.css')
     //new
-    link(rel='stylesheet' href=href+'/styles/new.css')
+    link(rel='stylesheet' href='/styles/new.css')
   
   body.noselect(class=bodyClass)
     include ../blocks/header
@@ -203,11 +203,11 @@ html
     block scripts 
 
     //некоторые библиотеки из к2
-    script(src=href+'/libs/fancybox/jquery.fancybox.min.js')
-    link(rel='stylesheet' href=href+'/libs/fancybox/jquery.fancybox.min.css')
-    script(src=href+'/libs/slick/slick.js')
+    script(src='/libs/fancybox/jquery.fancybox.min.js')
+    link(rel='stylesheet' href='/libs/fancybox/jquery.fancybox.min.css')
+    script(src='/libs/slick/slick.js')
     //обновленный файл со скриптами
-    script(src=href+'/scripts/new.js')
+    script(src='/scripts/new.js')
 
     include ../blocks/helper
 
