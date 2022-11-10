@@ -1,0 +1,100 @@
+.noselect {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+.ya-share-block {
+    cursor: pointer;
+}
+.share-block__show p {
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 20px;
+    color: #7C8994;
+}
+.ya-share2__badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pickup-point-selection .radio {
+    width: calc(100%/2 - 10px);
+    margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+    .document-item .document-item__btn {
+        margin-top: 10px;
+        display: block;
+    }
+    .pickup-point-selection .radio {
+        width: 100%;
+    }
+    .header-user__link {
+        font-size: 16px;
+    }
+    .catalog-container .catalog-content.top-products {
+        width: 100%;
+        margin: 0 -15px 15px 0;
+    }
+}
+
+.mobile-ul .catalog-menu-mobile {
+    margin-bottom: 20px;
+}
+.input-number--lg input[type=number] {
+    font-size: 12px;
+}
+.modal.fancybox-content {
+    max-width: 580px;
+}
+.product-card__personal-cost span:first-letter {
+    text-transform: uppercase;
+}
+.filter-select .dropdown-select-ul {
+    position: inherit;
+}
+.catalog-filter-accordion span.opener {
+    cursor: initial;
+}
+.catalog-filter-accordion span.opener::before {
+    background: none;
+}
+.contacts-block__title-red.address-data {
+    margin-top: 1rem;
+}
+.top-products-block {
+    margin-top: 40px;
+}
+
+.simple-order-form {
+    max-width: 500px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+.simple-order-form .full-width, .simple-order-form button {
+    width: 100%;
+}
+.simple-order-form .full-width {
+    margin: 2rem 0 1rem;
+}
+.simple-order-form .full-width.submit {
+    margin: 0;
+}
+.simple-order-form .form-group.comment {
+    margin-top: 3rem;
+}
+.shopping-cart-item__uom {
+    margin-left: 10px;
+}
+.no-bg-image {
+    background-image: none;
+}
